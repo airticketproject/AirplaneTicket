@@ -1,0 +1,1 @@
+SQLCMD -S DESKTOP-1SV0JFT -E -i createQLBVMB.sql
