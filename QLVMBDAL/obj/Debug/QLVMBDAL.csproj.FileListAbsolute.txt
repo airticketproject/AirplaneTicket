@@ -1,0 +1,9 @@
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\obj\Debug\QLVMBDAL.csprojAssemblyReference.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CoreCompileInputs.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\bin\Debug\QLVMBDAL.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\bin\Debug\QLVMBDAL.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\bin\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\bin\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CopyComplete
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\obj\Debug\QLVMBDAL.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\obj\Debug\QLVMBDAL.pdb
