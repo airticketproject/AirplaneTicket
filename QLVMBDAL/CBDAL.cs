@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace QLVMBDAL
 {
-    public class VMBDAL  
+    public class CBDAL  
     {
         private string connectionString;
 
-        public VMBDAL()
+        public CBDAL()
         {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
 
 
-        public bool ThemChuyenBay(VMBDTO cb)
+        public bool ThemChuyenBay(CBDTO cb)
         {
             string query = string.Empty;
             query += "INSERT INTO [LichChuyenBay] ([MaChuyenBay], [SanBayDi], [SanBayDen], [NgayGio], [ThoiGianBay], [SoLuongGheHang1], [SoLuongGheHang2])";
@@ -56,7 +56,7 @@ namespace QLVMBDAL
             return true;
         }
 
-        public bool XoaChuyenBay(VMBDTO cb)
+        public bool XoaChuyenBay(CBDTO cb)
         {
             //string query = string.Empty;
             //query += "DELETE FROM [tblKieuNau] WHERE [maKieuNau] = @maKieuNau";
@@ -85,7 +85,7 @@ namespace QLVMBDAL
             return true;
         }
 
-        public bool SuaChuyenBay(VMBDTO cb)
+        public bool SuaChuyenBay(CBDTO cb)
         {
             //string query = string.Empty;
             //query += "UPDATE [tblKieuNau] SET [tenKieuNau] = @tenKieuNau, [mota] = @mota WHERE [maKieuNau] = @maKieuNau";
@@ -116,7 +116,7 @@ namespace QLVMBDAL
             return true;
         }
 
-        public List<VMBDTO> select()
+        public List<CBDTO> select()
         {
             return null;
         }

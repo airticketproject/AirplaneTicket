@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace QLVMBBUS
 {
-    public class VMBBUS
+    public class CBBUS
     {
-        private VMBDAL vbmDAL;
-        public VMBBUS()
+        private CBDAL vbmDAL;
+        public CBBUS()
         {
-            vbmDAL = new VMBDAL();
+            vbmDAL = new CBDAL();
         }
-        public bool ThemChuyenBay(VMBDTO cb)
+        public bool ThemChuyenBay(CBDTO cb)
         {
             bool re = vbmDAL.ThemChuyenBay(cb);
             return re;
         }
 
-        public bool XoaChuyenBay(VMBDTO cb)
+        public bool XoaChuyenBay(CBDTO cb)
         {
             bool re = vbmDAL.XoaChuyenBay(cb);
             return re;
         }
 
-        public bool SuaChuyenBay(VMBDTO cb)
+        public bool SuaChuyenBay(CBDTO cb)
         {
             bool re = vbmDAL.SuaChuyenBay(cb);
             return re;
         }
 
-        public List<VMBDTO> select()
+        public List<CBDTO> select()
         {
             return null;
         }

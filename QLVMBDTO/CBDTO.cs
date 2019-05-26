@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLVMBDTO
 {
-    public class VMBDTO
+    public class CBDTO
     {
         private string maChuyenBay;
         private string sanBayDi;

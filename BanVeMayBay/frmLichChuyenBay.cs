@@ -14,7 +14,9 @@ namespace BanVeMayBay
 {   
     public partial class frmLichChuyenBay : Form
     {
-        private VMBBUS vmbBUS;
+        private CBBUS cbBUS;
+        private SBBUS sbBUS;
+
         public frmLichChuyenBay()
         {
             InitializeComponent();
@@ -31,12 +33,37 @@ namespace BanVeMayBay
 
         private void frmLichChuyenBay_Load(object sender, EventArgs e)
         {
-            vmbBUS = new VMBBUS();
+            cbBUS = new CBBUS();
+            sbBUS = new SBBUS();
+            loadSanBayVao_Combobox(cbbSanBayDi);
+            loadSanBayVao_Combobox(cbbSanBayDen);
+        }
+
+        private void loadSanBayVao_Combobox(ComboBox comboBox)
+        {
+            List<SBDTO> listSanBay = sbBUS.select();
+
+            if (listSanBay == null)
+            {
+                MessageBox.Show("Có lỗi khi lấy Sân bay từ cơ sở dữ liệu");
+                return;
+            }
+            comboBox.DataSource = new BindingSource(listSanBay, String.Empty);
+            comboBox.DisplayMember = "TenSanBay";
+            comboBox.ValueMember = "MaSanBay";
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[comboBox.DataSource];
+            myCurrencyManager.Refresh();
+
+            if (comboBox.Items.Count > 0)
+            {
+                comboBox.SelectedIndex = 0;
+            }
         }
 
         private void themChuyenBay_Click(object sender, EventArgs e)
         {
-            VMBDTO vmbDTO = new VMBDTO();
+            CBDTO cbDTO = new CBDTO();
 
            
             //2. Kiểm tra data hợp lệ or not
@@ -52,19 +79,20 @@ namespace BanVeMayBay
             else
             {
                 //1. Map data from GUI
-                vmbDTO.MaChuyenBay = txbMaChuyenBay.Text;
-                vmbDTO.SanBayDi = "1";
-                vmbDTO.SanBayDen = "2";
-                vmbDTO.TGKhoiHanh = ngayKhoiHanh.Value;
-                vmbDTO.TGBay = int.Parse(txbThoiGianBay.Text);
-                vmbDTO.SLGheHang1 = int.Parse(txbSLGheHang1.Text);
-                vmbDTO.SLGheHang2 = int.Parse(txbSLGheHang2.Text);
+                cbDTO.MaChuyenBay = txbMaChuyenBay.Text;
+                cbDTO.SanBayDi = cbbSanBayDi.Text;
+                cbDTO.SanBayDen = cbbSanBayDen.Text;
+                cbDTO.TGKhoiHanh = ngayKhoiHanh.Value;
+                cbDTO.TGBay = int.Parse(txbThoiGianBay.Text);
+                cbDTO.SLGheHang1 = int.Parse(txbSLGheHang1.Text);
+                cbDTO.SLGheHang2 = int.Parse(txbSLGheHang2.Text);
+
                 //3. Thêm vào DB
-                bool kq = vmbBUS.ThemChuyenBay(vmbDTO);
+                bool kq = cbBUS.ThemChuyenBay(cbDTO);
                 if (kq == false)
-                    MessageBox.Show("Thêm Kiểu nấu thất bại. Vui lòng kiểm tra lại dũ liệu");
+                    MessageBox.Show("Thêm Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu");
                 else
-                    MessageBox.Show("Thêm Kiểu nấu thành công");
+                    MessageBox.Show("Thêm Chuyến bay thành công");
             }
 
         }

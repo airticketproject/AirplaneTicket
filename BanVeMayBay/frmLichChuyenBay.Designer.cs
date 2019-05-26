@@ -113,7 +113,7 @@
             // SoLuongGheHang1_label
             // 
             this.SoLuongGheHang1_label.AutoSize = true;
-            this.SoLuongGheHang1_label.Location = new System.Drawing.Point(27, 333);
+            this.SoLuongGheHang1_label.Location = new System.Drawing.Point(27, 329);
             this.SoLuongGheHang1_label.Name = "SoLuongGheHang1_label";
             this.SoLuongGheHang1_label.Size = new System.Drawing.Size(150, 17);
             this.SoLuongGheHang1_label.TabIndex = 1;
@@ -122,7 +122,7 @@
             // SoLuongGheHang2_label
             // 
             this.SoLuongGheHang2_label.AutoSize = true;
-            this.SoLuongGheHang2_label.Location = new System.Drawing.Point(27, 373);
+            this.SoLuongGheHang2_label.Location = new System.Drawing.Point(27, 372);
             this.SoLuongGheHang2_label.Name = "SoLuongGheHang2_label";
             this.SoLuongGheHang2_label.Size = new System.Drawing.Size(150, 17);
             this.SoLuongGheHang2_label.TabIndex = 1;
@@ -167,7 +167,7 @@
             // 
             // txbSLGheHang1
             // 
-            this.txbSLGheHang1.Location = new System.Drawing.Point(280, 330);
+            this.txbSLGheHang1.Location = new System.Drawing.Point(280, 326);
             this.txbSLGheHang1.Name = "txbSLGheHang1";
             this.txbSLGheHang1.Size = new System.Drawing.Size(231, 22);
             this.txbSLGheHang1.TabIndex = 4;
