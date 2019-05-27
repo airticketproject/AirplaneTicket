@@ -43,17 +43,19 @@
             this.txbThoiGianBay = new System.Windows.Forms.TextBox();
             this.txbSLGheHang1 = new System.Windows.Forms.TextBox();
             this.txbSLGheHang2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SanBayTrungGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SanBayTrungGian_label = new System.Windows.Forms.Label();
             this.themChuyenBay = new System.Windows.Forms.Button();
-            this.Xoa_button = new System.Windows.Forms.Button();
-            this.Sua_button = new System.Windows.Forms.Button();
             this.Thoat_button = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SanBayTrungGian_Sua_button = new System.Windows.Forms.Button();
+            this.SanBayTrungGian_Xoa_button = new System.Windows.Forms.Button();
+            this.SanBayTrungGian_Them_button = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // title_label
@@ -179,52 +181,9 @@
             this.txbSLGheHang2.Size = new System.Drawing.Size(231, 22);
             this.txbSLGheHang2.TabIndex = 4;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.SanBayTrungGian,
-            this.ThoiGianDung,
-            this.GhiChu});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 451);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(569, 150);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // SanBayTrungGian
-            // 
-            this.SanBayTrungGian.HeaderText = "Sân Bay Trung Gian";
-            this.SanBayTrungGian.Name = "SanBayTrungGian";
-            // 
-            // ThoiGianDung
-            // 
-            this.ThoiGianDung.HeaderText = "Thời Gian Dừng";
-            this.ThoiGianDung.Name = "ThoiGianDung";
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.HeaderText = "Ghi Chú";
-            this.GhiChu.Name = "GhiChu";
-            // 
-            // SanBayTrungGian_label
-            // 
-            this.SanBayTrungGian_label.AutoSize = true;
-            this.SanBayTrungGian_label.Location = new System.Drawing.Point(27, 418);
-            this.SanBayTrungGian_label.Name = "SanBayTrungGian_label";
-            this.SanBayTrungGian_label.Size = new System.Drawing.Size(137, 17);
-            this.SanBayTrungGian_label.TabIndex = 1;
-            this.SanBayTrungGian_label.Text = "Sân Bay Trung Gian";
-            // 
             // themChuyenBay
             // 
-            this.themChuyenBay.Location = new System.Drawing.Point(28, 633);
+            this.themChuyenBay.Location = new System.Drawing.Point(167, 633);
             this.themChuyenBay.Name = "themChuyenBay";
             this.themChuyenBay.Size = new System.Drawing.Size(106, 40);
             this.themChuyenBay.TabIndex = 6;
@@ -232,43 +191,97 @@
             this.themChuyenBay.UseVisualStyleBackColor = true;
             this.themChuyenBay.Click += new System.EventHandler(this.themChuyenBay_Click);
             // 
-            // Xoa_button
-            // 
-            this.Xoa_button.Location = new System.Drawing.Point(181, 633);
-            this.Xoa_button.Name = "Xoa_button";
-            this.Xoa_button.Size = new System.Drawing.Size(106, 40);
-            this.Xoa_button.TabIndex = 6;
-            this.Xoa_button.Text = "Xóa";
-            this.Xoa_button.UseVisualStyleBackColor = true;
-            // 
-            // Sua_button
-            // 
-            this.Sua_button.Location = new System.Drawing.Point(339, 633);
-            this.Sua_button.Name = "Sua_button";
-            this.Sua_button.Size = new System.Drawing.Size(106, 40);
-            this.Sua_button.TabIndex = 6;
-            this.Sua_button.Text = "Sửa";
-            this.Sua_button.UseVisualStyleBackColor = true;
-            // 
             // Thoat_button
             // 
-            this.Thoat_button.Location = new System.Drawing.Point(493, 633);
+            this.Thoat_button.Location = new System.Drawing.Point(357, 633);
             this.Thoat_button.Name = "Thoat_button";
             this.Thoat_button.Size = new System.Drawing.Size(106, 40);
             this.Thoat_button.TabIndex = 6;
             this.Thoat_button.Text = "Thoát";
             this.Thoat_button.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.SanBayTrungGian_Sua_button);
+            this.groupBox1.Controls.Add(this.SanBayTrungGian_Xoa_button);
+            this.groupBox1.Controls.Add(this.SanBayTrungGian_Them_button);
+            this.groupBox1.Controls.Add(this.dataGridView2);
+            this.groupBox1.Location = new System.Drawing.Point(28, 396);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(569, 225);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sân Bay Trung Gian";
+            // 
+            // SanBayTrungGian_Sua_button
+            // 
+            this.SanBayTrungGian_Sua_button.Location = new System.Drawing.Point(463, 176);
+            this.SanBayTrungGian_Sua_button.Name = "SanBayTrungGian_Sua_button";
+            this.SanBayTrungGian_Sua_button.Size = new System.Drawing.Size(96, 32);
+            this.SanBayTrungGian_Sua_button.TabIndex = 6;
+            this.SanBayTrungGian_Sua_button.Text = "Sửa";
+            this.SanBayTrungGian_Sua_button.UseVisualStyleBackColor = true;
+            // 
+            // SanBayTrungGian_Xoa_button
+            // 
+            this.SanBayTrungGian_Xoa_button.Location = new System.Drawing.Point(233, 176);
+            this.SanBayTrungGian_Xoa_button.Name = "SanBayTrungGian_Xoa_button";
+            this.SanBayTrungGian_Xoa_button.Size = new System.Drawing.Size(96, 32);
+            this.SanBayTrungGian_Xoa_button.TabIndex = 6;
+            this.SanBayTrungGian_Xoa_button.Text = "Xóa";
+            this.SanBayTrungGian_Xoa_button.UseVisualStyleBackColor = true;
+            // 
+            // SanBayTrungGian_Them_button
+            // 
+            this.SanBayTrungGian_Them_button.Location = new System.Drawing.Point(22, 176);
+            this.SanBayTrungGian_Them_button.Name = "SanBayTrungGian_Them_button";
+            this.SanBayTrungGian_Them_button.Size = new System.Drawing.Size(96, 32);
+            this.SanBayTrungGian_Them_button.TabIndex = 6;
+            this.SanBayTrungGian_Them_button.Text = "Thêm";
+            this.SanBayTrungGian_Them_button.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView2.Location = new System.Drawing.Point(12, 21);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(557, 149);
+            this.dataGridView2.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Sân Bay Trung Gian";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Thời Gian Dừng";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Ghi Chú";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // frmLichChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 685);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Thoat_button);
-            this.Controls.Add(this.Sua_button);
-            this.Controls.Add(this.Xoa_button);
             this.Controls.Add(this.themChuyenBay);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txbSLGheHang2);
             this.Controls.Add(this.txbSLGheHang1);
             this.Controls.Add(this.txbThoiGianBay);
@@ -276,7 +289,6 @@
             this.Controls.Add(this.ngayKhoiHanh);
             this.Controls.Add(this.cbbSanBayDen);
             this.Controls.Add(this.cbbSanBayDi);
-            this.Controls.Add(this.SanBayTrungGian_label);
             this.Controls.Add(this.SoLuongGheHang2_label);
             this.Controls.Add(this.SoLuongGheHang1_label);
             this.Controls.Add(this.ThoiGianBay_label);
@@ -288,7 +300,8 @@
             this.Name = "frmLichChuyenBay";
             this.Text = "LichChuyenBay";
             this.Load += new System.EventHandler(this.frmLichChuyenBay_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,16 +324,17 @@
         private System.Windows.Forms.TextBox txbThoiGianBay;
         private System.Windows.Forms.TextBox txbSLGheHang1;
         private System.Windows.Forms.TextBox txbSLGheHang2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label SanBayTrungGian_label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SanBayTrungGian;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.Button themChuyenBay;
-        private System.Windows.Forms.Button Xoa_button;
-        private System.Windows.Forms.Button Sua_button;
         private System.Windows.Forms.Button Thoat_button;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button SanBayTrungGian_Sua_button;
+        private System.Windows.Forms.Button SanBayTrungGian_Xoa_button;
+        private System.Windows.Forms.Button SanBayTrungGian_Them_button;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
 

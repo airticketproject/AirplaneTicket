@@ -53,6 +53,8 @@
             this.GiaTien_textBox = new System.Windows.Forms.TextBox();
             this.DatVe_button = new System.Windows.Forms.Button();
             this.Thoat_button = new System.Windows.Forms.Button();
+            this.ThemHanhKhach_button = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -277,11 +279,31 @@
             this.Thoat_button.Text = "Thoát";
             this.Thoat_button.UseVisualStyleBackColor = true;
             // 
-            // DatVe
+            // ThemHanhKhach_button
+            // 
+            this.ThemHanhKhach_button.Location = new System.Drawing.Point(520, 195);
+            this.ThemHanhKhach_button.Name = "ThemHanhKhach_button";
+            this.ThemHanhKhach_button.Size = new System.Drawing.Size(161, 36);
+            this.ThemHanhKhach_button.TabIndex = 27;
+            this.ThemHanhKhach_button.Text = "Thêm Hành Khách";
+            this.ThemHanhKhach_button.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(405, 207);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 17);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "hoặc";
+            // 
+            // frmDatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 496);
+            this.Controls.Add(this.ThemHanhKhach_button);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.Thoat_button);
             this.Controls.Add(this.DatVe_button);
             this.Controls.Add(this.GiaTien_textBox);
@@ -295,7 +317,7 @@
             this.Controls.Add(this.MaHanhKhach_label);
             this.Controls.Add(this.MaChuyenBay_label);
             this.Controls.Add(this.label1);
-            this.Name = "DatVe";
+            this.Name = "frmDatVe";
             this.Text = "Dat Ve Chuyen Bay";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -333,5 +355,7 @@
         private System.Windows.Forms.TextBox GiaTien_textBox;
         private System.Windows.Forms.Button DatVe_button;
         private System.Windows.Forms.Button Thoat_button;
+        private System.Windows.Forms.Button ThemHanhKhach_button;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -7,3 +7,12 @@ C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\bin\Debug\QLVMBDTO.pdb
 C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CopyComplete
 C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\obj\Debug\QLVMBDAL.dll
 C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDAL\obj\Debug\QLVMBDAL.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDAL.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDAL.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDTO.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDTO.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csprojAssemblyReference.cache
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CoreCompileInputs.cache
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CopyComplete
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.pdb

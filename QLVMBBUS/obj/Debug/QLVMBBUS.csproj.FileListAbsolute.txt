@@ -9,3 +9,14 @@ C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBBUS\bin\Debug\QLVMBDTO.pdb
 C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBBUS\obj\Debug\QLVMBBUS.csproj.CopyComplete
 C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBBUS\obj\Debug\QLVMBBUS.dll
 C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBBUS\obj\Debug\QLVMBBUS.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBBUS.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBBUS.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBDAL.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBDTO.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBDAL.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBDTO.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.csprojAssemblyReference.cache
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.csproj.CoreCompileInputs.cache
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.csproj.CopyComplete
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.pdb

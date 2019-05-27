@@ -16,5 +16,22 @@ namespace BanVeMayBay
         {
             InitializeComponent();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Form frmLichChuyenBay = new frmLichChuyenBay();
+            frmLichChuyenBay.Show();
+        }
+
+        private void TimKiem_button_Click(object sender, EventArgs e)
+        {
+            Form frmTimKiem = new frmTimKiem_DanhSachChuyenBay();
+            frmTimKiem.Show();
+        }
+
+        private void Thoat_button_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

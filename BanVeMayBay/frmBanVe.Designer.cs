@@ -32,7 +32,6 @@
             this.Thoat_button = new System.Windows.Forms.Button();
             this.Luu_button = new System.Windows.Forms.Button();
             this.GiaTien_textBox = new System.Windows.Forms.TextBox();
-            this.HangVe_textBox = new System.Windows.Forms.TextBox();
             this.HangVe_comboBox = new System.Windows.Forms.ComboBox();
             this.MaHanhKhach_comboBox = new System.Windows.Forms.ComboBox();
             this.MaChuyenBay_comboBox = new System.Windows.Forms.ComboBox();
@@ -54,6 +53,8 @@
             this.MaChuyenBay_label = new System.Windows.Forms.Label();
             this.DienThoai_textBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ThemHanhKhach_button = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -91,13 +92,6 @@
             this.GiaTien_textBox.Name = "GiaTien_textBox";
             this.GiaTien_textBox.Size = new System.Drawing.Size(201, 22);
             this.GiaTien_textBox.TabIndex = 17;
-            // 
-            // HangVe_textBox
-            // 
-            this.HangVe_textBox.Location = new System.Drawing.Point(430, 393);
-            this.HangVe_textBox.Name = "HangVe_textBox";
-            this.HangVe_textBox.Size = new System.Drawing.Size(201, 22);
-            this.HangVe_textBox.TabIndex = 18;
             // 
             // HangVe_comboBox
             // 
@@ -285,15 +279,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hành khách";
             // 
-            // BanVe
+            // ThemHanhKhach_button
+            // 
+            this.ThemHanhKhach_button.Location = new System.Drawing.Point(542, 226);
+            this.ThemHanhKhach_button.Name = "ThemHanhKhach_button";
+            this.ThemHanhKhach_button.Size = new System.Drawing.Size(161, 36);
+            this.ThemHanhKhach_button.TabIndex = 27;
+            this.ThemHanhKhach_button.Text = "Thêm Hành Khách";
+            this.ThemHanhKhach_button.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(427, 238);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 17);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "hoặc";
+            // 
+            // frmBanVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 552);
+            this.Controls.Add(this.ThemHanhKhach_button);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.Thoat_button);
             this.Controls.Add(this.Luu_button);
             this.Controls.Add(this.GiaTien_textBox);
-            this.Controls.Add(this.HangVe_textBox);
             this.Controls.Add(this.HangVe_comboBox);
             this.Controls.Add(this.MaHanhKhach_comboBox);
             this.Controls.Add(this.MaChuyenBay_label);
@@ -304,7 +317,7 @@
             this.Controls.Add(this.MaHanhKhach_label);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label);
-            this.Name = "BanVe";
+            this.Name = "frmBanVe";
             this.Text = "Ban Ve Chuyen Bay";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -321,7 +334,6 @@
         private System.Windows.Forms.Button Thoat_button;
         private System.Windows.Forms.Button Luu_button;
         private System.Windows.Forms.TextBox GiaTien_textBox;
-        private System.Windows.Forms.TextBox HangVe_textBox;
         private System.Windows.Forms.ComboBox HangVe_comboBox;
         private System.Windows.Forms.ComboBox MaHanhKhach_comboBox;
         private System.Windows.Forms.ComboBox MaChuyenBay_comboBox;
@@ -343,5 +355,7 @@
         private System.Windows.Forms.Label MaChuyenBay_label;
         private System.Windows.Forms.TextBox DienThoai_textBox;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button ThemHanhKhach_button;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -16,7 +16,7 @@ namespace BanVeMayBay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLichChuyenBay());
+            Application.Run(new frmMain());
         }
     }
 }

@@ -40,6 +40,9 @@
             this.SoGheDaDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimKiem_button = new System.Windows.Forms.Button();
             this.Thoat_button = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,32 +115,65 @@
             // 
             // TimKiem_button
             // 
-            this.TimKiem_button.Location = new System.Drawing.Point(130, 468);
+            this.TimKiem_button.Location = new System.Drawing.Point(12, 468);
             this.TimKiem_button.Name = "TimKiem_button";
             this.TimKiem_button.Size = new System.Drawing.Size(133, 53);
             this.TimKiem_button.TabIndex = 2;
             this.TimKiem_button.Text = "Tìm kiếm";
             this.TimKiem_button.UseVisualStyleBackColor = true;
+            this.TimKiem_button.Click += new System.EventHandler(this.TimKiem_button_Click);
             // 
             // Thoat_button
             // 
-            this.Thoat_button.Location = new System.Drawing.Point(578, 468);
+            this.Thoat_button.Location = new System.Drawing.Point(722, 468);
             this.Thoat_button.Name = "Thoat_button";
             this.Thoat_button.Size = new System.Drawing.Size(133, 53);
             this.Thoat_button.TabIndex = 2;
             this.Thoat_button.Text = "Thoát";
             this.Thoat_button.UseVisualStyleBackColor = true;
+            this.Thoat_button.Click += new System.EventHandler(this.Thoat_button_Click);
             // 
-            // DanhSachChuyenBay
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(198, 468);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(133, 53);
+            this.btnThem.TabIndex = 2;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(384, 468);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(133, 53);
+            this.btnXoa.TabIndex = 2;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(557, 468);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(133, 53);
+            this.btnSua.TabIndex = 2;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            // 
+            // frmDanhSachChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 533);
             this.Controls.Add(this.Thoat_button);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.TimKiem_button);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Name = "DanhSachChuyenBay";
+            this.Name = "frmDanhSachChuyenBay";
             this.Text = "Danh Sách Chuyến Bay";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -159,5 +195,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoGheDaDat;
         private System.Windows.Forms.Button TimKiem_button;
         private System.Windows.Forms.Button Thoat_button;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
     }
 }
