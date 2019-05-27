@@ -39,6 +39,8 @@
             this.SoVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DoanhThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TiLe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnBaoCao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +96,7 @@
             this.SoVe,
             this.DoanhThu,
             this.TiLe});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 119);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 188);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(551, 230);
@@ -125,18 +127,39 @@
             this.TiLe.HeaderText = "Tỉ Lệ";
             this.TiLe.Name = "TiLe";
             // 
-            // BaoCaoDoanhThuThang
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(357, 126);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(110, 38);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnBaoCao
+            // 
+            this.btnBaoCao.Location = new System.Drawing.Point(102, 126);
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Size = new System.Drawing.Size(110, 38);
+            this.btnBaoCao.TabIndex = 6;
+            this.btnBaoCao.Text = "Báo cáo";
+            this.btnBaoCao.UseVisualStyleBackColor = true;
+            // 
+            // frmBaoCaoDoanhThuThang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 361);
+            this.ClientSize = new System.Drawing.Size(578, 430);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnBaoCao);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Nam_comboBox);
             this.Controls.Add(this.Thang_comboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Nam_label);
             this.Controls.Add(this.Thang_label);
-            this.Name = "BaoCaoDoanhThuThang";
+            this.Name = "frmBaoCaoDoanhThuThang";
             this.Text = "BaoCaoDoanhThuThang";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -157,5 +180,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoVe;
         private System.Windows.Forms.DataGridViewTextBoxColumn DoanhThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TiLe;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnBaoCao;
     }
 }

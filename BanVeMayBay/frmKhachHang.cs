@@ -38,7 +38,7 @@ namespace BanVeMayBay
 
         private void btnSuaKhachHang_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -16,5 +16,16 @@ namespace BanVeMayBay
         {
             InitializeComponent();
         }
+
+        private void Thoat_button_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void ThemHanhKhach_button_Click(object sender, EventArgs e)
+        {
+            Form frmKhachHang = new frmKhachHang();
+            frmKhachHang.Show();
+        }
     }
 }

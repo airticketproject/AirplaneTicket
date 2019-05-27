@@ -76,6 +76,7 @@
             this.Thoat_button.TabIndex = 19;
             this.Thoat_button.Text = "Thoát";
             this.Thoat_button.UseVisualStyleBackColor = true;
+            this.Thoat_button.Click += new System.EventHandler(this.Thoat_button_Click);
             // 
             // Luu_button
             // 
@@ -287,6 +288,7 @@
             this.ThemHanhKhach_button.TabIndex = 27;
             this.ThemHanhKhach_button.Text = "Thêm Hành Khách";
             this.ThemHanhKhach_button.UseVisualStyleBackColor = true;
+            this.ThemHanhKhach_button.Click += new System.EventHandler(this.ThemHanhKhach_button_Click);
             // 
             // label3
             // 

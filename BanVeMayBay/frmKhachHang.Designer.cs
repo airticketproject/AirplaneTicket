@@ -40,6 +40,7 @@
             this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.btnSuaKhachHang = new System.Windows.Forms.Button();
             this.btnXoaKhachHang = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,15 +111,15 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 257);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 213);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(797, 193);
+            this.dataGridView1.Size = new System.Drawing.Size(799, 258);
             this.dataGridView1.TabIndex = 8;
             // 
             // btnThemKhachHang
             // 
-            this.btnThemKhachHang.Location = new System.Drawing.Point(419, 91);
+            this.btnThemKhachHang.Location = new System.Drawing.Point(424, 61);
             this.btnThemKhachHang.Name = "btnThemKhachHang";
             this.btnThemKhachHang.Size = new System.Drawing.Size(98, 37);
             this.btnThemKhachHang.TabIndex = 9;
@@ -128,7 +129,7 @@
             // 
             // btnSuaKhachHang
             // 
-            this.btnSuaKhachHang.Location = new System.Drawing.Point(539, 91);
+            this.btnSuaKhachHang.Location = new System.Drawing.Point(572, 61);
             this.btnSuaKhachHang.Name = "btnSuaKhachHang";
             this.btnSuaKhachHang.Size = new System.Drawing.Size(95, 37);
             this.btnSuaKhachHang.TabIndex = 10;
@@ -138,7 +139,7 @@
             // 
             // btnXoaKhachHang
             // 
-            this.btnXoaKhachHang.Location = new System.Drawing.Point(655, 91);
+            this.btnXoaKhachHang.Location = new System.Drawing.Point(714, 61);
             this.btnXoaKhachHang.Name = "btnXoaKhachHang";
             this.btnXoaKhachHang.Size = new System.Drawing.Size(97, 37);
             this.btnXoaKhachHang.TabIndex = 11;
@@ -146,12 +147,23 @@
             this.btnXoaKhachHang.UseVisualStyleBackColor = true;
             this.btnXoaKhachHang.Click += new System.EventHandler(this.btnXoaKhachHang_Click);
             // 
-            // frmKhachHanh
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(572, 115);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(95, 37);
+            this.btnThoat.TabIndex = 10;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnSuaKhachHang_Click);
+            // 
+            // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(823, 483);
             this.Controls.Add(this.btnXoaKhachHang);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnSuaKhachHang);
             this.Controls.Add(this.btnThemKhachHang);
             this.Controls.Add(this.dataGridView1);
@@ -163,7 +175,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmKhachHanh";
+            this.Name = "frmKhachHang";
             this.Text = "Thông tin khách hàng";
             this.Load += new System.EventHandler(this.frmKhachHanh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Button btnThemKhachHang;
         private System.Windows.Forms.Button btnSuaKhachHang;
         private System.Windows.Forms.Button btnXoaKhachHang;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

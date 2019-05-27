@@ -37,6 +37,8 @@
             this.SoChuyenBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DoanhThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TiLe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBaoCao = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,16 +109,37 @@
             this.TiLe.HeaderText = "Tỉ Lệ";
             this.TiLe.Name = "TiLe";
             // 
-            // BaoCaoDoanhThuNam
+            // btnBaoCao
+            // 
+            this.btnBaoCao.Location = new System.Drawing.Point(304, 70);
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Size = new System.Drawing.Size(110, 38);
+            this.btnBaoCao.TabIndex = 4;
+            this.btnBaoCao.Text = "Báo cáo";
+            this.btnBaoCao.UseVisualStyleBackColor = true;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(441, 70);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(110, 38);
+            this.btnThoat.TabIndex = 4;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // frmBaoCaoDoanhThuNam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 406);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnBaoCao);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Nam_comboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Nam_label);
-            this.Name = "BaoCaoDoanhThuNam";
+            this.Name = "frmBaoCaoDoanhThuNam";
             this.Text = "BaoCaoDoanhThuNam";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -135,5 +158,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoChuyenBay;
         private System.Windows.Forms.DataGridViewTextBoxColumn DoanhThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TiLe;
+        private System.Windows.Forms.Button btnBaoCao;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

@@ -30,8 +30,8 @@
         {
             this.Thoat_button = new System.Windows.Forms.Button();
             this.Them_button = new System.Windows.Forms.Button();
-            this.TenSanBay_textBox = new System.Windows.Forms.TextBox();
-            this.MaSanBay_textBox = new System.Windows.Forms.TextBox();
+            this.txbTenSanBay = new System.Windows.Forms.TextBox();
+            this.txbMaSanBay = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,20 +55,21 @@
             this.Them_button.TabIndex = 16;
             this.Them_button.Text = "Thêm";
             this.Them_button.UseVisualStyleBackColor = true;
+            this.Them_button.Click += new System.EventHandler(this.Them_button_Click);
             // 
-            // TenSanBay_textBox
+            // txbTenSanBay
             // 
-            this.TenSanBay_textBox.Location = new System.Drawing.Point(134, 190);
-            this.TenSanBay_textBox.Name = "TenSanBay_textBox";
-            this.TenSanBay_textBox.Size = new System.Drawing.Size(166, 22);
-            this.TenSanBay_textBox.TabIndex = 13;
+            this.txbTenSanBay.Location = new System.Drawing.Point(134, 190);
+            this.txbTenSanBay.Name = "txbTenSanBay";
+            this.txbTenSanBay.Size = new System.Drawing.Size(166, 22);
+            this.txbTenSanBay.TabIndex = 13;
             // 
-            // MaSanBay_textBox
+            // txbMaSanBay
             // 
-            this.MaSanBay_textBox.Location = new System.Drawing.Point(134, 85);
-            this.MaSanBay_textBox.Name = "MaSanBay_textBox";
-            this.MaSanBay_textBox.Size = new System.Drawing.Size(166, 22);
-            this.MaSanBay_textBox.TabIndex = 14;
+            this.txbMaSanBay.Location = new System.Drawing.Point(134, 85);
+            this.txbMaSanBay.Name = "txbMaSanBay";
+            this.txbMaSanBay.Size = new System.Drawing.Size(166, 22);
+            this.txbMaSanBay.TabIndex = 14;
             // 
             // label3
             // 
@@ -104,8 +105,8 @@
             this.ClientSize = new System.Drawing.Size(321, 347);
             this.Controls.Add(this.Thoat_button);
             this.Controls.Add(this.Them_button);
-            this.Controls.Add(this.TenSanBay_textBox);
-            this.Controls.Add(this.MaSanBay_textBox);
+            this.Controls.Add(this.txbTenSanBay);
+            this.Controls.Add(this.txbMaSanBay);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -120,8 +121,8 @@
 
         private System.Windows.Forms.Button Thoat_button;
         private System.Windows.Forms.Button Them_button;
-        private System.Windows.Forms.TextBox TenSanBay_textBox;
-        private System.Windows.Forms.TextBox MaSanBay_textBox;
+        private System.Windows.Forms.TextBox txbTenSanBay;
+        private System.Windows.Forms.TextBox txbMaSanBay;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
