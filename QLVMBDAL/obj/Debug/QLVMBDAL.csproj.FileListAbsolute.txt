@@ -16,3 +16,12 @@ E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CopyComplete
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.dll
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDAL.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDAL.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csprojAssemblyReference.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CoreCompileInputs.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CopyComplete
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.pdb

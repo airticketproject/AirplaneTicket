@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmKhachHang.cs">
+    <Compile Include="frmQuanLyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKhachHang.Designer.cs">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    <Compile Include="frmQuanLyKhachHang.Designer.cs">
+      <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBaoCaoDoanhThuNam.cs">
       <SubType>Form</SubType>
@@ -85,11 +85,11 @@
     <Compile Include="frmBanVe.Designer.cs">
       <DependentUpon>frmBanVe.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLichChuyenBay.cs">
+    <Compile Include="frmThemChuyenBay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLichChuyenBay.Designer.cs">
-      <DependentUpon>frmLichChuyenBay.cs</DependentUpon>
+    <Compile Include="frmThemChuyenBay.Designer.cs">
+      <DependentUpon>frmThemChuyenBay.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -97,17 +97,29 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSanBay.cs">
+    <Compile Include="frmQuanLySanBay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSanBay.Designer.cs">
-      <DependentUpon>frmSanBay.cs</DependentUpon>
+    <Compile Include="frmQuanLySanBay.Designer.cs">
+      <DependentUpon>frmQuanLySanBay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemKhachHang.Designer.cs">
+      <DependentUpon>frmThemKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemSanBay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThemSanBay.Designer.cs">
       <DependentUpon>frmThemSanBay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyChuyenBay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyChuyenBay.Designer.cs">
+      <DependentUpon>frmQuanLyChuyenBay.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,20 +147,26 @@
     <EmbeddedResource Include="frmDatVe.resx">
       <DependentUpon>frmDatVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKhachHang.resx">
-      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanLyKhachHang.resx">
+      <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLichChuyenBay.resx">
-      <DependentUpon>frmLichChuyenBay.cs</DependentUpon>
+    <EmbeddedResource Include="frmThemChuyenBay.resx">
+      <DependentUpon>frmThemChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSanBay.resx">
-      <DependentUpon>frmSanBay.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanLySanBay.resx">
+      <DependentUpon>frmQuanLySanBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemKhachHang.resx">
+      <DependentUpon>frmThemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemSanBay.resx">
       <DependentUpon>frmThemSanBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyChuyenBay.resx">
+      <DependentUpon>frmQuanLyChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

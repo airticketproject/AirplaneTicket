@@ -19,7 +19,7 @@ namespace BanVeMayBay
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Form frmLichChuyenBay = new frmLichChuyenBay();
+            Form frmLichChuyenBay = new frmThemChuyenBay();
             frmLichChuyenBay.Show();
         }
 

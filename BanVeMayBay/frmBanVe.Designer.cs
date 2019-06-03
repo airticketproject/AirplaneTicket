@@ -37,9 +37,7 @@
             this.MaChuyenBay_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.SanBayDi_label = new System.Windows.Forms.Label();
-            this.SanBayDen_textBox = new System.Windows.Forms.TextBox();
             this.NgayGio_textBox = new System.Windows.Forms.TextBox();
-            this.SanBayDi_textBox = new System.Windows.Forms.TextBox();
             this.SanBayDen_label = new System.Windows.Forms.Label();
             this.NgayGio_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +53,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ThemHanhKhach_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbbSanBayDi = new System.Windows.Forms.ComboBox();
+            this.cbbSanBayDen = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -120,10 +120,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbbSanBayDen);
+            this.groupBox2.Controls.Add(this.cbbSanBayDi);
             this.groupBox2.Controls.Add(this.SanBayDi_label);
-            this.groupBox2.Controls.Add(this.SanBayDen_textBox);
             this.groupBox2.Controls.Add(this.NgayGio_textBox);
-            this.groupBox2.Controls.Add(this.SanBayDi_textBox);
             this.groupBox2.Controls.Add(this.SanBayDen_label);
             this.groupBox2.Controls.Add(this.NgayGio_label);
             this.groupBox2.Location = new System.Drawing.Point(27, 95);
@@ -142,26 +142,12 @@
             this.SanBayDi_label.TabIndex = 1;
             this.SanBayDi_label.Text = "Sân Bay Đi";
             // 
-            // SanBayDen_textBox
-            // 
-            this.SanBayDen_textBox.Location = new System.Drawing.Point(515, 27);
-            this.SanBayDen_textBox.Name = "SanBayDen_textBox";
-            this.SanBayDen_textBox.Size = new System.Drawing.Size(200, 22);
-            this.SanBayDen_textBox.TabIndex = 2;
-            // 
             // NgayGio_textBox
             // 
             this.NgayGio_textBox.Location = new System.Drawing.Point(158, 66);
             this.NgayGio_textBox.Name = "NgayGio_textBox";
             this.NgayGio_textBox.Size = new System.Drawing.Size(200, 22);
             this.NgayGio_textBox.TabIndex = 2;
-            // 
-            // SanBayDi_textBox
-            // 
-            this.SanBayDi_textBox.Location = new System.Drawing.Point(158, 27);
-            this.SanBayDi_textBox.Name = "SanBayDi_textBox";
-            this.SanBayDi_textBox.Size = new System.Drawing.Size(200, 22);
-            this.SanBayDi_textBox.TabIndex = 2;
             // 
             // SanBayDen_label
             // 
@@ -299,6 +285,22 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "hoặc";
             // 
+            // cbbSanBayDi
+            // 
+            this.cbbSanBayDi.FormattingEnabled = true;
+            this.cbbSanBayDi.Location = new System.Drawing.Point(156, 27);
+            this.cbbSanBayDi.Name = "cbbSanBayDi";
+            this.cbbSanBayDi.Size = new System.Drawing.Size(198, 24);
+            this.cbbSanBayDi.TabIndex = 3;
+            // 
+            // cbbSanBayDen
+            // 
+            this.cbbSanBayDen.FormattingEnabled = true;
+            this.cbbSanBayDen.Location = new System.Drawing.Point(497, 27);
+            this.cbbSanBayDen.Name = "cbbSanBayDen";
+            this.cbbSanBayDen.Size = new System.Drawing.Size(198, 24);
+            this.cbbSanBayDen.TabIndex = 4;
+            // 
             // frmBanVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -341,9 +343,7 @@
         private System.Windows.Forms.ComboBox MaChuyenBay_comboBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label SanBayDi_label;
-        private System.Windows.Forms.TextBox SanBayDen_textBox;
         private System.Windows.Forms.TextBox NgayGio_textBox;
-        private System.Windows.Forms.TextBox SanBayDi_textBox;
         private System.Windows.Forms.Label SanBayDen_label;
         private System.Windows.Forms.Label NgayGio_label;
         private System.Windows.Forms.Label label2;
@@ -359,5 +359,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button ThemHanhKhach_button;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbbSanBayDen;
+        private System.Windows.Forms.ComboBox cbbSanBayDi;
     }
 }
