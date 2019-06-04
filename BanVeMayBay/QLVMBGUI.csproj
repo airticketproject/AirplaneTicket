@@ -135,6 +135,12 @@
     <Compile Include="frmTimKiem_DanhSachChuyenBay.Designer.cs">
       <DependentUpon>frmTimKiem_DanhSachChuyenBay.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThemSanBayTrungGian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemSanBayTrungGian.Designer.cs">
+      <DependentUpon>frmThemSanBayTrungGian.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmBanVe.resx">
       <DependentUpon>frmBanVe.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,12 +182,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frmDanhSachChuyenBay.resx">
       <DependentUpon>frmDanhSachChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimKiem_DanhSachChuyenBay.resx">
       <DependentUpon>frmTimKiem_DanhSachChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemSanBayTrungGian.resx">
+      <DependentUpon>frmThemSanBayTrungGian.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -209,6 +219,12 @@
       <Project>{aac89d37-d608-4baa-9f86-9204a8b50405}</Project>
       <Name>QLVMBDTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GNCWir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Google-Noto-Emoji-Travel-Places-42586-airplane.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

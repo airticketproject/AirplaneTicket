@@ -68,5 +68,43 @@ namespace BanVeMayBay
             frmThemSanBay.MdiParent = this;
             frmThemSanBay.Show();
         }
+
+        private void đặtVéToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frmDatVe = new frmDatVe();
+            frmDatVe.MdiParent = this;
+            frmDatVe.Show();
+        }
+
+        private void bánVéToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frmBanVe = new frmBanVe();
+            frmBanVe.MdiParent = this;
+            frmBanVe.Show();
+        }
+
+        private void doanhThuThángToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmBaoCaoDoanhThuThang = new frmBaoCaoDoanhThuThang();
+            frmBaoCaoDoanhThuThang.MdiParent = this;
+            frmBaoCaoDoanhThuThang.Show();
+        }
+
+        private void doanhThuNămToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmBaoCaoDoanhThuNam = new frmBaoCaoDoanhThuNam();
+            frmBaoCaoDoanhThuNam.MdiParent = this;
+            frmBaoCaoDoanhThuNam.Show();
+        }
+
+        private void đóngỨngDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Đây là kết quả đồ án nhóm môn Nhập môn công nghệ phần mềm.\nĐược thiết kế và thực hiện trên nền tảng C# và SQL Server.\nThành viên thực hiện:\n1. Võ Phi Nhật Duy - 17520407\n2. Phan Huỳnh Minh Duy - 17520405", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

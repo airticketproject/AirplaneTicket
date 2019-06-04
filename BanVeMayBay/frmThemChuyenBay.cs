@@ -96,5 +96,12 @@ namespace BanVeMayBay
             }
 
         }
+
+        private void buttonThemSanBayTrungGian_Click(object sender, EventArgs e)
+        {
+            Form themSanBayTrungGian = new frmThemSanBayTrungGian();
+            themSanBayTrungGian.MdiParent = this;
+            themSanBayTrungGian.Show();
+        }
     }
 }

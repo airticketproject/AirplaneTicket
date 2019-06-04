@@ -117,9 +117,7 @@ E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmBaoCaoDoanhThuNam.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmBaoCaoDoanhThuThang.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmDatVe.resources
-E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmLichChuyenBay.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmMain.resources
-E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmSanBay.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.Properties.Resources.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmDanhSachChuyenBay.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmTimKiem_DanhSachChuyenBay.resources
@@ -219,7 +217,6 @@ E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\bin\Debug\ru\DevExpress.Office.v18.1.Core.resources.dll
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\QLVMBGUI.csproj.CopyComplete
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmThemSanBay.resources
-E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmKhachHang.resources
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\bin\Debug\BanVeMayBay.exe.config
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\bin\Debug\BanVeMayBay.exe
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\bin\Debug\BanVeMayBay.pdb
@@ -340,3 +337,9 @@ C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLyKhachHang.resources
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLySanBay.resources
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmThemKhachHang.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLyKhachHang.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmThemChuyenBay.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLySanBay.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmThemKhachHang.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLyChuyenBay.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.ThemSanBayTrungGian.resources
