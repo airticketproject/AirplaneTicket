@@ -111,8 +111,13 @@
             // 
             // dtgvDsKhachHang
             // 
+            this.dtgvDsKhachHang.AllowUserToAddRows = false;
+            this.dtgvDsKhachHang.AllowUserToDeleteRows = false;
+            this.dtgvDsKhachHang.AllowUserToResizeColumns = false;
+            this.dtgvDsKhachHang.AllowUserToResizeRows = false;
+            this.dtgvDsKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDsKhachHang.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgvDsKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDsKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsKhachHang.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsKhachHang.Location = new System.Drawing.Point(0, 204);
             this.dtgvDsKhachHang.Name = "dtgvDsKhachHang";
@@ -187,9 +192,9 @@
         private System.Windows.Forms.TextBox txbSuaMaKhachHang;
         private System.Windows.Forms.TextBox txbSuaCMND;
         private System.Windows.Forms.TextBox txbSuaSDT;
-        private System.Windows.Forms.DataGridView dtgvDsKhachHang;
         private System.Windows.Forms.Button btnSuaKhachHang;
         private System.Windows.Forms.Button btnXoaKhachHang;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dtgvDsKhachHang;
     }
 }

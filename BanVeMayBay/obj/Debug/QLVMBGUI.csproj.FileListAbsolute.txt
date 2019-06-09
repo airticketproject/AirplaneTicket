@@ -328,7 +328,6 @@ C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmMain.resources
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmThemSanBay.resources
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.Properties.Resources.resources
-C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmDanhSachChuyenBay.resources
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmTimKiem_DanhSachChuyenBay.resources
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\QLVMBGUI.csproj.GenerateResource.cache
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\QLVMBGUI.csproj.CoreCompileInputs.cache

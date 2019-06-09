@@ -35,7 +35,7 @@ namespace QLVMBBUS
 
         public List<CBDTO> select()
         {
-            return null;
+            return vbmDAL.select();
         }
     }
 }

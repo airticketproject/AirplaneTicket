@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnThemKhachHang = new System.Windows.Forms.Button();
+            this.dtgvDsThemKhachHang = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbDiaChiKhachHang = new System.Windows.Forms.TextBox();
+            this.txbDienThoaiKhachHang = new System.Windows.Forms.TextBox();
             this.txbCmndKhachHang = new System.Windows.Forms.TextBox();
             this.txbTenKhachHang = new System.Windows.Forms.TextBox();
             this.txbMaKhachHang = new System.Windows.Forms.TextBox();
-            this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDsThemKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnThemKhachHang);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dtgvDsThemKhachHang);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txbDiaChiKhachHang);
+            this.groupBox1.Controls.Add(this.txbDienThoaiKhachHang);
             this.groupBox1.Controls.Add(this.txbCmndKhachHang);
             this.groupBox1.Controls.Add(this.txbTenKhachHang);
             this.groupBox1.Controls.Add(this.txbMaKhachHang);
@@ -63,25 +63,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm thông tin khách hàng";
             // 
-            // dataGridView1
+            // btnThemKhachHang
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 284);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(772, 303);
-            this.dataGridView1.TabIndex = 8;
+            this.btnThemKhachHang.Location = new System.Drawing.Point(556, 146);
+            this.btnThemKhachHang.Name = "btnThemKhachHang";
+            this.btnThemKhachHang.Size = new System.Drawing.Size(125, 53);
+            this.btnThemKhachHang.TabIndex = 9;
+            this.btnThemKhachHang.Text = "Lưu";
+            this.btnThemKhachHang.UseVisualStyleBackColor = true;
+            this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
+            // 
+            // dtgvDsThemKhachHang
+            // 
+            this.dtgvDsThemKhachHang.AllowUserToAddRows = false;
+            this.dtgvDsThemKhachHang.AllowUserToDeleteRows = false;
+            this.dtgvDsThemKhachHang.AllowUserToResizeColumns = false;
+            this.dtgvDsThemKhachHang.AllowUserToResizeRows = false;
+            this.dtgvDsThemKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvDsThemKhachHang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dtgvDsThemKhachHang.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsThemKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDsThemKhachHang.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgvDsThemKhachHang.Location = new System.Drawing.Point(3, 284);
+            this.dtgvDsThemKhachHang.Name = "dtgvDsThemKhachHang";
+            this.dtgvDsThemKhachHang.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgvDsThemKhachHang.RowTemplate.Height = 24;
+            this.dtgvDsThemKhachHang.ShowCellToolTips = false;
+            this.dtgvDsThemKhachHang.ShowEditingIcon = false;
+            this.dtgvDsThemKhachHang.ShowRowErrors = false;
+            this.dtgvDsThemKhachHang.Size = new System.Drawing.Size(772, 303);
+            this.dtgvDsThemKhachHang.TabIndex = 8;
+            this.dtgvDsThemKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsThemKhachHang_CellContentClick);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(50, 191);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
+            this.label4.Size = new System.Drawing.Size(80, 17);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Địa chỉ :";
+            this.label4.Text = "Điện thoại :";
             // 
             // label3
             // 
@@ -104,18 +125,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 102);
+            this.label1.Location = new System.Drawing.Point(44, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tên khách hàng :";
             // 
-            // txbDiaChiKhachHang
+            // txbDienThoaiKhachHang
             // 
-            this.txbDiaChiKhachHang.Location = new System.Drawing.Point(175, 191);
-            this.txbDiaChiKhachHang.Name = "txbDiaChiKhachHang";
-            this.txbDiaChiKhachHang.Size = new System.Drawing.Size(191, 22);
-            this.txbDiaChiKhachHang.TabIndex = 3;
+            this.txbDienThoaiKhachHang.Location = new System.Drawing.Point(175, 191);
+            this.txbDienThoaiKhachHang.Name = "txbDienThoaiKhachHang";
+            this.txbDienThoaiKhachHang.Size = new System.Drawing.Size(191, 22);
+            this.txbDienThoaiKhachHang.TabIndex = 3;
             // 
             // txbCmndKhachHang
             // 
@@ -138,15 +159,6 @@
             this.txbMaKhachHang.Size = new System.Drawing.Size(191, 22);
             this.txbMaKhachHang.TabIndex = 0;
             // 
-            // btnThemKhachHang
-            // 
-            this.btnThemKhachHang.Location = new System.Drawing.Point(556, 146);
-            this.btnThemKhachHang.Name = "btnThemKhachHang";
-            this.btnThemKhachHang.Size = new System.Drawing.Size(125, 53);
-            this.btnThemKhachHang.TabIndex = 9;
-            this.btnThemKhachHang.Text = "Lưu";
-            this.btnThemKhachHang.UseVisualStyleBackColor = true;
-            // 
             // frmThemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,9 +167,10 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmThemKhachHang";
             this.Text = "Quản lý khách hàng";
+            this.Load += new System.EventHandler(this.frmThemKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDsThemKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,7 +178,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txbDiaChiKhachHang;
+        private System.Windows.Forms.TextBox txbDienThoaiKhachHang;
         private System.Windows.Forms.TextBox txbCmndKhachHang;
         private System.Windows.Forms.TextBox txbTenKhachHang;
         private System.Windows.Forms.TextBox txbMaKhachHang;
@@ -173,7 +186,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnThemKhachHang;
+        private System.Windows.Forms.DataGridView dtgvDsThemKhachHang;
     }
 }

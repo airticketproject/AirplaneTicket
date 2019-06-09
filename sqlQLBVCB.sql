@@ -1,12 +1,13 @@
-create database QLBVMB
+﻿create database QLBVMB
 use QLBVMB
+
 
 CREATE TABLE LichChuyenBay
 (
 MaChuyenBay CHAR(5) NOT NULL PRIMARY KEY,
 SanBayDi CHAR(5) not null,
 SanBayDen CHAR(5) not null,
-NgayGio smalldatetime,
+NgayGio DATETIME2(7),
 ThoiGianBay int,
 SoLuongGheHang1 int,
 SoLuongGheHang2 int,
@@ -293,3 +294,14 @@ as
 		rollback tran
 	end
 
+
+/*Dữ liệu mẫu*/
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('1',N'Nội Bài')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('5',N'a')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('6',N'b')
+INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2)
+VALUES ('2','2','1','2019/06/21', 40, 1, 1)
+
+SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
+SELECT * FROM SanBay

@@ -27,5 +27,10 @@ namespace BanVeMayBay
             Form frmKhachHang = new frmQuanLyKhachHang();
             frmKhachHang.Show();
         }
+
+        private void Luu_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

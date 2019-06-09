@@ -52,7 +52,7 @@ namespace QLVMBDAL
         public bool SuaSanBay(SBDTO sb)
         {
             string query = string.Empty;
-            query += "UPDATE [SanBay] SET [TenSanBay] = @TenSanBay where [MaSanBay] = @MaSanBay";
+            query += "UPDATE [SanBay] SET [TenSanBay] = @TenSanBay WHERE [MaSanBay] = @MaSanBay";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -81,7 +81,7 @@ namespace QLVMBDAL
         public bool XoaSanBay(SBDTO sb)
         {
             string query = string.Empty;
-            query += "DELETE FROM [SanBay] where [MaSanBay] = @MaSanBay";
+            query += "DELETE FROM [SanBay] WHERE [MaSanBay] = @MaSanBay";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())

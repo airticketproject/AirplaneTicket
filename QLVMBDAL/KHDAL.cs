@@ -24,6 +24,7 @@ namespace QLVMBDAL
             string query = string.Empty;
             query += "INSERT INTO [HanhKhach] ([MaHanhKhach], [TenHanhKhach], [CMND], [DienThoai])";
             query += "VALUES (@MaHanhKhach, @TenHanhKhach, @CMND, @DienThoai)";
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
 
@@ -55,7 +56,9 @@ namespace QLVMBDAL
         public bool SuaKhachHang(KHDTO kh)
         {
             string query = string.Empty;
-            query += "UPDATE [HanhKhach] SET [TenHanhKhach] = @TenHanhKhach, [CMND] = @CMND, [DienThoai] = @DienThoai where [MaHanhKhach] = @MaHanhKhach";
+            query += "UPDATE [HanhKhach] SET [TenHanhKhach] = @TenHanhKhach, [CMND] = @CMND, [DienThoai] = @DienThoai";
+            query += "WHERE [MaHanhKhach] = @MaHanhKhach";
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -115,7 +118,7 @@ namespace QLVMBDAL
         public List<KHDTO> select()
         {
             string query = string.Empty;
-            query += "SELECT [MaHanhKhach], [TenHanhKhach], [CMND], [DienThoai]";
+            query += "SELECT * ";
             query += "FROM [HanhKhach]";
 
             List<KHDTO> lsKhachHang = new List<KHDTO>();

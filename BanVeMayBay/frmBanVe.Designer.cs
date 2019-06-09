@@ -36,6 +36,8 @@
             this.MaHanhKhach_comboBox = new System.Windows.Forms.ComboBox();
             this.MaChuyenBay_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbbSanBayDen = new System.Windows.Forms.ComboBox();
+            this.cbbSanBayDi = new System.Windows.Forms.ComboBox();
             this.SanBayDi_label = new System.Windows.Forms.Label();
             this.NgayGio_textBox = new System.Windows.Forms.TextBox();
             this.SanBayDen_label = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ThemHanhKhach_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbbSanBayDi = new System.Windows.Forms.ComboBox();
-            this.cbbSanBayDen = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,7 @@
             this.Luu_button.TabIndex = 20;
             this.Luu_button.Text = "Lưu";
             this.Luu_button.UseVisualStyleBackColor = true;
+            this.Luu_button.Click += new System.EventHandler(this.Luu_button_Click);
             // 
             // GiaTien_textBox
             // 
@@ -132,6 +133,22 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chuyến bay";
+            // 
+            // cbbSanBayDen
+            // 
+            this.cbbSanBayDen.FormattingEnabled = true;
+            this.cbbSanBayDen.Location = new System.Drawing.Point(497, 27);
+            this.cbbSanBayDen.Name = "cbbSanBayDen";
+            this.cbbSanBayDen.Size = new System.Drawing.Size(198, 24);
+            this.cbbSanBayDen.TabIndex = 4;
+            // 
+            // cbbSanBayDi
+            // 
+            this.cbbSanBayDi.FormattingEnabled = true;
+            this.cbbSanBayDi.Location = new System.Drawing.Point(156, 27);
+            this.cbbSanBayDi.Name = "cbbSanBayDi";
+            this.cbbSanBayDi.Size = new System.Drawing.Size(198, 24);
+            this.cbbSanBayDi.TabIndex = 3;
             // 
             // SanBayDi_label
             // 
@@ -284,22 +301,6 @@
             this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 26;
             this.label3.Text = "hoặc";
-            // 
-            // cbbSanBayDi
-            // 
-            this.cbbSanBayDi.FormattingEnabled = true;
-            this.cbbSanBayDi.Location = new System.Drawing.Point(156, 27);
-            this.cbbSanBayDi.Name = "cbbSanBayDi";
-            this.cbbSanBayDi.Size = new System.Drawing.Size(198, 24);
-            this.cbbSanBayDi.TabIndex = 3;
-            // 
-            // cbbSanBayDen
-            // 
-            this.cbbSanBayDen.FormattingEnabled = true;
-            this.cbbSanBayDen.Location = new System.Drawing.Point(497, 27);
-            this.cbbSanBayDen.Name = "cbbSanBayDen";
-            this.cbbSanBayDen.Size = new System.Drawing.Size(198, 24);
-            this.cbbSanBayDen.TabIndex = 4;
             // 
             // frmBanVe
             // 

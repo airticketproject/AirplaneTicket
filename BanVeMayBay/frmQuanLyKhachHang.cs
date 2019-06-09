@@ -24,12 +24,32 @@ namespace BanVeMayBay
         private void frmKhachHanh_Load(object sender, EventArgs e)
         {
             khBUS = new KHBUS();
+            this.loadData_Vao_dtgvDsKhachHang();
         }
 
-        private void ThemKhachHang_Click(object sender, EventArgs e)
+        private void loadData_Vao_dtgvDsKhachHang()
         {
+            List<KHDTO> listKhachHang = khBUS.select();
+
+            if (listKhachHang == null)
+            {
+                MessageBox.Show("Có lỗi khi lấy danh sách khách hàng từ DB");
+                return;
+            }
+
+            dtgvDsKhachHang.Columns.Clear();
+            dtgvDsKhachHang.DataSource = null;
+
+            dtgvDsKhachHang.AllowUserToAddRows = false;
+            dtgvDsKhachHang.AllowUserToResizeColumns = false;
+            dtgvDsKhachHang.AllowUserToResizeRows = false;
+            dtgvDsKhachHang.DataSource = listKhachHang;
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsKhachHang.DataSource];
+            myCurrencyManager.Refresh();
 
         }
+
 
         private void btnXoaKhachHang_Click(object sender, EventArgs e)
         {
@@ -38,7 +58,6 @@ namespace BanVeMayBay
 
         private void btnSuaKhachHang_Click(object sender, EventArgs e)
         {
-            Close();
         }
     }
 }

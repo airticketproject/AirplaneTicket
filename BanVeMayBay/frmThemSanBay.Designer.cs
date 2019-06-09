@@ -34,14 +34,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtgvThemDsChuyenBay = new System.Windows.Forms.DataGridView();
+            this.dtgvDsThemSanBay = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvThemDsChuyenBay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDsThemSanBay)).BeginInit();
             this.SuspendLayout();
             // 
             // Them_button
             // 
-            this.Them_button.Location = new System.Drawing.Point(592, 96);
+            this.Them_button.Location = new System.Drawing.Point(534, 97);
             this.Them_button.Name = "Them_button";
             this.Them_button.Size = new System.Drawing.Size(98, 41);
             this.Them_button.TabIndex = 16;
@@ -83,7 +83,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtgvThemDsChuyenBay);
+            this.groupBox1.Controls.Add(this.dtgvDsThemSanBay);
             this.groupBox1.Controls.Add(this.txbMaSanBay);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.Them_button);
@@ -97,16 +97,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sân bay";
             // 
-            // dtgvThemDsChuyenBay
+            // dtgvDsThemSanBay
             // 
-            this.dtgvThemDsChuyenBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgvThemDsChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvThemDsChuyenBay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvThemDsChuyenBay.Location = new System.Drawing.Point(3, 277);
-            this.dtgvThemDsChuyenBay.Name = "dtgvThemDsChuyenBay";
-            this.dtgvThemDsChuyenBay.RowTemplate.Height = 24;
-            this.dtgvThemDsChuyenBay.Size = new System.Drawing.Size(756, 351);
-            this.dtgvThemDsChuyenBay.TabIndex = 17;
+            this.dtgvDsThemSanBay.AllowUserToAddRows = false;
+            this.dtgvDsThemSanBay.AllowUserToDeleteRows = false;
+            this.dtgvDsThemSanBay.AllowUserToResizeColumns = false;
+            this.dtgvDsThemSanBay.AllowUserToResizeRows = false;
+            this.dtgvDsThemSanBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvDsThemSanBay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dtgvDsThemSanBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsThemSanBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgvDsThemSanBay.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgvDsThemSanBay.Location = new System.Drawing.Point(3, 277);
+            this.dtgvDsThemSanBay.MultiSelect = false;
+            this.dtgvDsThemSanBay.Name = "dtgvDsThemSanBay";
+            this.dtgvDsThemSanBay.ReadOnly = true;
+            this.dtgvDsThemSanBay.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgvDsThemSanBay.RowTemplate.Height = 24;
+            this.dtgvDsThemSanBay.ShowCellToolTips = false;
+            this.dtgvDsThemSanBay.ShowEditingIcon = false;
+            this.dtgvDsThemSanBay.Size = new System.Drawing.Size(756, 351);
+            this.dtgvDsThemSanBay.TabIndex = 17;
             // 
             // frmThemSanBay
             // 
@@ -116,9 +127,10 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmThemSanBay";
             this.Text = "Quản lý sân bay";
+            this.Load += new System.EventHandler(this.frmThemSanBay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvThemDsChuyenBay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDsThemSanBay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -130,6 +142,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dtgvThemDsChuyenBay;
+        private System.Windows.Forms.DataGridView dtgvDsThemSanBay;
     }
 }

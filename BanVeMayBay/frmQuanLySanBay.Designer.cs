@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtgvSanBay = new System.Windows.Forms.DataGridView();
-            this.Sua_button = new System.Windows.Forms.Button();
-            this.Xoa_button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txbSuaMaSanBay = new System.Windows.Forms.TextBox();
             this.txbSuaTenSanBay = new System.Windows.Forms.TextBox();
+            this.txbSuaMaSanBay = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtgvSanBay = new System.Windows.Forms.DataGridView();
+            this.Xoa_button = new System.Windows.Forms.Button();
+            this.Sua_button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanBay)).BeginInit();
             this.SuspendLayout();
@@ -52,39 +52,34 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(916, 648);
+            this.groupBox1.Size = new System.Drawing.Size(836, 577);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sân bay";
             // 
-            // dtgvSanBay
+            // txbSuaTenSanBay
             // 
-            this.dtgvSanBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgvSanBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvSanBay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvSanBay.Location = new System.Drawing.Point(3, 278);
-            this.dtgvSanBay.Name = "dtgvSanBay";
-            this.dtgvSanBay.RowTemplate.Height = 24;
-            this.dtgvSanBay.Size = new System.Drawing.Size(910, 367);
-            this.dtgvSanBay.TabIndex = 0;
+            this.txbSuaTenSanBay.Location = new System.Drawing.Point(207, 138);
+            this.txbSuaTenSanBay.Name = "txbSuaTenSanBay";
+            this.txbSuaTenSanBay.Size = new System.Drawing.Size(206, 22);
+            this.txbSuaTenSanBay.TabIndex = 18;
             // 
-            // Sua_button
+            // txbSuaMaSanBay
             // 
-            this.Sua_button.Location = new System.Drawing.Point(545, 121);
-            this.Sua_button.Name = "Sua_button";
-            this.Sua_button.Size = new System.Drawing.Size(104, 52);
-            this.Sua_button.TabIndex = 12;
-            this.Sua_button.Text = "Sửa";
-            this.Sua_button.UseVisualStyleBackColor = true;
+            this.txbSuaMaSanBay.Enabled = false;
+            this.txbSuaMaSanBay.Location = new System.Drawing.Point(207, 80);
+            this.txbSuaMaSanBay.Name = "txbSuaMaSanBay";
+            this.txbSuaMaSanBay.Size = new System.Drawing.Size(206, 22);
+            this.txbSuaMaSanBay.TabIndex = 17;
             // 
-            // Xoa_button
+            // label2
             // 
-            this.Xoa_button.Location = new System.Drawing.Point(712, 121);
-            this.Xoa_button.Name = "Xoa_button";
-            this.Xoa_button.Size = new System.Drawing.Size(107, 52);
-            this.Xoa_button.TabIndex = 14;
-            this.Xoa_button.Text = "Xóa";
-            this.Xoa_button.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(80, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Tên sân bay :";
             // 
             // label1
             // 
@@ -95,37 +90,53 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Mã sân bay :";
             // 
-            // label2
+            // dtgvSanBay
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Tên sân bay :";
+            this.dtgvSanBay.AllowUserToAddRows = false;
+            this.dtgvSanBay.AllowUserToDeleteRows = false;
+            this.dtgvSanBay.AllowUserToResizeColumns = false;
+            this.dtgvSanBay.AllowUserToResizeRows = false;
+            this.dtgvSanBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvSanBay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dtgvSanBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvSanBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgvSanBay.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgvSanBay.Location = new System.Drawing.Point(3, 216);
+            this.dtgvSanBay.Name = "dtgvSanBay";
+            this.dtgvSanBay.RowTemplate.Height = 24;
+            this.dtgvSanBay.ShowCellToolTips = false;
+            this.dtgvSanBay.ShowEditingIcon = false;
+            this.dtgvSanBay.Size = new System.Drawing.Size(830, 358);
+            this.dtgvSanBay.TabIndex = 0;
             // 
-            // txbSuaMaSanBay
+            // Xoa_button
             // 
-            this.txbSuaMaSanBay.Location = new System.Drawing.Point(207, 80);
-            this.txbSuaMaSanBay.Name = "txbSuaMaSanBay";
-            this.txbSuaMaSanBay.Size = new System.Drawing.Size(206, 22);
-            this.txbSuaMaSanBay.TabIndex = 17;
+            this.Xoa_button.Location = new System.Drawing.Point(674, 108);
+            this.Xoa_button.Name = "Xoa_button";
+            this.Xoa_button.Size = new System.Drawing.Size(107, 52);
+            this.Xoa_button.TabIndex = 14;
+            this.Xoa_button.Text = "Xóa";
+            this.Xoa_button.UseVisualStyleBackColor = true;
             // 
-            // txbSuaTenSanBay
+            // Sua_button
             // 
-            this.txbSuaTenSanBay.Location = new System.Drawing.Point(207, 140);
-            this.txbSuaTenSanBay.Name = "txbSuaTenSanBay";
-            this.txbSuaTenSanBay.Size = new System.Drawing.Size(206, 22);
-            this.txbSuaTenSanBay.TabIndex = 18;
+            this.Sua_button.Location = new System.Drawing.Point(507, 108);
+            this.Sua_button.Name = "Sua_button";
+            this.Sua_button.Size = new System.Drawing.Size(104, 52);
+            this.Sua_button.TabIndex = 12;
+            this.Sua_button.Text = "Sửa";
+            this.Sua_button.UseVisualStyleBackColor = true;
+            this.Sua_button.Click += new System.EventHandler(this.Sua_button_Click);
             // 
-            // frmSanBay
+            // frmQuanLySanBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 648);
+            this.ClientSize = new System.Drawing.Size(836, 577);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmSanBay";
+            this.Name = "frmQuanLySanBay";
             this.Text = "Quản lý sân bay";
+            this.Load += new System.EventHandler(this.frmQuanLySanBay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanBay)).EndInit();

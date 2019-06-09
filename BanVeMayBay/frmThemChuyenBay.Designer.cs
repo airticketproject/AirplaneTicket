@@ -139,6 +139,7 @@
             this.txbMaChuyenBay.Name = "txbMaChuyenBay";
             this.txbMaChuyenBay.Size = new System.Drawing.Size(231, 22);
             this.txbMaChuyenBay.TabIndex = 4;
+            this.txbMaChuyenBay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMaChuyenBay_KeyPress);
             // 
             // cbbSanBayDen
             // 
@@ -154,6 +155,7 @@
             this.txbThoiGianBay.Name = "txbThoiGianBay";
             this.txbThoiGianBay.Size = new System.Drawing.Size(231, 22);
             this.txbThoiGianBay.TabIndex = 4;
+            this.txbThoiGianBay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbThoiGianBay_KeyPress);
             // 
             // txbSLGheHang1
             // 
@@ -161,6 +163,7 @@
             this.txbSLGheHang1.Name = "txbSLGheHang1";
             this.txbSLGheHang1.Size = new System.Drawing.Size(231, 22);
             this.txbSLGheHang1.TabIndex = 4;
+            this.txbSLGheHang1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSLGheHang1_KeyPress);
             // 
             // txbSLGheHang2
             // 
@@ -168,6 +171,7 @@
             this.txbSLGheHang2.Name = "txbSLGheHang2";
             this.txbSLGheHang2.Size = new System.Drawing.Size(231, 22);
             this.txbSLGheHang2.TabIndex = 4;
+            this.txbSLGheHang2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSLGheHang2_KeyPress);
             // 
             // themChuyenBay
             // 

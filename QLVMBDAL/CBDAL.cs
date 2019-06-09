@@ -3,6 +3,7 @@ using QLVMBDTO;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace QLVMBDAL
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
 
-
+        //Thêm chuyến bay
         public bool ThemChuyenBay(CBDTO cb)
         {
             string query = string.Empty;
@@ -26,7 +27,74 @@ namespace QLVMBDAL
             query += "VALUES (@MaChuyenBay,@SanBayDi,@SanBayDen,@NgayGio,@ThoiGianBay,@SoLuongGheHang1,@SoLuongGheHang2)";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@MaChuyenBay", cb.MaChuyenBay);
+                    cmd.Parameters.AddWithValue("@SanBayDi", cb.SanBayDi);
+                    cmd.Parameters.AddWithValue("@SanBayDen", cb.SanBayDen);
+                    cmd.Parameters.AddWithValue("@NgayGio", cb.TGKhoiHanh);
+                    cmd.Parameters.AddWithValue("@ThoiGianBay", cb.TGBay);
+                    cmd.Parameters.AddWithValue("@SoLuongGheHang1", cb.SLGheHang1);
+                    cmd.Parameters.AddWithValue("@SoLuongGheHang2", cb.SLGheHang2);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        
+        //Xoá chuyến bay
+        public bool XoaChuyenBay(CBDTO cb)
+        {
+            string query = string.Empty;
+            query += "DELETE FROM [LichChuyenBay] WHERE [MaChuyenBay] = @MaChuyenBay";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@MaChuyenBay", cb.MaChuyenBay);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
 
+        //Sửa chuyến bay
+        public bool SuaChuyenBay(CBDTO cb)
+        {
+            string query = string.Empty;
+            query += "UPDATE [LichChuyenBay] SET [SanBayDi] = @SanBayDi, [SanBayDen] = @SanBayDen, [NgayGio] = @NgayGio, [ThoiGianBay] = @ThoiGianBay, [SoLuongGheHang1] = @SoLuongGheHang1, [SoLuongGheHang2] = @SoLuongGheHang2";
+            query += "WHERE [MaChuyenBay] = @MaChuyenBay";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = con;
@@ -56,69 +124,56 @@ namespace QLVMBDAL
             return true;
         }
 
-        public bool XoaChuyenBay(CBDTO cb)
-        {
-            //string query = string.Empty;
-            //query += "DELETE FROM [tblKieuNau] WHERE [maKieuNau] = @maKieuNau";
-            //using (SqlConnection con = new SqlConnection(connectionString))
-            //{
-            //    using (SqlCommand cmd = new SqlCommand())
-            //    {
-            //        cmd.Connection = con;
-            //        cmd.CommandType = System.Data.CommandType.Text;
-            //        cmd.CommandText = query;
-            //        cmd.Parameters.AddWithValue("@maKieuNau", kn.Ma);
-            //        try
-            //        {
-            //            con.Open();
-            //            cmd.ExecuteNonQuery();
-            //            con.Close();
-            //            con.Dispose();
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            con.Close();
-            //            return false;
-            //        }
-            //    }
-            //}
-            return true;
-        }
-
-        public bool SuaChuyenBay(CBDTO cb)
-        {
-            //string query = string.Empty;
-            //query += "UPDATE [tblKieuNau] SET [tenKieuNau] = @tenKieuNau, [mota] = @mota WHERE [maKieuNau] = @maKieuNau";
-            //using (SqlConnection con = new SqlConnection(connectionString))
-            //{
-            //    using (SqlCommand cmd = new SqlCommand())
-            //    {
-            //        cmd.Connection = con;
-            //        cmd.CommandType = System.Data.CommandType.Text;
-            //        cmd.CommandText = query;
-            //        cmd.Parameters.AddWithValue("@maKieuNau", cb.Ma);
-            //        cmd.Parameters.AddWithValue("@tenKieuNau", cb.Ten);
-            //        cmd.Parameters.AddWithValue("@mota", cb.Mota);
-            //        try
-            //        {
-            //            con.Open();
-            //            cmd.ExecuteNonQuery();
-            //            con.Close();
-            //            con.Dispose();
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            con.Close();
-            //            return false;
-            //        }
-            //    }
-            //}
-            return true;
-        }
-
         public List<CBDTO> select()
         {
-            return null;
+            string query = string.Empty;
+            query += "SELECT *";
+            query += "FROM [LichChuyenBay]";
+
+            List<CBDTO> lsChuyenBay = new List<CBDTO>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                CBDTO cb = new CBDTO();
+                                cb.MaChuyenBay = reader["MaChuyenBay"].ToString();
+                                cb.SanBayDi = reader["SanBayDi"].ToString();
+                                cb.SanBayDen = reader["SanBayDen"].ToString();
+                                cb.TGKhoiHanh = reader["NgayGio"].ToString();
+                                cb.TGBay = int.Parse(reader["ThoiGianBay"].ToString());
+                                cb.SLGheHang1 = int.Parse(reader["SoLuongGheHang1"].ToString());
+                                cb.SLGheHang2 = int.Parse(reader["SoLuongGheHang2"].ToString());
+
+                                lsChuyenBay.Add(cb);
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return lsChuyenBay;
         }
     }
 }

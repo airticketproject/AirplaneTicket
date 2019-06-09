@@ -1,7 +1,7 @@
 USE [master]
 GO
 
-/****** Object:  Database [QLBVMB]    Script Date: 18/05/2019 10:14:17 CH ******/
+/****** Object:  Database [QLBVMB]    Script Date: 04/06/2019 9:27:14 CH ******/
 CREATE DATABASE [QLBVMB]
  CONTAINMENT = NONE
  ON  PRIMARY 

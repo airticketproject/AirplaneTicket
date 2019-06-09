@@ -37,8 +37,7 @@ namespace QLVMBBUS
 
         public List<KHDTO> select()
         {
-            //return khDAL.select();
-            return null;
+            return khDAL.select();
         }
     }
 }

@@ -123,12 +123,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmDanhSachChuyenBay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDanhSachChuyenBay.Designer.cs">
-      <DependentUpon>frmDanhSachChuyenBay.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTimKiem_DanhSachChuyenBay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,9 +171,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmDanhSachChuyenBay.resx">
-      <DependentUpon>frmDanhSachChuyenBay.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmTimKiem_DanhSachChuyenBay.resx">
       <DependentUpon>frmTimKiem_DanhSachChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
