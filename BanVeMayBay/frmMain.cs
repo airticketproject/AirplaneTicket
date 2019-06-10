@@ -27,6 +27,7 @@ namespace BanVeMayBay
         {
             Form frmThemChuyenBay = new frmThemChuyenBay();
             frmThemChuyenBay.MdiParent = this;
+            frmThemChuyenBay.Dock = DockStyle.Fill;
             frmThemChuyenBay.Show();
         }
 
@@ -34,6 +35,7 @@ namespace BanVeMayBay
         {
             Form frmQuanLyChuyenBay = new frmQuanLyChuyenBay();
             frmQuanLyChuyenBay.MdiParent = this;
+            frmQuanLyChuyenBay.Dock = DockStyle.Fill;
             frmQuanLyChuyenBay.Show();
         }
 
@@ -43,6 +45,7 @@ namespace BanVeMayBay
         {
             Form frmThemKhachHang = new frmThemKhachHang();
             frmThemKhachHang.MdiParent = this;
+            frmThemKhachHang.Dock = DockStyle.Fill;
             frmThemKhachHang.Show();
         }
 
@@ -50,6 +53,7 @@ namespace BanVeMayBay
         {
             Form frmQuanLyKhachHang = new frmQuanLyKhachHang();
             frmQuanLyKhachHang.MdiParent = this;
+            frmQuanLyKhachHang.Dock = DockStyle.Fill;
             frmQuanLyKhachHang.Show();
         }
 
@@ -59,6 +63,7 @@ namespace BanVeMayBay
         {
             Form frmQuanLySanBay = new frmQuanLySanBay();
             frmQuanLySanBay.MdiParent = this;
+            frmQuanLySanBay.Dock = DockStyle.Fill;
             frmQuanLySanBay.Show();
         }
 
@@ -66,7 +71,24 @@ namespace BanVeMayBay
         {
             Form frmThemSanBay= new frmThemSanBay();
             frmThemSanBay.MdiParent = this;
+            frmThemSanBay.Dock = DockStyle.Fill;
             frmThemSanBay.Show();
+        }
+
+        private void bánVéToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frmBanVe = new frmBanVe();
+            frmBanVe.MdiParent = this;
+            frmBanVe.Dock = DockStyle.Fill;
+            frmBanVe.Show();
+        }
+
+        private void đặtVéToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frmDatVe = new frmDatVe();
+            frmDatVe.MdiParent = this;
+            frmDatVe.Dock = DockStyle.Fill;
+            frmDatVe.Show();
         }
     }
 }

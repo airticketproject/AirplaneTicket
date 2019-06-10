@@ -45,6 +45,7 @@
     <Compile Include="KHDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SBDTO.cs" />
+    <Compile Include="VBDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

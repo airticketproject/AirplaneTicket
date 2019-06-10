@@ -167,14 +167,16 @@
             // đặtVéToolStripMenuItem1
             // 
             this.đặtVéToolStripMenuItem1.Name = "đặtVéToolStripMenuItem1";
-            this.đặtVéToolStripMenuItem1.Size = new System.Drawing.Size(128, 26);
+            this.đặtVéToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
             this.đặtVéToolStripMenuItem1.Text = "Đặt vé";
+            this.đặtVéToolStripMenuItem1.Click += new System.EventHandler(this.đặtVéToolStripMenuItem1_Click);
             // 
             // bánVéToolStripMenuItem1
             // 
             this.bánVéToolStripMenuItem1.Name = "bánVéToolStripMenuItem1";
-            this.bánVéToolStripMenuItem1.Size = new System.Drawing.Size(128, 26);
+            this.bánVéToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
             this.bánVéToolStripMenuItem1.Text = "Bán vé";
+            this.bánVéToolStripMenuItem1.Click += new System.EventHandler(this.bánVéToolStripMenuItem1_Click);
             // 
             // báoCáoToolStripMenuItem
             // 
