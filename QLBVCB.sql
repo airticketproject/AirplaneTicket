@@ -71,6 +71,7 @@ create table ThamSo
 ThoiGianBayToiThieu int,
 SoLuongSanBayTrungGianToiDa int,
 ThoiGianDungToiDa int,
+ThoiGianDungToiThieu int,
 DonGiaVeHang1 money,
 ThoiGianChamNhatKhiDatVe int,
 ThoiGianHuyVe int
@@ -124,7 +125,6 @@ add constraint FK_ChiTietSanBayTrungGian_MaChuyenBay foreign key (MaChuyenBay) r
 	constraint FK_ChiTietSanBayTrungGian_MaSanBay foreign key (MaSanBay) references SanBay(MaSanBay)
 
 
-/*Update tu day*/
 
 alter table LichChuyenBay
 add check (SanBayDi<>SanBayDen),
@@ -136,11 +136,11 @@ alter table DanhSachChuyenBay
 add check (SoGheTrong>=0),
 	check (SoGheDaDat>=0)
 
-alter table ChiTietSanBayTrungGian
-add check (10<=ThoiGianDung and ThoiGianDung<=20)
+--alter table ChiTietSanBayTrungGian
+--add check (10<=ThoiGianDung and ThoiGianDung<=20)
 
-insert into ThamSo
-	values (30,2,20,1000000,1,1)
+--insert into ThamSo
+--	values (30,2,20,1000000,24,24)
 
 
 /*Trigger Thoi Gian Bay Toi Thieu*/
@@ -187,7 +187,7 @@ as
 	select @max=SoLuongSanBayTrungGianToiDa from ThamSo
 	if (@t>@max)
 	begin
-		print 'So luong san bay trung gian vuot qua so luong san bay toi da'
+		print 'So luong san bay trung gian vuot qua so luong toi da'
 		rollback tran
 	end
 
@@ -258,6 +258,9 @@ as
 		where MaChuyenBay=@i
 	end
 
+
+/*Update 11/6*/
+
 /*Trigger thoi gian dat ve cham nhat*/
 create trigger tr_ThoiGianDatVeChamNhat
 on PhieuDatVe
@@ -266,11 +269,13 @@ as
 	declare @i char(5)
 	declare @ngaykhoihanh smalldatetime
 	declare @ngaydat smalldatetime
+	declare @thoigian int
 	select @i=MaChuyenBay from inserted
+	select @thoigian=ThoiGianChamNhatKhiDatVe from ThamSo
 	select @ngaydat=GETDATE()
 	select @ngaykhoihanh=NgayGio from LichChuyenBay
 	where @i=MaChuyenBay
-	if (DATEDIFF(hour,@ngaydat,@ngaykhoihanh)<=24)
+	if (DATEDIFF(hour,@ngaydat,@ngaykhoihanh)<=@thoigian)
 	begin
 		print 'Thoi gian dat ve da het'
 		rollback tran
@@ -283,13 +288,57 @@ as
 	declare @i char(5)
 	declare @ngaykhoihanh smalldatetime
 	declare @ngaydat smalldatetime
+	declare @thoigian smalldatetime
 	select @i=MaChuyenBay from inserted
+	select @thoigian=ThoiGianChamNhatKhiDatVe from ThamSo
 	select @ngaydat=GETDATE()
 	select @ngaykhoihanh=NgayGio from LichChuyenBay
-	where @i=MaChuyenBay
-	if (DATEDIFF(hour,@ngaydat,@ngaykhoihanh)<=24)
+		where @i=MaChuyenBay
+	if (DATEDIFF(hour,@ngaydat,@ngaykhoihanh)<=@thoigian)
 	begin
 		print 'Thoi gian dat ve da het'
+		rollback tran
+	end
+
+
+/*drop table ThamSo
+drop table ChiTietSanBayTrungGian*/
+
+
+alter table ThamSo
+add check (ThoiGianDungToiDa>ThoiGianDungToiThieu and ThoiGianDungToiThieu>0)
+
+
+/*Trigger thoi gian dung cua san bay trung gian*/
+create trigger tr_ThoiGianDung
+on ChiTietSanBayTrungGian
+for insert
+as
+	declare @thoigiandung int
+	declare @min int
+	declare @max int
+	select @thoigiandung=ThoiGianDung from inserted
+	select @min=ThoiGianDungToiThieu from ThamSo
+	select @max=ThoiGianDungToiDa from ThamSo
+	if (@thoigiandung<@min or @thoigiandung>@max)
+	begin
+		print 'Thoi gian dung khong hop le'
+		rollback tran
+	end
+
+create trigger tr_ThoiGianDung_Update
+on ChiTietSanBayTrungGian
+for update
+as
+	declare @thoigiandung int
+	declare @min int
+	declare @max int
+	select @thoigiandung=ThoiGianDung from inserted
+	select @min=ThoiGianDungToiThieu from ThamSo
+	select @max=ThoiGianDungToiDa from ThamSo
+	if (@thoigiandung<@min or @thoigiandung>@max)
+	begin
+		print 'Thoi gian dung khong hop le'
 		rollback tran
 	end
 

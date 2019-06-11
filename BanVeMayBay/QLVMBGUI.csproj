@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmHangVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHangVe.Designer.cs">
+      <DependentUpon>frmHangVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanLyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     </Compile>
     <Compile Include="frmBanVe.Designer.cs">
       <DependentUpon>frmBanVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThamSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThamSo.Designer.cs">
+      <DependentUpon>frmThamSo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemChuyenBay.cs">
       <SubType>Form</SubType>
@@ -153,8 +165,14 @@
     <EmbeddedResource Include="frmDatVe.resx">
       <DependentUpon>frmDatVe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHangVe.resx">
+      <DependentUpon>frmHangVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyKhachHang.resx">
       <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThamSo.resx">
+      <DependentUpon>frmThamSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemChuyenBay.resx">
       <DependentUpon>frmThemChuyenBay.cs</DependentUpon>
