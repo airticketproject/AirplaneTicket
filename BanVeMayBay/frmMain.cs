@@ -104,6 +104,13 @@ namespace BanVeMayBay
             frmBanVe.Show();
         }
 
+        private void hạngVéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmHangVe = new frmHangVe();
+            frmHangVe.MdiParent = this;
+            frmHangVe.Show();
+        }
+
         private void doanhThuThángToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmBaoCaoDoanhThuThang = new frmBaoCaoDoanhThuThang();
@@ -127,6 +134,13 @@ namespace BanVeMayBay
         {
             MessageBox.Show("Đây là kết quả đồ án nhóm môn Nhập môn công nghệ phần mềm.\nĐược thiết kế và thực hiện trên nền tảng C# và SQL Server.\nThành viên thực hiện:\n1. Võ Phi Nhật Duy - 17520407\n2. Phan Huỳnh Minh Duy - 17520405", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
 >>>>>>> 6e7082b66938581a6b07bb0e83e07cf9520f54c1
+        }
+
+        private void thayĐổiThamSốToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmThamSo = new frmThamSo();
+            frmThamSo.MdiParent = this;
+            frmThamSo.Show();
         }
     }
 }

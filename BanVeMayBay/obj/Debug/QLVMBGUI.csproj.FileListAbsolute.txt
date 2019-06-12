@@ -341,4 +341,6 @@ E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLySanBay.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmThemKhachHang.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLyChuyenBay.resources
-E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.ThemSanBayTrungGian.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmHangVe.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmThamSo.resources
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmThemSanBayTrungGian.resources
