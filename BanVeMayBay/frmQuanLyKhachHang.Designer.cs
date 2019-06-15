@@ -124,6 +124,7 @@
             this.dtgvDsKhachHang.RowTemplate.Height = 24;
             this.dtgvDsKhachHang.Size = new System.Drawing.Size(823, 279);
             this.dtgvDsKhachHang.TabIndex = 8;
+            this.dtgvDsKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsKhachHang_CellClick);
             // 
             // btnSuaKhachHang
             // 

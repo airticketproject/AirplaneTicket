@@ -27,6 +27,25 @@ namespace BanVeMayBay
             this.loadData_Vao_dtgvDsThemSanBay();
         }
 
+        //Kiểm tra null của textbox
+        private bool checkNullData()
+        {
+            if (string.IsNullOrEmpty(txbSuaMaSanBay.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập mã sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbSuaMaSanBay.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(txbSuaTenSanBay.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập tên sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbSuaTenSanBay.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        //Load dữ liệu sân bay vào danh sách
         private void loadData_Vao_dtgvDsThemSanBay()
         {
             List<SBDTO> listSanBay = sbBUS.select();
@@ -50,11 +69,58 @@ namespace BanVeMayBay
 
         }
 
-        private void Sua_button_Click(object sender, EventArgs e)
-        {
 
+        private void dtgvSanBay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int Row = e.RowIndex;
+            if (Row != -1)
+            {
+                txbSuaMaSanBay.Text = dtgvSanBay.Rows[Row].Cells["MaSanBay"].Value.ToString();
+                txbSuaTenSanBay.Text = dtgvSanBay.Rows[Row].Cells["TenSanBay"].Value.ToString();
+            }
+            else
+                return;
         }
 
-     
+        //Xoá sân bay
+        private void Xoa_button_Click(object sender, EventArgs e)
+        {
+            SBDTO sbDTO = new SBDTO();
+
+            sbDTO.MaSanBay = txbSuaMaSanBay.Text;
+
+            //Them vao DTB
+            bool kq = sbBUS.XoaSanBay(sbDTO);
+            if (kq == false)
+                MessageBox.Show("Xoá Sân bay thất bại. Vui lòng kiểm tra lại dũ liệu");
+            else
+            {
+                MessageBox.Show("Xoá Sân bay thành công");
+                this.loadData_Vao_dtgvDsThemSanBay();
+            }
+        }
+
+        //Sửa sân bay
+        private void Sua_button_Click(object sender, EventArgs e)
+        {
+            SBDTO sbDTO = new SBDTO();
+
+            //2. Kiểm tra data hợp lệ or not
+            if (checkNullData())
+            {
+                sbDTO.MaSanBay = txbSuaMaSanBay.Text;
+                sbDTO.TenSanBay = txbSuaTenSanBay.Text;
+
+                //Them vao DTB
+                bool kq = sbBUS.SuaSanBay(sbDTO);
+                if (kq == false)
+                    MessageBox.Show("Cập nhật Sân bay thất bại. Vui lòng kiểm tra lại dũ liệu");
+                else
+                {
+                    MessageBox.Show("Cập nhật Sân bay thành công");
+                    this.loadData_Vao_dtgvDsThemSanBay();
+                }
+            }
+        }
     }
 }

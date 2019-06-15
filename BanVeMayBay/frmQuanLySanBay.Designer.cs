@@ -108,6 +108,7 @@
             this.dtgvSanBay.ShowEditingIcon = false;
             this.dtgvSanBay.Size = new System.Drawing.Size(830, 358);
             this.dtgvSanBay.TabIndex = 0;
+            this.dtgvSanBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvSanBay_CellClick);
             // 
             // Xoa_button
             // 
@@ -117,6 +118,7 @@
             this.Xoa_button.TabIndex = 14;
             this.Xoa_button.Text = "Xóa";
             this.Xoa_button.UseVisualStyleBackColor = true;
+            this.Xoa_button.Click += new System.EventHandler(this.Xoa_button_Click);
             // 
             // Sua_button
             // 

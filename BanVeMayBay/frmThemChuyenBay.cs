@@ -159,7 +159,6 @@ namespace BanVeMayBay
 
         }
 
-<<<<<<< HEAD
         private void txbMaChuyenBay_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (inputTextLengthCheck(txbMaChuyenBay,e))
@@ -186,17 +185,16 @@ namespace BanVeMayBay
 
         private void txbSLGheHang2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (inputTextLengthCheck(txbSLGheHang2,e))
+            if (inputTextLengthCheck(txbSLGheHang2, e))
             {
                 InputTextOnlyNumber(e);
             }
-=======
+        }
         private void buttonThemSanBayTrungGian_Click(object sender, EventArgs e)
         {
             Form themSanBayTrungGian = new frmThemSanBayTrungGian();
             themSanBayTrungGian.MdiParent = this;
             themSanBayTrungGian.Show();
->>>>>>> 6e7082b66938581a6b07bb0e83e07cf9520f54c1
         }
     }
 }

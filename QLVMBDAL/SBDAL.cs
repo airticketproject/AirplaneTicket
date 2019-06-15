@@ -84,7 +84,7 @@ namespace QLVMBDAL
             query += "DELETE FROM [SanBay] WHERE [MaSanBay] = @MaSanBay";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand()) 
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
