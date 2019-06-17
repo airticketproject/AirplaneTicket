@@ -315,6 +315,12 @@ VALUES ('2','2','1','2019/06/21', 40, 1, 1)
 
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
 SELECT * FROM SanBay
+
+SELECT * FROM LoaiVe
+INSERT INTO LoaiVe (MaLoaiVe,TenLoaiVe) VALUES ('1','Thuong')
+INSERT INTO LoaiVe (MaLoaiVe,TenLoaiVe) VALUES ('2','VIP')
+UPDATE LoaiVe set GiaTien = 10000 where MaLoaiVe = '1'
+
 /*drop table ThamSo
 drop table ChiTietSanBayTrungGian*/
 
