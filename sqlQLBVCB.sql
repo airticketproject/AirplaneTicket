@@ -143,6 +143,9 @@ add check (SoGheTrong>=0),
 --insert into ThamSo
 --	values (30,2,20,1000000,24,24)
 
+Select * from LichChuyenBay
+Update LichChuyenBay set SoLuongGheHang1 = 10
+Where MaChuyenBay = '2'
 
 /*Trigger Thoi Gian Bay Toi Thieu*/
 create trigger tr_ThoiGianBay
@@ -302,7 +305,6 @@ as
 	end
 
 
-<<<<<<< HEAD:sqlQLBVCB.sql
 /*Dữ liệu mẫu*/
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('1',N'Nội Bài')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
@@ -313,7 +315,6 @@ VALUES ('2','2','1','2019/06/21', 40, 1, 1)
 
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
 SELECT * FROM SanBay
-=======
 /*drop table ThamSo
 drop table ChiTietSanBayTrungGian*/
 
@@ -354,5 +355,3 @@ as
 		print 'Thoi gian dung khong hop le'
 		rollback tran
 	end
-
->>>>>>> develop:QLBVCB.sql

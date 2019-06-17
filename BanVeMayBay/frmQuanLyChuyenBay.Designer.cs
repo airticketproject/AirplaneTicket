@@ -30,6 +30,7 @@
         {
             this.dtgvDsChuyenBay = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXoaChuyenBay = new System.Windows.Forms.Button();
             this.btnCapNhatChuyenBay = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,10 +43,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbSuaSanBayDen = new System.Windows.Forms.TextBox();
-            this.txbSuaSanBayDi = new System.Windows.Forms.TextBox();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
-            this.btnXoaChuyenBay = new System.Windows.Forms.Button();
+            this.cbbSanBayDi = new System.Windows.Forms.ComboBox();
+            this.cbbSanBayDen = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsChuyenBay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,11 +60,13 @@
             this.dtgvDsChuyenBay.RowTemplate.Height = 24;
             this.dtgvDsChuyenBay.Size = new System.Drawing.Size(870, 321);
             this.dtgvDsChuyenBay.TabIndex = 0;
-            this.dtgvDsChuyenBay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsChuyenBay_CellContentClick);
+            this.dtgvDsChuyenBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsChuyenBay_CellClick);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Controls.Add(this.cbbSanBayDen);
+            this.groupBox1.Controls.Add(this.cbbSanBayDi);
             this.groupBox1.Controls.Add(this.btnXoaChuyenBay);
             this.groupBox1.Controls.Add(this.btnCapNhatChuyenBay);
             this.groupBox1.Controls.Add(this.label7);
@@ -78,8 +80,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txbSuaSanBayDen);
-            this.groupBox1.Controls.Add(this.txbSuaSanBayDi);
             this.groupBox1.Controls.Add(this.txbMaChuyenBay);
             this.groupBox1.Controls.Add(this.dtgvDsChuyenBay);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -89,6 +89,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cập nhật chuyến bay";
+            // 
+            // btnXoaChuyenBay
+            // 
+            this.btnXoaChuyenBay.Location = new System.Drawing.Point(653, 176);
+            this.btnXoaChuyenBay.Name = "btnXoaChuyenBay";
+            this.btnXoaChuyenBay.Size = new System.Drawing.Size(152, 55);
+            this.btnXoaChuyenBay.TabIndex = 18;
+            this.btnXoaChuyenBay.Text = "Xoá";
+            this.btnXoaChuyenBay.UseVisualStyleBackColor = true;
+            this.btnXoaChuyenBay.Click += new System.EventHandler(this.btnXoaChuyenBay_Click);
             // 
             // btnCapNhatChuyenBay
             // 
@@ -191,36 +201,31 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Mã chuyến bay";
             // 
-            // txbSuaSanBayDen
-            // 
-            this.txbSuaSanBayDen.Location = new System.Drawing.Point(192, 128);
-            this.txbSuaSanBayDen.Name = "txbSuaSanBayDen";
-            this.txbSuaSanBayDen.Size = new System.Drawing.Size(200, 22);
-            this.txbSuaSanBayDen.TabIndex = 3;
-            // 
-            // txbSuaSanBayDi
-            // 
-            this.txbSuaSanBayDi.Location = new System.Drawing.Point(192, 86);
-            this.txbSuaSanBayDi.Name = "txbSuaSanBayDi";
-            this.txbSuaSanBayDi.Size = new System.Drawing.Size(200, 22);
-            this.txbSuaSanBayDi.TabIndex = 2;
-            // 
             // txbMaChuyenBay
             // 
+            this.txbMaChuyenBay.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbMaChuyenBay.Enabled = false;
             this.txbMaChuyenBay.Location = new System.Drawing.Point(192, 47);
             this.txbMaChuyenBay.Name = "txbMaChuyenBay";
             this.txbMaChuyenBay.Size = new System.Drawing.Size(200, 22);
             this.txbMaChuyenBay.TabIndex = 1;
             // 
-            // btnXoaChuyenBay
+            // cbbSanBayDi
             // 
-            this.btnXoaChuyenBay.Location = new System.Drawing.Point(653, 176);
-            this.btnXoaChuyenBay.Name = "btnXoaChuyenBay";
-            this.btnXoaChuyenBay.Size = new System.Drawing.Size(152, 55);
-            this.btnXoaChuyenBay.TabIndex = 18;
-            this.btnXoaChuyenBay.Text = "Xoá";
-            this.btnXoaChuyenBay.UseVisualStyleBackColor = true;
-            this.btnXoaChuyenBay.Click += new System.EventHandler(this.btnXoaChuyenBay_Click);
+            this.cbbSanBayDi.FormattingEnabled = true;
+            this.cbbSanBayDi.Location = new System.Drawing.Point(192, 82);
+            this.cbbSanBayDi.Name = "cbbSanBayDi";
+            this.cbbSanBayDi.Size = new System.Drawing.Size(200, 24);
+            this.cbbSanBayDi.TabIndex = 19;
+            this.cbbSanBayDi.SelectedIndexChanged += new System.EventHandler(this.cbbSanBayDi_SelectedIndexChanged);
+            // 
+            // cbbSanBayDen
+            // 
+            this.cbbSanBayDen.FormattingEnabled = true;
+            this.cbbSanBayDen.Location = new System.Drawing.Point(192, 124);
+            this.cbbSanBayDen.Name = "cbbSanBayDen";
+            this.cbbSanBayDen.Size = new System.Drawing.Size(200, 24);
+            this.cbbSanBayDen.TabIndex = 20;
             // 
             // frmQuanLyChuyenBay
             // 
@@ -249,8 +254,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbSuaSanBayDen;
-        private System.Windows.Forms.TextBox txbSuaSanBayDi;
         private System.Windows.Forms.TextBox txbMaChuyenBay;
         private System.Windows.Forms.DateTimePicker suaThoiGianKhoiHanh;
         private System.Windows.Forms.TextBox txbSuaThoiGianBay;
@@ -260,5 +263,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCapNhatChuyenBay;
         private System.Windows.Forms.Button btnXoaChuyenBay;
+        private System.Windows.Forms.ComboBox cbbSanBayDen;
+        private System.Windows.Forms.ComboBox cbbSanBayDi;
     }
 }

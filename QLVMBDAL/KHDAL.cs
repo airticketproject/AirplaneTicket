@@ -56,7 +56,7 @@ namespace QLVMBDAL
         public bool SuaKhachHang(KHDTO kh)
         {
             string query = string.Empty;
-            query += "UPDATE [HanhKhach] SET [TenHanhKhach] = @TenHanhKhach, [CMND] = @CMND, [DienThoai] = @DienThoai";
+            query += "UPDATE [HanhKhach] SET [TenHanhKhach] = @TenHanhKhach, [CMND] = @CMND, [DienThoai] = @DienThoai ";
             query += "WHERE [MaHanhKhach] = @MaHanhKhach";
 
             using (SqlConnection con = new SqlConnection(connectionString))

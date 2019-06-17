@@ -90,7 +90,7 @@ namespace QLVMBDAL
         public bool SuaChuyenBay(CBDTO cb)
         {
             string query = string.Empty;
-            query += "UPDATE [LichChuyenBay] SET [SanBayDi] = @SanBayDi, [SanBayDen] = @SanBayDen, [NgayGio] = @NgayGio, [ThoiGianBay] = @ThoiGianBay, [SoLuongGheHang1] = @SoLuongGheHang1, [SoLuongGheHang2] = @SoLuongGheHang2";
+            query += "UPDATE [LichChuyenBay] SET [SanBayDi] = @SanBayDi, [SanBayDen] = @SanBayDen, [NgayGio] = @NgayGio, [ThoiGianBay] = @ThoiGianBay, [SoLuongGheHang1] = @SoLuongGheHang1, [SoLuongGheHang2] = @SoLuongGheHang2 ";
             query += "WHERE [MaChuyenBay] = @MaChuyenBay";
 
             using (SqlConnection con = new SqlConnection(connectionString))
