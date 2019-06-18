@@ -4,42 +4,43 @@ use QLBVMB
 
 CREATE TABLE LichChuyenBay
 (
-MaChuyenBay CHAR(5) NOT NULL PRIMARY KEY,
-SanBayDi CHAR(5) not null,
-SanBayDen CHAR(5) not null,
+MaChuyenBay nvarchar(5) NOT NULL PRIMARY KEY,
+SanBayDi nvarchar(5) not null,
+SanBayDen nvarchar(5) not null,
 NgayGio DATETIME2(7),
 ThoiGianBay int,
 SoLuongGheHang1 int,
 SoLuongGheHang2 int,
+GiaVe money
 )
 
 Create table SanBay
 (
-MaSanBay char(5) not null primary key,
-TenSanBay char(20)
+MaSanBay nvarchar(5) not null primary key,
+TenSanBay nvarchar(20)
 )
 
 create table HanhKhach
 (
-MaHanhKhach char(10) not null primary key,
-TenHanhKhach char(40),
-CMND char(9),
-DienThoai char(11)
+MaHanhKhach nvarchar(10) not null primary key,
+TenHanhKhach nvarchar(40),
+CMND nvarchar(9),
+DienThoai nvarchar(11)
 )
 
 create table DanhSachChuyenBay
 (
-MaDanhSach char(5) not null primary key,
-MaChuyenBay char(5) not null,
+MaDanhSach nvarchar(5) not null primary key,
+MaChuyenBay nvarchar(5) not null,
 SoGheTrong int,
 SoGheDaDat int
 )
 
-create table LoaiVe
+create table HangVe
 (
-MaLoaiVe char(5) not null primary key,
-TenLoaiVe char(10),
-GiaTien money
+MaHangVe nvarchar(10),
+TenHangVe nvarchar(20),
+TiLeDonGia float   /*vd: ti le don gia = 0.9 tuong duong voi 90%, ti le don gia = 1.05 tuong duong voi 105%*/
 )
 
 create table PhieuDatVe
@@ -47,7 +48,7 @@ create table PhieuDatVe
 MaPhieuDat char(5) not null primary key,
 MaHanhKhach char(10) not null,
 MaChuyenBay char(5) not null,
-MaLoaiVe char(5) not null
+MaHangVe char(5) not null
 )
 
 create table Ve
@@ -55,7 +56,7 @@ create table Ve
 MaVe char(10) not null primary key,
 MaHanhKhach char(10) not null,
 MaChuyenBay char(5) not null,
-MaLoaiVe char(5) not null
+MaHangVe char(5) not null
 )
 
 create table ChiTietSanBayTrungGian
@@ -73,7 +74,6 @@ ThoiGianBayToiThieu int,
 SoLuongSanBayTrungGianToiDa int,
 ThoiGianDungToiDa int,
 ThoiGianDungToiThieu int,
-DonGiaVeHang1 money,
 ThoiGianChamNhatKhiDatVe int,
 ThoiGianHuyVe int
 )
@@ -108,12 +108,12 @@ add constraint FK_DanhSachChuyenBay_MaChuyenBay foreign key (MaChuyenBay) refere
 alter table PhieuDatVe
 add constraint FK_PhieuDatVe_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay),
 	constraint FK_PhieuDatVe_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach),
-	constraint FK_PhieuDatVe_MaLoaiVe foreign key (MaLoaiVe) references LoaiVe(MaLoaiVe)
+	constraint FK_PhieuDatVe_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe)
 
 alter table Ve
 add constraint FK_Ve_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay),
 	constraint FK_Ve_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach),
-	constraint FK_Ve_MaLoaiVe foreign key (MaLoaiVe) references LoaiVe(MaLoaiVe)
+	constraint FK_Ve_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe)
 
 alter table DoanhThuTheoThang
 add constraint FK_DoanhThuTheoThang_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay)
@@ -137,11 +137,8 @@ alter table DanhSachChuyenBay
 add check (SoGheTrong>=0),
 	check (SoGheDaDat>=0)
 
---alter table ChiTietSanBayTrungGian
---add check (10<=ThoiGianDung and ThoiGianDung<=20)
-
---insert into ThamSo
---	values (30,2,20,1000000,24,24)
+alter table HangVe
+add check (TiLeDonGia>=0)
 
 Select * from LichChuyenBay
 Update LichChuyenBay set SoLuongGheHang1 = 10
@@ -310,20 +307,22 @@ INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('1',N'Nội Bài')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('5',N'a')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('6',N'b')
-INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2)
-VALUES ('2','2','1','2019/06/21', 40, 1, 1)
+INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
+VALUES ('2','2','1','2019/06/21', 40, 1, 1, 100000)
 
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
 SELECT * FROM SanBay
 
-SELECT * FROM LoaiVe
-INSERT INTO LoaiVe (MaLoaiVe,TenLoaiVe) VALUES ('1','Thuong')
-INSERT INTO LoaiVe (MaLoaiVe,TenLoaiVe) VALUES ('2','VIP')
-UPDATE LoaiVe set GiaTien = 10000 where MaLoaiVe = '1'
+SELECT * FROM HangVe
+INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('1','Thuong',1) /*hang thuong co gia ve = 1*gia ve*/
+INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('2','VIP',1.05) /*hang vip co gia ve = 1.05*gia ve*/
+/*UPDATE HangVe set GiaTien = 10000 where MaHangVe = '1'*/
 
 /*drop table ThamSo
 drop table ChiTietSanBayTrungGian*/
 
+
+/*Update 18/6*/
 
 alter table ThamSo
 add check (ThoiGianDungToiDa>ThoiGianDungToiThieu and ThoiGianDungToiThieu>0)

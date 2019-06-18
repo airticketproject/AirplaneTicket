@@ -48,6 +48,8 @@
             this.buttonXoaSanBayTrungGian = new System.Windows.Forms.Button();
             this.buttonThemSanBayTrungGian = new System.Windows.Forms.Button();
             this.sanBayTrungGian = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbGiaVe = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sanBayTrungGian)).BeginInit();
             this.SuspendLayout();
@@ -181,7 +183,7 @@
             // 
             // themChuyenBay
             // 
-            this.themChuyenBay.Location = new System.Drawing.Point(270, 543);
+            this.themChuyenBay.Location = new System.Drawing.Point(270, 573);
             this.themChuyenBay.Name = "themChuyenBay";
             this.themChuyenBay.Size = new System.Drawing.Size(106, 40);
             this.themChuyenBay.TabIndex = 6;
@@ -194,9 +196,9 @@
             this.groupBox1.Controls.Add(this.buttonXoaSanBayTrungGian);
             this.groupBox1.Controls.Add(this.buttonThemSanBayTrungGian);
             this.groupBox1.Controls.Add(this.sanBayTrungGian);
-            this.groupBox1.Location = new System.Drawing.Point(23, 333);
+            this.groupBox1.Location = new System.Drawing.Point(23, 363);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 204);
+            this.groupBox1.Size = new System.Drawing.Size(577, 204);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sân bay trung gian";
@@ -226,16 +228,34 @@
             this.sanBayTrungGian.Location = new System.Drawing.Point(3, 18);
             this.sanBayTrungGian.Name = "sanBayTrungGian";
             this.sanBayTrungGian.RowTemplate.Height = 24;
-            this.sanBayTrungGian.Size = new System.Drawing.Size(584, 138);
+            this.sanBayTrungGian.Size = new System.Drawing.Size(568, 138);
             this.sanBayTrungGian.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(60, 330);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Đơn giá vé";
+            // 
+            // txbGiaVe
+            // 
+            this.txbGiaVe.Location = new System.Drawing.Point(314, 327);
+            this.txbGiaVe.Name = "txbGiaVe";
+            this.txbGiaVe.Size = new System.Drawing.Size(231, 22);
+            this.txbGiaVe.TabIndex = 4;
+            this.txbGiaVe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSLGheHang2_KeyPress);
             // 
             // frmThemChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 595);
+            this.ClientSize = new System.Drawing.Size(628, 625);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.themChuyenBay);
+            this.Controls.Add(this.txbGiaVe);
             this.Controls.Add(this.txbSLGheHang2);
             this.Controls.Add(this.txbSLGheHang1);
             this.Controls.Add(this.txbThoiGianBay);
@@ -243,6 +263,7 @@
             this.Controls.Add(this.ngayKhoiHanh);
             this.Controls.Add(this.cbbSanBayDen);
             this.Controls.Add(this.cbbSanBayDi);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.SoLuongGheHang2_label);
             this.Controls.Add(this.SoLuongGheHang1_label);
             this.Controls.Add(this.ThoiGianBay_label);
@@ -283,6 +304,8 @@
         private System.Windows.Forms.Button buttonXoaSanBayTrungGian;
         private System.Windows.Forms.Button buttonThemSanBayTrungGian;
         private System.Windows.Forms.DataGridView sanBayTrungGian;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txbGiaVe;
     }
 }
 

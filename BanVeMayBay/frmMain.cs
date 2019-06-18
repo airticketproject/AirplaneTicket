@@ -17,11 +17,6 @@ namespace BanVeMayBay
             InitializeComponent();
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         //Chuyến bay
         private void thêmChuyếnBayToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -98,28 +93,9 @@ namespace BanVeMayBay
             frmHangVe.Show();
         }
 
-        private void doanhThuThángToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frmBaoCaoDoanhThuThang = new frmBaoCaoDoanhThuThang();
-            frmBaoCaoDoanhThuThang.MdiParent = this;
-            frmBaoCaoDoanhThuThang.Show();
-        }
-
-        private void doanhThuNămToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frmBaoCaoDoanhThuNam = new frmBaoCaoDoanhThuNam();
-            frmBaoCaoDoanhThuNam.MdiParent = this;
-            frmBaoCaoDoanhThuNam.Show();
-        }
-
         private void đóngỨngDụngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Đây là kết quả đồ án nhóm môn Nhập môn công nghệ phần mềm.\nĐược thiết kế và thực hiện trên nền tảng C# và SQL Server.\nThành viên thực hiện:\n1. Võ Phi Nhật Duy - 17520407\n2. Phan Huỳnh Minh Duy - 17520405", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void thayĐổiThamSốToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,6 +103,30 @@ namespace BanVeMayBay
             Form frmThamSo = new frmThamSo();
             frmThamSo.MdiParent = this;
             frmThamSo.Show();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void thôngTinToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Đây là kết quả đồ án nhóm môn Nhập môn công nghệ phần mềm.\nĐược thiết kế và thực hiện trên nền tảng C# và SQL Server.\nThành viên thực hiện:\n1. Võ Phi Nhật Duy - 17520407\n2. Phan Huỳnh Minh Duy - 17520405", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void báoCáoThángToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmBaoCaoDoanhThuThang = new frmBaoCaoDoanhThuThang();
+            frmBaoCaoDoanhThuThang.MdiParent = this;
+            frmBaoCaoDoanhThuThang.Show();
+        }
+
+        private void báoCáoNămToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmBaoCaoDoanhThuNam = new frmBaoCaoDoanhThuNam();
+            frmBaoCaoDoanhThuNam.MdiParent = this;
+            frmBaoCaoDoanhThuNam.Show();
         }
     }
 }
