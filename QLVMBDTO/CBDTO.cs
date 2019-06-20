@@ -15,6 +15,7 @@ namespace QLVMBDTO
         private int thoiGianBay;
         private int soLuongGheHang1;
         private int soLuongGheHang2;
+        private int giaVe;
 
         public string MaChuyenBay { get => maChuyenBay; set => maChuyenBay = value; }
         public string SanBayDi { get => sanBayDi; set => sanBayDi = value; }
@@ -23,5 +24,6 @@ namespace QLVMBDTO
         public int TGBay { get => thoiGianBay; set => thoiGianBay = value; }
         public int SLGheHang1 { get => soLuongGheHang1; set => soLuongGheHang1 = value; }
         public int SLGheHang2 { get => soLuongGheHang2; set => soLuongGheHang2 = value; }
+        public int GiaVe { get => giaVe; set => giaVe = value; }
     }
 }

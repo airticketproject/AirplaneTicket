@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CBBUS.cs" />
+    <Compile Include="HVBUS.cs" />
     <Compile Include="KHBUS.cs" />
+    <Compile Include="PDVBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SBBUS.cs" />
     <Compile Include="VBBUS.cs" />

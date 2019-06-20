@@ -92,7 +92,7 @@
             // 
             // txbGiaTien
             // 
-            this.txbGiaTien.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbGiaTien.BackColor = System.Drawing.Color.White;
             this.txbGiaTien.Enabled = false;
             this.txbGiaTien.Location = new System.Drawing.Point(182, 432);
             this.txbGiaTien.Name = "txbGiaTien";
@@ -101,6 +101,7 @@
             // 
             // HangVe_comboBox
             // 
+            this.HangVe_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HangVe_comboBox.FormattingEnabled = true;
             this.HangVe_comboBox.Location = new System.Drawing.Point(183, 393);
             this.HangVe_comboBox.Name = "HangVe_comboBox";
@@ -110,6 +111,7 @@
             // 
             // MaHanhKhach_comboBox
             // 
+            this.MaHanhKhach_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MaHanhKhach_comboBox.FormattingEnabled = true;
             this.MaHanhKhach_comboBox.Location = new System.Drawing.Point(185, 233);
             this.MaHanhKhach_comboBox.Name = "MaHanhKhach_comboBox";
@@ -120,6 +122,7 @@
             // MaChuyenBay_comboBox
             // 
             this.MaChuyenBay_comboBox.AllowDrop = true;
+            this.MaChuyenBay_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MaChuyenBay_comboBox.FormattingEnabled = true;
             this.MaChuyenBay_comboBox.Location = new System.Drawing.Point(183, 65);
             this.MaChuyenBay_comboBox.Name = "MaChuyenBay_comboBox";
@@ -155,7 +158,7 @@
             // 
             // txbThoiGianBay
             // 
-            this.txbThoiGianBay.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbThoiGianBay.BackColor = System.Drawing.Color.White;
             this.txbThoiGianBay.Enabled = false;
             this.txbThoiGianBay.ForeColor = System.Drawing.SystemColors.Window;
             this.txbThoiGianBay.Location = new System.Drawing.Point(515, 64);
@@ -165,7 +168,7 @@
             // 
             // txbSanBayDen
             // 
-            this.txbSanBayDen.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbSanBayDen.BackColor = System.Drawing.Color.White;
             this.txbSanBayDen.Enabled = false;
             this.txbSanBayDen.ForeColor = System.Drawing.SystemColors.Window;
             this.txbSanBayDen.Location = new System.Drawing.Point(515, 27);
@@ -175,7 +178,7 @@
             // 
             // txbSanBayDi
             // 
-            this.txbSanBayDi.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbSanBayDi.BackColor = System.Drawing.Color.White;
             this.txbSanBayDi.Enabled = false;
             this.txbSanBayDi.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txbSanBayDi.Location = new System.Drawing.Point(158, 21);
@@ -194,7 +197,7 @@
             // 
             // txbNgayGio
             // 
-            this.txbNgayGio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbNgayGio.BackColor = System.Drawing.Color.White;
             this.txbNgayGio.Enabled = false;
             this.txbNgayGio.ForeColor = System.Drawing.SystemColors.Window;
             this.txbNgayGio.Location = new System.Drawing.Point(158, 64);
@@ -231,7 +234,7 @@
             // 
             // txbCMND
             // 
-            this.txbCMND.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbCMND.BackColor = System.Drawing.Color.White;
             this.txbCMND.Enabled = false;
             this.txbCMND.Location = new System.Drawing.Point(158, 66);
             this.txbCMND.Name = "txbCMND";
@@ -240,9 +243,9 @@
             // 
             // txbTenKhachHang
             // 
-            this.txbTenKhachHang.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbTenKhachHang.BackColor = System.Drawing.Color.White;
             this.txbTenKhachHang.Enabled = false;
-            this.txbTenKhachHang.Location = new System.Drawing.Point(158, 27);
+            this.txbTenKhachHang.Location = new System.Drawing.Point(155, 27);
             this.txbTenKhachHang.Name = "txbTenKhachHang";
             this.txbTenKhachHang.Size = new System.Drawing.Size(200, 22);
             this.txbTenKhachHang.TabIndex = 2;
@@ -303,7 +306,7 @@
             // 
             // txbDienThoai
             // 
-            this.txbDienThoai.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txbDienThoai.BackColor = System.Drawing.Color.White;
             this.txbDienThoai.Enabled = false;
             this.txbDienThoai.Location = new System.Drawing.Point(515, 27);
             this.txbDienThoai.Name = "txbDienThoai";

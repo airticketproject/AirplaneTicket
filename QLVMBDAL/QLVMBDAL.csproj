@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CBDAL.cs" />
+    <Compile Include="HVDAL.cs" />
     <Compile Include="KHDAL.cs" />
+    <Compile Include="PDVDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SBDAL.cs" />
     <Compile Include="VBDAL.cs" />

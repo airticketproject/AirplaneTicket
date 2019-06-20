@@ -49,6 +49,12 @@ namespace BanVeMayBay
                 txbSLGheHang2.Focus();
                 return false;
             }
+            if (string.IsNullOrEmpty(txbDonGiaVe.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập đơn giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbDonGiaVe.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -148,6 +154,7 @@ namespace BanVeMayBay
                 cbDTO.TGBay = int.Parse(txbThoiGianBay.Text);
                 cbDTO.SLGheHang1 = int.Parse(txbSLGheHang1.Text);
                 cbDTO.SLGheHang2 = int.Parse(txbSLGheHang2.Text);
+                cbDTO.GiaVe = int.Parse(txbDonGiaVe.Text);
 
                 //3. Thêm vào DB
                 bool kq = cbBUS.ThemChuyenBay(cbDTO);
@@ -157,6 +164,12 @@ namespace BanVeMayBay
                     MessageBox.Show("Thêm Chuyến bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void buttonThemSanBayTrungGian_Click(object sender, EventArgs e)
+        {
+            Form themSanBayTrungGian = new frmThemSanBayTrungGian();
+            themSanBayTrungGian.Show();
         }
 
         private void txbMaChuyenBay_KeyPress(object sender, KeyPressEventArgs e)
@@ -190,11 +203,21 @@ namespace BanVeMayBay
                 InputTextOnlyNumber(e);
             }
         }
-        private void buttonThemSanBayTrungGian_Click(object sender, EventArgs e)
+   
+        private void txbDonGiaVe_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Form themSanBayTrungGian = new frmThemSanBayTrungGian();
-            themSanBayTrungGian.MdiParent = this;
-            themSanBayTrungGian.Show();
+            if (inputTextLengthCheck(txbSLGheHang2, e))
+            {
+                if (
+                     char.IsLetter(e.KeyChar) || //Ký tự Alphabe
+                     char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
+                     char.IsWhiteSpace(e.KeyChar)//Khoảng cách
+                   )
+                {
+                    e.Handled = true; //Không cho thể hiện lên TextBox
+                    MessageBox.Show("Vui lòng nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+            }
         }
     }
 }

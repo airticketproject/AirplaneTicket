@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CBDTO.cs" />
+    <Compile Include="HVDTO.cs" />
     <Compile Include="KHDTO.cs" />
+    <Compile Include="PDVDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SBDTO.cs" />
     <Compile Include="VBDTO.cs" />

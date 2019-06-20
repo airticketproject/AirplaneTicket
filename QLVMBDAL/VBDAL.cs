@@ -24,8 +24,8 @@ namespace QLVMBDAL
         public bool ThemVeBay(VBDTO vb)
         {
             string query = string.Empty;
-            query += "INSERT INTO [Ve] ([MaVe], [MaHanhKhach], [MaChuyenBay], [MaLoaiVe])";
-            query += "VALUES (@MaVe,@MaHanhKhach,@MaChuyenBay,@MaLoaiVe)";
+            query += "INSERT INTO [Ve] [MaHanhKhach], [MaChuyenBay], [MaLoaiVe]) ";
+            query += "VALUES (@MaHanhKhach,@MaChuyenBay,@MaLoaiVe)";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -33,10 +33,9 @@ namespace QLVMBDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaVe", vb.MaVe);
                     cmd.Parameters.AddWithValue("@MaHanhKhach", vb.MaHanhKhach);
                     cmd.Parameters.AddWithValue("@MaChuyenBay", vb.MaChuyenBay);
-                    cmd.Parameters.AddWithValue("@MaLoaiVe", vb.MaLoaiVe);
+                    cmd.Parameters.AddWithValue("@MaLoaiVe", vb.MaHangVe);
                     try
                     {
                         con.Open();
@@ -55,70 +54,32 @@ namespace QLVMBDAL
         }
 
         //Xoá chuyến bay
-        public bool XoaChuyenBay(VBDTO cb)
+        public bool XoaVeBay(VBDTO cb)
         {
-            //string query = string.Empty;
-            //query += "DELETE FROM [LichChuyenBay] WHERE [MaChuyenBay] = @MaChuyenBay";
-            //using (SqlConnection con = new SqlConnection(connectionString))
-            //{
-            //    using (SqlCommand cmd = new SqlCommand())
-            //    {
-            //        cmd.Connection = con;
-            //        cmd.CommandType = System.Data.CommandType.Text;
-            //        cmd.CommandText = query;
-            //        cmd.Parameters.AddWithValue("@MaChuyenBay", cb.MaChuyenBay);
-            //        try
-            //        {
-            //            con.Open();
-            //            cmd.ExecuteNonQuery();
-            //            con.Close();
-            //            con.Dispose();
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            con.Close();
-            //            return false;
-            //        }
-            //    }
-            //}
-            return true;
-        }
-
-        //Sửa chuyến bay
-        public bool SuaChuyenBay(VBDTO cb)
-        {
-            //string query = string.Empty;
-            //query += "UPDATE [LichChuyenBay] SET [SanBayDi] = @SanBayDi, [SanBayDen] = @SanBayDen, [NgayGio] = @NgayGio, [ThoiGianBay] = @ThoiGianBay, [SoLuongGheHang1] = @SoLuongGheHang1, [SoLuongGheHang2] = @SoLuongGheHang2";
-            //query += "WHERE [MaChuyenBay] = @MaChuyenBay";
-
-            //using (SqlConnection con = new SqlConnection(connectionString))
-            //{
-            //    using (SqlCommand cmd = new SqlCommand())
-            //    {
-            //        cmd.Connection = con;
-            //        cmd.CommandType = System.Data.CommandType.Text;
-            //        cmd.CommandText = query;
-            //        cmd.Parameters.AddWithValue("@MaChuyenBay", cb.MaChuyenBay);
-            //        cmd.Parameters.AddWithValue("@SanBayDi", cb.SanBayDi);
-            //        cmd.Parameters.AddWithValue("@SanBayDen", cb.SanBayDen);
-            //        cmd.Parameters.AddWithValue("@NgayGio", cb.TGKhoiHanh);
-            //        cmd.Parameters.AddWithValue("@ThoiGianBay", cb.TGBay);
-            //        cmd.Parameters.AddWithValue("@SoLuongGheHang1", cb.SLGheHang1);
-            //        cmd.Parameters.AddWithValue("@SoLuongGheHang2", cb.SLGheHang2);
-            //        try
-            //        {
-            //            con.Open();
-            //            cmd.ExecuteNonQuery();
-            //            con.Close();
-            //            con.Dispose();
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            con.Close();
-            //            return false;
-            //        }
-            //    }
-            //}
+            string query = string.Empty;
+            query += "DELETE FROM [Ve] WHERE [MaChuyenBay] = @MaChuyenBay";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@MaChuyenBay", cb.MaChuyenBay);
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
             return true;
         }
 
@@ -149,10 +110,9 @@ namespace QLVMBDAL
                             while (reader.Read())
                             {
                                 VBDTO vb = new VBDTO();
-                                vb.MaVe = reader["MaVe"].ToString();
                                 vb.MaChuyenBay = reader["MaChuyenBay"].ToString();
                                 vb.MaHanhKhach = reader["MaHanhKhach"].ToString();
-                                vb.MaLoaiVe = reader["MaLoaiVe"].ToString();
+                                vb.MaHangVe = reader["MaHangVe"].ToString();
 
                                 lsVeBay.Add(vb);
                             }
@@ -171,4 +131,6 @@ namespace QLVMBDAL
             return lsVeBay;
         }
     }
+
 }
+

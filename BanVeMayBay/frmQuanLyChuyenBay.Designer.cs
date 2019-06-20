@@ -30,6 +30,8 @@
         {
             this.dtgvDsChuyenBay = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbSanBayDen = new System.Windows.Forms.ComboBox();
+            this.cbbSanBayDi = new System.Windows.Forms.ComboBox();
             this.btnXoaChuyenBay = new System.Windows.Forms.Button();
             this.btnCapNhatChuyenBay = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,8 +46,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
-            this.cbbSanBayDi = new System.Windows.Forms.ComboBox();
-            this.cbbSanBayDen = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txbDonGiaVe = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsChuyenBay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +67,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Controls.Add(this.txbDonGiaVe);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cbbSanBayDen);
             this.groupBox1.Controls.Add(this.cbbSanBayDi);
             this.groupBox1.Controls.Add(this.btnXoaChuyenBay);
@@ -90,6 +94,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cập nhật chuyến bay";
             // 
+            // cbbSanBayDen
+            // 
+            this.cbbSanBayDen.FormattingEnabled = true;
+            this.cbbSanBayDen.Location = new System.Drawing.Point(192, 124);
+            this.cbbSanBayDen.Name = "cbbSanBayDen";
+            this.cbbSanBayDen.Size = new System.Drawing.Size(200, 24);
+            this.cbbSanBayDen.TabIndex = 20;
+            // 
+            // cbbSanBayDi
+            // 
+            this.cbbSanBayDi.FormattingEnabled = true;
+            this.cbbSanBayDi.Location = new System.Drawing.Point(192, 82);
+            this.cbbSanBayDi.Name = "cbbSanBayDi";
+            this.cbbSanBayDi.Size = new System.Drawing.Size(200, 24);
+            this.cbbSanBayDi.TabIndex = 19;
+            this.cbbSanBayDi.SelectedIndexChanged += new System.EventHandler(this.cbbSanBayDi_SelectedIndexChanged);
+            // 
             // btnXoaChuyenBay
             // 
             this.btnXoaChuyenBay.Location = new System.Drawing.Point(653, 176);
@@ -113,7 +134,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(470, 89);
+            this.label7.Location = new System.Drawing.Point(470, 85);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 17);
             this.label7.TabIndex = 16;
@@ -130,7 +151,7 @@
             // 
             // txbSuaSLGheHang2
             // 
-            this.txbSuaSLGheHang2.Location = new System.Drawing.Point(627, 86);
+            this.txbSuaSLGheHang2.Location = new System.Drawing.Point(627, 82);
             this.txbSuaSLGheHang2.Name = "txbSuaSLGheHang2";
             this.txbSuaSLGheHang2.Size = new System.Drawing.Size(178, 22);
             this.txbSuaSLGheHang2.TabIndex = 14;
@@ -210,22 +231,22 @@
             this.txbMaChuyenBay.Size = new System.Drawing.Size(200, 22);
             this.txbMaChuyenBay.TabIndex = 1;
             // 
-            // cbbSanBayDi
+            // label8
             // 
-            this.cbbSanBayDi.FormattingEnabled = true;
-            this.cbbSanBayDi.Location = new System.Drawing.Point(192, 82);
-            this.cbbSanBayDi.Name = "cbbSanBayDi";
-            this.cbbSanBayDi.Size = new System.Drawing.Size(200, 24);
-            this.cbbSanBayDi.TabIndex = 19;
-            this.cbbSanBayDi.SelectedIndexChanged += new System.EventHandler(this.cbbSanBayDi_SelectedIndexChanged);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(470, 122);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 17);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Đơn giá vé";
             // 
-            // cbbSanBayDen
+            // txbDonGiaVe
             // 
-            this.cbbSanBayDen.FormattingEnabled = true;
-            this.cbbSanBayDen.Location = new System.Drawing.Point(192, 124);
-            this.cbbSanBayDen.Name = "cbbSanBayDen";
-            this.cbbSanBayDen.Size = new System.Drawing.Size(200, 24);
-            this.cbbSanBayDen.TabIndex = 20;
+            this.txbDonGiaVe.BackColor = System.Drawing.Color.White;
+            this.txbDonGiaVe.Location = new System.Drawing.Point(627, 119);
+            this.txbDonGiaVe.Name = "txbDonGiaVe";
+            this.txbDonGiaVe.Size = new System.Drawing.Size(178, 22);
+            this.txbDonGiaVe.TabIndex = 22;
             // 
             // frmQuanLyChuyenBay
             // 
@@ -265,5 +286,7 @@
         private System.Windows.Forms.Button btnXoaChuyenBay;
         private System.Windows.Forms.ComboBox cbbSanBayDen;
         private System.Windows.Forms.ComboBox cbbSanBayDi;
+        private System.Windows.Forms.TextBox txbDonGiaVe;
+        private System.Windows.Forms.Label label8;
     }
 }

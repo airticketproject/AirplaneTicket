@@ -15,23 +15,18 @@ namespace QLVMBBUS
         {
             vbDAL = new VBDAL();
         }
-        public bool ThemChuyenBay(VBDTO vb)
+        public bool ThemVeBay(VBDTO vb)
         {
             bool re = vbDAL.ThemVeBay(vb);
             return re;
         }
 
-        public bool XoaChuyenBay(VBDTO vb)
+        public bool XoaveBay(VBDTO vb)
         {
-            bool re = vbDAL.XoaChuyenBay(vb);
+            bool re = vbDAL.XoaVeBay(vb);
             return re;
         }
 
-        public bool SuaChuyenBay(VBDTO cb)
-        {
-            bool re = vbDAL.SuaChuyenBay(cb);
-            return re;
-        }
 
         public List<VBDTO> select()
         {
