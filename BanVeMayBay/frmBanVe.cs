@@ -17,6 +17,7 @@ namespace BanVeMayBay
         private VBBUS vbBUS;
         private CBBUS cbBUS;
         private KHBUS khBUS;
+        private HVBUS hvBUS;
 
         public frmBanVe()
         {
@@ -29,9 +30,11 @@ namespace BanVeMayBay
             vbBUS = new VBBUS();
             cbBUS = new CBBUS();
             khBUS = new KHBUS();
+            hvBUS = new HVBUS();
 
             this.loadChuyenBayVao_Combobox(MaChuyenBay_comboBox);
             this.loadKhachHangVao_Combobox(MaHanhKhach_comboBox);
+            this.loadHangVeVao_Combobox(HangVe_comboBox);
         }
 
         //Load dữ liệu chuyến bay vào combobox
@@ -82,9 +85,50 @@ namespace BanVeMayBay
             }
         }
 
+        //load dữ liệu hạng vé vào combobox 
+        private void loadHangVeVao_Combobox(ComboBox comboBox)
+        {
+            List<HVDTO> listHangVe = hvBUS.select();
+
+            if (listHangVe == null)
+            {
+                MessageBox.Show("Có lỗi khi lấy Hạng vé từ cơ sở dữ liệu");
+                return;
+            }
+            comboBox.DataSource = new BindingSource(listHangVe, String.Empty);
+            comboBox.DisplayMember = "TenHangVe";
+            comboBox.ValueMember = "MaHangve";
+
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[comboBox.DataSource];
+            myCurrencyManager.Refresh();
+
+            if (comboBox.Items.Count > 0)
+            {
+                comboBox.SelectedIndex = 0;
+            }
+        }
+
+
         private void Luu_button_Click(object sender, EventArgs e)
         {
+            VBDTO vbDTO = new VBDTO();
 
+            //2. Kiểm tra data hợp lệ or not
+
+            //1. Map data from GUI
+            vbDTO.MaChuyenBay = MaChuyenBay_comboBox.SelectedValue.ToString();
+            vbDTO.MaHangVe = HangVe_comboBox.SelectedValue.ToString();
+            vbDTO.MaHanhKhach = MaHanhKhach_comboBox.SelectedValue.ToString();
+
+            //3. Thêm vào DB
+            bool kq = vbBUS.ThemVeBay(vbDTO);
+            if (kq == false)
+                MessageBox.Show("Thêm vé bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                MessageBox.Show("Thêm vé bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         //Binding dữ liệu vào textbox thuộc Chuyến bay
@@ -109,7 +153,9 @@ namespace BanVeMayBay
         //Binding dữ liệu vào texbox thuộc Hạng ghế
         private void HangVe_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            HVDTO hvDTO = HangVe_comboBox.SelectedItem as HVDTO;
+            CBDTO cbDTO = MaChuyenBay_comboBox.SelectedItem as CBDTO;
+            txbGiaTien.Text = (hvDTO.TiLeDonGia * cbDTO.GiaVe).ToString();
         }
 
         private void Thoat_button_Click(object sender, EventArgs e)

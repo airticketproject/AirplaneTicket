@@ -74,6 +74,7 @@ namespace BanVeMayBay
         {
             Form frmDatVe = new frmDatVe();
             frmDatVe.MdiParent = this;
+            frmDatVe.Dock = DockStyle.Fill;
             frmDatVe.Show();
         }
 
@@ -88,7 +89,7 @@ namespace BanVeMayBay
 
         private void hạngVéToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmHangVe = new frmHangVe();
+            Form frmHangVe = new frmThemHangVe();
             frmHangVe.MdiParent = this;
             frmHangVe.Show();
         }
@@ -127,6 +128,22 @@ namespace BanVeMayBay
             Form frmBaoCaoDoanhThuNam = new frmBaoCaoDoanhThuNam();
             frmBaoCaoDoanhThuNam.MdiParent = this;
             frmBaoCaoDoanhThuNam.Show();
+        }
+
+        private void thêmHạngVéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmThemHangVe = new frmThemHangVe();
+            frmThemHangVe.MdiParent = this;
+            frmThemHangVe.Dock = DockStyle.Fill;
+            frmThemHangVe.Show();
+        }
+
+        private void danhSáchHạngVéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmQuanLyHangVe = new frmQuanLyHangVe();
+            frmQuanLyHangVe.MdiParent = this;
+            frmQuanLyHangVe.Dock = DockStyle.Fill;
+            frmQuanLyHangVe.Show();
         }
     }
 }

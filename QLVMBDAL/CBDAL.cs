@@ -23,8 +23,8 @@ namespace QLVMBDAL
         public bool ThemChuyenBay(CBDTO cb)
         {
             string query = string.Empty;
-            query += "INSERT INTO [LichChuyenBay] ([MaChuyenBay], [SanBayDi], [SanBayDen], [NgayGio], [ThoiGianBay], [SoLuongGheHang1], [SoLuongGheHang2])";
-            query += "VALUES (@MaChuyenBay,@SanBayDi,@SanBayDen,@NgayGio,@ThoiGianBay,@SoLuongGheHang1,@SoLuongGheHang2)";
+            query += "INSERT INTO [LichChuyenBay] ([MaChuyenBay], [SanBayDi], [SanBayDen], [NgayGio], [ThoiGianBay], [SoLuongGheHang1], [SoLuongGheHang2], [GiaVe]) ";
+            query += "VALUES (@MaChuyenBay, @SanBayDi, @SanBayDen, @NgayGio, @ThoiGianBay, @SoLuongGheHang1, @SoLuongGheHang2, @GiaVe) ";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -39,6 +39,7 @@ namespace QLVMBDAL
                     cmd.Parameters.AddWithValue("@ThoiGianBay", cb.TGBay);
                     cmd.Parameters.AddWithValue("@SoLuongGheHang1", cb.SLGheHang1);
                     cmd.Parameters.AddWithValue("@SoLuongGheHang2", cb.SLGheHang2);
+                    cmd.Parameters.AddWithValue("@GiaVe", cb.GiaVe);
                     try
                     {
                         con.Open();
@@ -90,7 +91,7 @@ namespace QLVMBDAL
         public bool SuaChuyenBay(CBDTO cb)
         {
             string query = string.Empty;
-            query += "UPDATE [LichChuyenBay] SET [SanBayDi] = @SanBayDi, [SanBayDen] = @SanBayDen, [NgayGio] = @NgayGio, [ThoiGianBay] = @ThoiGianBay, [SoLuongGheHang1] = @SoLuongGheHang1, [SoLuongGheHang2] = @SoLuongGheHang2 ";
+            query += "UPDATE [LichChuyenBay] SET [SanBayDi] = @SanBayDi, [SanBayDen] = @SanBayDen, [NgayGio] = @NgayGio, [ThoiGianBay] = @ThoiGianBay, [SoLuongGheHang1] = @SoLuongGheHang1, [SoLuongGheHang2] = @SoLuongGheHang2, [GiaVe] = @GiaVe ";
             query += "WHERE [MaChuyenBay] = @MaChuyenBay";
 
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -107,6 +108,7 @@ namespace QLVMBDAL
                     cmd.Parameters.AddWithValue("@ThoiGianBay", cb.TGBay);
                     cmd.Parameters.AddWithValue("@SoLuongGheHang1", cb.SLGheHang1);
                     cmd.Parameters.AddWithValue("@SoLuongGheHang2", cb.SLGheHang2);
+                    cmd.Parameters.AddWithValue("@GiaVe", cb.GiaVe);
                     try
                     {
                         con.Open();
@@ -158,6 +160,7 @@ namespace QLVMBDAL
                                 cb.TGBay = int.Parse(reader["ThoiGianBay"].ToString());
                                 cb.SLGheHang1 = int.Parse(reader["SoLuongGheHang1"].ToString());
                                 cb.SLGheHang2 = int.Parse(reader["SoLuongGheHang2"].ToString());
+                                cb.GiaVe = int.Parse(reader["GiaVe"].ToString());
 
                                 lsChuyenBay.Add(cb);
                             }

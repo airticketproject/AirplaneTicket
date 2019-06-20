@@ -1,7 +1,6 @@
 ﻿create database QLBVMB
 use QLBVMB
 
-
 CREATE TABLE LichChuyenBay
 (
 MaChuyenBay nvarchar(5) NOT NULL PRIMARY KEY,
@@ -11,7 +10,7 @@ NgayGio DATETIME2(7),
 ThoiGianBay int,
 SoLuongGheHang1 int,
 SoLuongGheHang2 int,
-GiaVe money
+GiaVe int
 )
 
 Create table SanBay
@@ -140,9 +139,7 @@ add check (SoGheTrong>=0),
 alter table HangVe
 add check (TiLeDonGia>=0)
 
-Select * from LichChuyenBay
-Update LichChuyenBay set SoLuongGheHang1 = 10
-Where MaChuyenBay = '2'
+
 
 /*Trigger Thoi Gian Bay Toi Thieu*/
 create trigger tr_ThoiGianBay
@@ -310,6 +307,9 @@ INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('6',N'b')
 INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
 VALUES ('2','2','1','2019/06/21', 40, 1, 1, 100000)
 
+INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
+VALUES ('1','2','1','2019/06/21', 40, 1, 1, 100000)
+
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
 SELECT * FROM SanBay
 
@@ -341,7 +341,7 @@ as
 	select @max=ThoiGianDungToiDa from ThamSo
 	if (@thoigiandung<@min or @thoigiandung>@max)
 	begin
-		print 'Thoi gian dung khong hop le'
+		print 'Thời gian không hợp lệ'
 		rollback tran
 	end
 

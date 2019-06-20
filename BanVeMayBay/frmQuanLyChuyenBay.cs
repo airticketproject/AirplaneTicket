@@ -114,6 +114,7 @@ namespace BanVeMayBay
             cbDTO.TGBay = int.Parse(txbSuaThoiGianBay.Text);
             cbDTO.SLGheHang1 = int.Parse(txbSuaSLGheHang1.Text);
             cbDTO.SLGheHang2 = int.Parse(txbSuaSLGheHang2.Text);
+            cbDTO.GiaVe = int.Parse(txbDonGiaVe.Text);
 
             //3. Thêm vào DB
             bool kq = cbBUS.SuaChuyenBay(cbDTO);
@@ -138,6 +139,7 @@ namespace BanVeMayBay
                 txbSuaThoiGianBay.Text = dtgvDsChuyenBay.Rows[Row].Cells["TGBay"].Value.ToString();
                 txbSuaSLGheHang1.Text = dtgvDsChuyenBay.Rows[Row].Cells["SLGheHang1"].Value.ToString();
                 txbSuaSLGheHang2.Text = dtgvDsChuyenBay.Rows[Row].Cells["SLGheHang2"].Value.ToString(); 
+                txbDonGiaVe.Text = dtgvDsChuyenBay.Rows[Row].Cells["GiaVe"].Value.ToString();
             }
             else
                 return;

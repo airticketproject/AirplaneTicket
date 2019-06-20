@@ -49,7 +49,7 @@
             this.buttonThemSanBayTrungGian = new System.Windows.Forms.Button();
             this.sanBayTrungGian = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbGiaVe = new System.Windows.Forms.TextBox();
+            this.txbDonGiaVe = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sanBayTrungGian)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +132,7 @@
             this.cbbSanBayDi.Location = new System.Drawing.Point(314, 97);
             this.cbbSanBayDi.Name = "cbbSanBayDi";
             this.cbbSanBayDi.Size = new System.Drawing.Size(231, 24);
-            this.cbbSanBayDi.TabIndex = 2;
+            this.cbbSanBayDi.TabIndex = 1;
             // 
             // ngayKhoiHanh
             // 
@@ -146,7 +146,7 @@
             this.txbMaChuyenBay.Location = new System.Drawing.Point(314, 57);
             this.txbMaChuyenBay.Name = "txbMaChuyenBay";
             this.txbMaChuyenBay.Size = new System.Drawing.Size(231, 22);
-            this.txbMaChuyenBay.TabIndex = 4;
+            this.txbMaChuyenBay.TabIndex = 0;
             this.txbMaChuyenBay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMaChuyenBay_KeyPress);
             // 
             // cbbSanBayDen
@@ -170,7 +170,7 @@
             this.txbSLGheHang1.Location = new System.Drawing.Point(314, 257);
             this.txbSLGheHang1.Name = "txbSLGheHang1";
             this.txbSLGheHang1.Size = new System.Drawing.Size(231, 22);
-            this.txbSLGheHang1.TabIndex = 4;
+            this.txbSLGheHang1.TabIndex = 5;
             this.txbSLGheHang1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSLGheHang1_KeyPress);
             // 
             // txbSLGheHang2
@@ -178,7 +178,7 @@
             this.txbSLGheHang2.Location = new System.Drawing.Point(314, 294);
             this.txbSLGheHang2.Name = "txbSLGheHang2";
             this.txbSLGheHang2.Size = new System.Drawing.Size(231, 22);
-            this.txbSLGheHang2.TabIndex = 4;
+            this.txbSLGheHang2.TabIndex = 6;
             this.txbSLGheHang2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSLGheHang2_KeyPress);
             // 
             // themChuyenBay
@@ -240,13 +240,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Đơn giá vé";
             // 
-            // txbGiaVe
+            // txbDonGiaVe
             // 
-            this.txbGiaVe.Location = new System.Drawing.Point(314, 327);
-            this.txbGiaVe.Name = "txbGiaVe";
-            this.txbGiaVe.Size = new System.Drawing.Size(231, 22);
-            this.txbGiaVe.TabIndex = 4;
-            this.txbGiaVe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSLGheHang2_KeyPress);
+            this.txbDonGiaVe.Location = new System.Drawing.Point(314, 327);
+            this.txbDonGiaVe.Name = "txbDonGiaVe";
+            this.txbDonGiaVe.Size = new System.Drawing.Size(231, 22);
+            this.txbDonGiaVe.TabIndex = 7;
+            this.txbDonGiaVe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDonGiaVe_KeyPress);
             // 
             // frmThemChuyenBay
             // 
@@ -255,7 +255,7 @@
             this.ClientSize = new System.Drawing.Size(628, 625);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.themChuyenBay);
-            this.Controls.Add(this.txbGiaVe);
+            this.Controls.Add(this.txbDonGiaVe);
             this.Controls.Add(this.txbSLGheHang2);
             this.Controls.Add(this.txbSLGheHang1);
             this.Controls.Add(this.txbThoiGianBay);
@@ -305,7 +305,7 @@
         private System.Windows.Forms.Button buttonThemSanBayTrungGian;
         private System.Windows.Forms.DataGridView sanBayTrungGian;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbGiaVe;
+        private System.Windows.Forms.TextBox txbDonGiaVe;
     }
 }
 

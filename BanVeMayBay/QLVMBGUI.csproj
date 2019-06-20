@@ -55,11 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmHangVe.cs">
+    <Compile Include="frmQuanLyHangVe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHangVe.Designer.cs">
-      <DependentUpon>frmHangVe.cs</DependentUpon>
+    <Compile Include="frmQuanLyHangVe.Designer.cs">
+      <DependentUpon>frmQuanLyHangVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemHangVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemHangVe.Designer.cs">
+      <DependentUpon>frmThemHangVe.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLyKhachHang.cs">
       <SubType>Form</SubType>
@@ -159,8 +165,11 @@
     <EmbeddedResource Include="frmDatVe.resx">
       <DependentUpon>frmDatVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHangVe.resx">
-      <DependentUpon>frmHangVe.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanLyHangVe.resx">
+      <DependentUpon>frmQuanLyHangVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemHangVe.resx">
+      <DependentUpon>frmThemHangVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyKhachHang.resx">
       <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>

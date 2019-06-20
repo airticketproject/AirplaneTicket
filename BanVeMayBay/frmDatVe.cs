@@ -16,6 +16,8 @@ namespace BanVeMayBay
     {
         private CBBUS cbBUS;
         private KHBUS khBUS;
+        private HVBUS hvBUS;
+        private PDVBUS pdvBUS;
 
         public frmDatVe()
         {
@@ -26,8 +28,11 @@ namespace BanVeMayBay
         {
             cbBUS = new CBBUS();
             khBUS = new KHBUS();
+            hvBUS = new HVBUS();
+            pdvBUS = new PDVBUS();
             this.loadChuyenBayVao_Combobox(MaChuyenBay_comboBox);
             this.loadKhachHangVao_Combobox(MaHanhKhach_comboBox);
+            this.loadHangVeVao_Combobox(HangVe_comboBox);
         }
 
         //Load dữ liệu chuyến bay vào combobox
@@ -78,6 +83,30 @@ namespace BanVeMayBay
             }
         }
 
+        //load dữ liệu khách hàng vào combobox
+        private void loadHangVeVao_Combobox(ComboBox comboBox)
+        {
+            List<HVDTO> listHangVe = hvBUS.select();
+
+            if (listHangVe == null)
+            {
+                MessageBox.Show("Có lỗi khi lấy Sân bay từ cơ sở dữ liệu");
+                return;
+            }
+            comboBox.DataSource = new BindingSource(listHangVe, String.Empty);
+            comboBox.DisplayMember = "TenHangVe";
+            comboBox.ValueMember = "MaHangVe";
+
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[comboBox.DataSource];
+            myCurrencyManager.Refresh();
+
+            if (comboBox.Items.Count > 0)
+            {
+                comboBox.SelectedIndex = 0;
+            }
+        }
+
 
         //Binding dữ liệu vào texbox thuộc Chuyến bay
         private void MaChuyenBay_comboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,7 +130,9 @@ namespace BanVeMayBay
         //Binding dữ liệu vào texbox thuộc Hạng ghế
         private void HangVe_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            HVDTO hvDTO = HangVe_comboBox.SelectedItem as HVDTO;
+            CBDTO cbDTO = MaChuyenBay_comboBox.SelectedItem as CBDTO;
+            txbGiaTien.Text = (hvDTO.TiLeDonGia * cbDTO.GiaVe).ToString();
         }
 
 
@@ -113,7 +144,27 @@ namespace BanVeMayBay
         private void ThemHanhKhach_button_Click(object sender, EventArgs e)
         {
             Form frmKhachHang = new frmQuanLyKhachHang();
-            frmKhachHang.Show();
+            frmKhachHang.ShowDialog();
+        }
+
+        private void DatVe_button_Click(object sender, EventArgs e)
+        {
+            PDVDTO pdvDTO = new PDVDTO();
+
+            //2. Kiểm tra data hợp lệ or not
+
+            //1. Map data from GUI
+            pdvDTO.MaChuyenBay = MaChuyenBay_comboBox.SelectedValue.ToString();
+            pdvDTO.MaHangVe = HangVe_comboBox.SelectedValue.ToString();
+            pdvDTO.MaHanhKhach = MaHanhKhach_comboBox.SelectedValue.ToString();
+
+
+            //3. Thêm vào DB
+            bool kq = pdvBUS.ThemPhieuDatVe(pdvDTO);
+            if (kq == false)
+                MessageBox.Show("Thêm vé bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Thêm vé bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
