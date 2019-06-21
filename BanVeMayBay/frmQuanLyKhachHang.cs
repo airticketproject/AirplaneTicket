@@ -53,12 +53,6 @@ namespace BanVeMayBay
         //Kiểm tra null của textbox
         private bool checkNullData()
         {
-            if (string.IsNullOrEmpty(txbSuaMaKhachHang.Text))
-            {
-                MessageBox.Show("Bạn chưa nhập mã khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbSuaMaKhachHang.Focus();
-                return false;
-            }
             if (string.IsNullOrEmpty(txbSuaTenKhachHang.Text))
             {
                 MessageBox.Show("Bạn chưa nhập tên khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -79,6 +73,55 @@ namespace BanVeMayBay
             }
             return true;
         }
+
+        //Kiểm tra độ dài của textbox
+        private bool inputTextLengthCheck(TextBox textBox, KeyPressEventArgs e)
+        {
+            if (textBox.Text.Length > 30)
+            {
+                MessageBox.Show("Bạn nhập quá số kí tự cho phép", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                textBox.Clear();
+                e.Handled = true;
+                return false;
+            }
+            return true;
+
+        }
+
+        //Kiểm tra dấu và kí tự đặc biệt
+        private void inputTextNonCharacter(TextBox textBox, KeyPressEventArgs e)
+        {
+
+            if (char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+                char.IsPunctuation(e.KeyChar))//Dấu chấm 
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng không nhập kí tự đặc biệt !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            if (char.IsControl(e.KeyChar) && //Cho phép chữ và só
+                !char.IsDigit(e.KeyChar) && !(e.KeyChar == 8)) //có dấu sẽ loại bỏ
+            {
+                e.Handled = true;
+                MessageBox.Show("Vui lòng không viết dấu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                textBox.Clear();//Clear
+                textBox.Focus();//Focus vào textBox
+            }
+
+        }
+
+        //Kiểm tra số
+        private void InputTextOnlyNumber(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || //Ký tự Alphabe
+                char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
+                char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+                char.IsPunctuation(e.KeyChar)) //Dấu chấm              
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
 
         private void btnXoaKhachHang_Click(object sender, EventArgs e)
         {
@@ -140,5 +183,25 @@ namespace BanVeMayBay
             else
                 return;
         }
+
+        private void txbSuaTenKhachHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (inputTextLengthCheck(txbSuaTenKhachHang, e))
+            {
+                inputTextNonCharacter(txbSuaTenKhachHang, e);
+            }
+        }
+
+        private void txbSuaCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputTextOnlyNumber(e);
+        }
+
+        private void txbSuaSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            InputTextOnlyNumber(e);
+        }
+
+
     }
 }

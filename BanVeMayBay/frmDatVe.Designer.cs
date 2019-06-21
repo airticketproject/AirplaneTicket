@@ -57,6 +57,8 @@
             this.Thoat_button = new System.Windows.Forms.Button();
             this.ThemHanhKhach_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txbDonGia = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 396);
+            this.label4.Location = new System.Drawing.Point(427, 392);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 17);
             this.label4.TabIndex = 1;
@@ -290,7 +292,7 @@
             // 
             this.HangVe_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HangVe_comboBox.FormattingEnabled = true;
-            this.HangVe_comboBox.Location = new System.Drawing.Point(183, 393);
+            this.HangVe_comboBox.Location = new System.Drawing.Point(542, 389);
             this.HangVe_comboBox.Name = "HangVe_comboBox";
             this.HangVe_comboBox.Size = new System.Drawing.Size(200, 24);
             this.HangVe_comboBox.TabIndex = 4;
@@ -299,11 +301,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 435);
+            this.label2.Location = new System.Drawing.Point(33, 395);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.Size = new System.Drawing.Size(76, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Giá Tiền";
+            this.label2.Text = "Đơn giá vé";
             // 
             // txbGiaTien
             // 
@@ -354,11 +356,32 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "hoặc";
             // 
+            // txbDonGia
+            // 
+            this.txbDonGia.BackColor = System.Drawing.Color.White;
+            this.txbDonGia.Enabled = false;
+            this.txbDonGia.Location = new System.Drawing.Point(183, 392);
+            this.txbDonGia.Name = "txbDonGia";
+            this.txbDonGia.ReadOnly = true;
+            this.txbDonGia.Size = new System.Drawing.Size(201, 22);
+            this.txbDonGia.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 435);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 17);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Thành Tiền";
+            // 
             // frmDatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(790, 552);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txbDonGia);
             this.Controls.Add(this.ThemHanhKhach_button);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Thoat_button);
@@ -418,5 +441,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txbThoiGianBay;
+        private System.Windows.Forms.TextBox txbDonGia;
+        private System.Windows.Forms.Label label6;
     }
 }

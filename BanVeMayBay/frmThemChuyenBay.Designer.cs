@@ -50,23 +50,26 @@
             this.sanBayTrungGian = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txbDonGiaVe = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sanBayTrungGian)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // title_label
             // 
             this.title_label.AutoSize = true;
-            this.title_label.Location = new System.Drawing.Point(267, 9);
+            this.title_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title_label.Location = new System.Drawing.Point(584, 9);
             this.title_label.Name = "title_label";
-            this.title_label.Size = new System.Drawing.Size(130, 17);
+            this.title_label.Size = new System.Drawing.Size(226, 29);
             this.title_label.TabIndex = 0;
             this.title_label.Text = "LỊCH CHUYẾN BAY";
             // 
             // MaChuyenBay_label
             // 
             this.MaChuyenBay_label.AutoSize = true;
-            this.MaChuyenBay_label.Location = new System.Drawing.Point(60, 60);
+            this.MaChuyenBay_label.Location = new System.Drawing.Point(27, 49);
             this.MaChuyenBay_label.Name = "MaChuyenBay_label";
             this.MaChuyenBay_label.Size = new System.Drawing.Size(107, 17);
             this.MaChuyenBay_label.TabIndex = 1;
@@ -75,7 +78,7 @@
             // SanBayDi_label
             // 
             this.SanBayDi_label.AutoSize = true;
-            this.SanBayDi_label.Location = new System.Drawing.Point(61, 100);
+            this.SanBayDi_label.Location = new System.Drawing.Point(28, 93);
             this.SanBayDi_label.Name = "SanBayDi_label";
             this.SanBayDi_label.Size = new System.Drawing.Size(78, 17);
             this.SanBayDi_label.TabIndex = 1;
@@ -84,7 +87,7 @@
             // SanBayDen_label
             // 
             this.SanBayDen_label.AutoSize = true;
-            this.SanBayDen_label.Location = new System.Drawing.Point(61, 143);
+            this.SanBayDen_label.Location = new System.Drawing.Point(28, 136);
             this.SanBayDen_label.Name = "SanBayDen_label";
             this.SanBayDen_label.Size = new System.Drawing.Size(91, 17);
             this.SanBayDen_label.TabIndex = 1;
@@ -93,7 +96,7 @@
             // NgayGio_label
             // 
             this.NgayGio_label.AutoSize = true;
-            this.NgayGio_label.Location = new System.Drawing.Point(61, 186);
+            this.NgayGio_label.Location = new System.Drawing.Point(28, 198);
             this.NgayGio_label.Name = "NgayGio_label";
             this.NgayGio_label.Size = new System.Drawing.Size(76, 17);
             this.NgayGio_label.TabIndex = 1;
@@ -102,7 +105,7 @@
             // ThoiGianBay_label
             // 
             this.ThoiGianBay_label.AutoSize = true;
-            this.ThoiGianBay_label.Location = new System.Drawing.Point(60, 226);
+            this.ThoiGianBay_label.Location = new System.Drawing.Point(28, 231);
             this.ThoiGianBay_label.Name = "ThoiGianBay_label";
             this.ThoiGianBay_label.Size = new System.Drawing.Size(98, 17);
             this.ThoiGianBay_label.TabIndex = 1;
@@ -111,7 +114,7 @@
             // SoLuongGheHang1_label
             // 
             this.SoLuongGheHang1_label.AutoSize = true;
-            this.SoLuongGheHang1_label.Location = new System.Drawing.Point(61, 260);
+            this.SoLuongGheHang1_label.Location = new System.Drawing.Point(28, 282);
             this.SoLuongGheHang1_label.Name = "SoLuongGheHang1_label";
             this.SoLuongGheHang1_label.Size = new System.Drawing.Size(150, 17);
             this.SoLuongGheHang1_label.TabIndex = 1;
@@ -120,7 +123,7 @@
             // SoLuongGheHang2_label
             // 
             this.SoLuongGheHang2_label.AutoSize = true;
-            this.SoLuongGheHang2_label.Location = new System.Drawing.Point(61, 297);
+            this.SoLuongGheHang2_label.Location = new System.Drawing.Point(28, 319);
             this.SoLuongGheHang2_label.Name = "SoLuongGheHang2_label";
             this.SoLuongGheHang2_label.Size = new System.Drawing.Size(150, 17);
             this.SoLuongGheHang2_label.TabIndex = 1;
@@ -128,22 +131,24 @@
             // 
             // cbbSanBayDi
             // 
+            this.cbbSanBayDi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSanBayDi.FormattingEnabled = true;
-            this.cbbSanBayDi.Location = new System.Drawing.Point(314, 97);
+            this.cbbSanBayDi.Location = new System.Drawing.Point(281, 90);
             this.cbbSanBayDi.Name = "cbbSanBayDi";
             this.cbbSanBayDi.Size = new System.Drawing.Size(231, 24);
             this.cbbSanBayDi.TabIndex = 1;
             // 
             // ngayKhoiHanh
             // 
-            this.ngayKhoiHanh.Location = new System.Drawing.Point(314, 186);
+            this.ngayKhoiHanh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ngayKhoiHanh.Location = new System.Drawing.Point(281, 198);
             this.ngayKhoiHanh.Name = "ngayKhoiHanh";
             this.ngayKhoiHanh.Size = new System.Drawing.Size(231, 22);
             this.ngayKhoiHanh.TabIndex = 3;
             // 
             // txbMaChuyenBay
             // 
-            this.txbMaChuyenBay.Location = new System.Drawing.Point(314, 57);
+            this.txbMaChuyenBay.Location = new System.Drawing.Point(281, 46);
             this.txbMaChuyenBay.Name = "txbMaChuyenBay";
             this.txbMaChuyenBay.Size = new System.Drawing.Size(231, 22);
             this.txbMaChuyenBay.TabIndex = 0;
@@ -151,15 +156,16 @@
             // 
             // cbbSanBayDen
             // 
+            this.cbbSanBayDen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSanBayDen.FormattingEnabled = true;
-            this.cbbSanBayDen.Location = new System.Drawing.Point(314, 140);
+            this.cbbSanBayDen.Location = new System.Drawing.Point(281, 133);
             this.cbbSanBayDen.Name = "cbbSanBayDen";
             this.cbbSanBayDen.Size = new System.Drawing.Size(231, 24);
             this.cbbSanBayDen.TabIndex = 2;
             // 
             // txbThoiGianBay
             // 
-            this.txbThoiGianBay.Location = new System.Drawing.Point(314, 223);
+            this.txbThoiGianBay.Location = new System.Drawing.Point(281, 231);
             this.txbThoiGianBay.Name = "txbThoiGianBay";
             this.txbThoiGianBay.Size = new System.Drawing.Size(231, 22);
             this.txbThoiGianBay.TabIndex = 4;
@@ -167,7 +173,7 @@
             // 
             // txbSLGheHang1
             // 
-            this.txbSLGheHang1.Location = new System.Drawing.Point(314, 257);
+            this.txbSLGheHang1.Location = new System.Drawing.Point(281, 279);
             this.txbSLGheHang1.Name = "txbSLGheHang1";
             this.txbSLGheHang1.Size = new System.Drawing.Size(231, 22);
             this.txbSLGheHang1.TabIndex = 5;
@@ -175,7 +181,7 @@
             // 
             // txbSLGheHang2
             // 
-            this.txbSLGheHang2.Location = new System.Drawing.Point(314, 294);
+            this.txbSLGheHang2.Location = new System.Drawing.Point(281, 316);
             this.txbSLGheHang2.Name = "txbSLGheHang2";
             this.txbSLGheHang2.Size = new System.Drawing.Size(231, 22);
             this.txbSLGheHang2.TabIndex = 6;
@@ -183,7 +189,7 @@
             // 
             // themChuyenBay
             // 
-            this.themChuyenBay.Location = new System.Drawing.Point(270, 573);
+            this.themChuyenBay.Location = new System.Drawing.Point(953, 464);
             this.themChuyenBay.Name = "themChuyenBay";
             this.themChuyenBay.Size = new System.Drawing.Size(106, 40);
             this.themChuyenBay.TabIndex = 6;
@@ -196,16 +202,16 @@
             this.groupBox1.Controls.Add(this.buttonXoaSanBayTrungGian);
             this.groupBox1.Controls.Add(this.buttonThemSanBayTrungGian);
             this.groupBox1.Controls.Add(this.sanBayTrungGian);
-            this.groupBox1.Location = new System.Drawing.Point(23, 363);
+            this.groupBox1.Location = new System.Drawing.Point(707, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(577, 204);
+            this.groupBox1.Size = new System.Drawing.Size(577, 326);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sân bay trung gian";
             // 
             // buttonXoaSanBayTrungGian
             // 
-            this.buttonXoaSanBayTrungGian.Location = new System.Drawing.Point(402, 162);
+            this.buttonXoaSanBayTrungGian.Location = new System.Drawing.Point(391, 263);
             this.buttonXoaSanBayTrungGian.Name = "buttonXoaSanBayTrungGian";
             this.buttonXoaSanBayTrungGian.Size = new System.Drawing.Size(103, 36);
             this.buttonXoaSanBayTrungGian.TabIndex = 1;
@@ -214,7 +220,7 @@
             // 
             // buttonThemSanBayTrungGian
             // 
-            this.buttonThemSanBayTrungGian.Location = new System.Drawing.Point(110, 162);
+            this.buttonThemSanBayTrungGian.Location = new System.Drawing.Point(132, 263);
             this.buttonThemSanBayTrungGian.Name = "buttonThemSanBayTrungGian";
             this.buttonThemSanBayTrungGian.Size = new System.Drawing.Size(103, 36);
             this.buttonThemSanBayTrungGian.TabIndex = 1;
@@ -224,17 +230,19 @@
             // 
             // sanBayTrungGian
             // 
+            this.sanBayTrungGian.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.sanBayTrungGian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sanBayTrungGian.Dock = System.Windows.Forms.DockStyle.Top;
             this.sanBayTrungGian.Location = new System.Drawing.Point(3, 18);
             this.sanBayTrungGian.Name = "sanBayTrungGian";
             this.sanBayTrungGian.RowTemplate.Height = 24;
-            this.sanBayTrungGian.Size = new System.Drawing.Size(568, 138);
+            this.sanBayTrungGian.Size = new System.Drawing.Size(571, 202);
             this.sanBayTrungGian.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 330);
+            this.label1.Location = new System.Drawing.Point(27, 358);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 1;
@@ -242,41 +250,53 @@
             // 
             // txbDonGiaVe
             // 
-            this.txbDonGiaVe.Location = new System.Drawing.Point(314, 327);
+            this.txbDonGiaVe.Location = new System.Drawing.Point(281, 358);
             this.txbDonGiaVe.Name = "txbDonGiaVe";
             this.txbDonGiaVe.Size = new System.Drawing.Size(231, 22);
             this.txbDonGiaVe.TabIndex = 7;
             this.txbDonGiaVe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDonGiaVe_KeyPress);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.MaChuyenBay_label);
+            this.groupBox2.Controls.Add(this.SanBayDi_label);
+            this.groupBox2.Controls.Add(this.SanBayDen_label);
+            this.groupBox2.Controls.Add(this.txbDonGiaVe);
+            this.groupBox2.Controls.Add(this.NgayGio_label);
+            this.groupBox2.Controls.Add(this.txbSLGheHang2);
+            this.groupBox2.Controls.Add(this.cbbSanBayDi);
+            this.groupBox2.Controls.Add(this.txbSLGheHang1);
+            this.groupBox2.Controls.Add(this.cbbSanBayDen);
+            this.groupBox2.Controls.Add(this.txbThoiGianBay);
+            this.groupBox2.Controls.Add(this.ngayKhoiHanh);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txbMaChuyenBay);
+            this.groupBox2.Controls.Add(this.SoLuongGheHang2_label);
+            this.groupBox2.Controls.Add(this.ThoiGianBay_label);
+            this.groupBox2.Controls.Add(this.SoLuongGheHang1_label);
+            this.groupBox2.Location = new System.Drawing.Point(12, 57);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(689, 556);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông tin chuyến bay";
+            // 
             // frmThemChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 625);
+            this.ClientSize = new System.Drawing.Size(1299, 625);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.themChuyenBay);
-            this.Controls.Add(this.txbDonGiaVe);
-            this.Controls.Add(this.txbSLGheHang2);
-            this.Controls.Add(this.txbSLGheHang1);
-            this.Controls.Add(this.txbThoiGianBay);
-            this.Controls.Add(this.txbMaChuyenBay);
-            this.Controls.Add(this.ngayKhoiHanh);
-            this.Controls.Add(this.cbbSanBayDen);
-            this.Controls.Add(this.cbbSanBayDi);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.SoLuongGheHang2_label);
-            this.Controls.Add(this.SoLuongGheHang1_label);
-            this.Controls.Add(this.ThoiGianBay_label);
-            this.Controls.Add(this.NgayGio_label);
-            this.Controls.Add(this.SanBayDen_label);
-            this.Controls.Add(this.SanBayDi_label);
-            this.Controls.Add(this.MaChuyenBay_label);
             this.Controls.Add(this.title_label);
             this.Name = "frmThemChuyenBay";
             this.Text = "LichChuyenBay";
             this.Load += new System.EventHandler(this.frmLichChuyenBay_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sanBayTrungGian)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,6 +326,7 @@
         private System.Windows.Forms.DataGridView sanBayTrungGian;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbDonGiaVe;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

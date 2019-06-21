@@ -57,6 +57,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ThemHanhKhach_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txbDonGiaVe = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +105,7 @@
             // 
             this.HangVe_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HangVe_comboBox.FormattingEnabled = true;
-            this.HangVe_comboBox.Location = new System.Drawing.Point(183, 393);
+            this.HangVe_comboBox.Location = new System.Drawing.Point(542, 386);
             this.HangVe_comboBox.Name = "HangVe_comboBox";
             this.HangVe_comboBox.Size = new System.Drawing.Size(200, 24);
             this.HangVe_comboBox.TabIndex = 14;
@@ -226,11 +228,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 435);
+            this.label2.Location = new System.Drawing.Point(33, 435);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Giá Tiền";
+            this.label2.Text = "Thành Tiền";
             // 
             // txbCMND
             // 
@@ -245,7 +247,7 @@
             // 
             this.txbTenKhachHang.BackColor = System.Drawing.Color.White;
             this.txbTenKhachHang.Enabled = false;
-            this.txbTenKhachHang.Location = new System.Drawing.Point(155, 27);
+            this.txbTenKhachHang.Location = new System.Drawing.Point(159, 27);
             this.txbTenKhachHang.Name = "txbTenKhachHang";
             this.txbTenKhachHang.Size = new System.Drawing.Size(200, 22);
             this.txbTenKhachHang.TabIndex = 2;
@@ -271,7 +273,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 396);
+            this.label4.Location = new System.Drawing.Point(427, 389);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 17);
             this.label4.TabIndex = 9;
@@ -347,11 +349,31 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "hoặc";
             // 
+            // txbDonGiaVe
+            // 
+            this.txbDonGiaVe.BackColor = System.Drawing.Color.White;
+            this.txbDonGiaVe.Enabled = false;
+            this.txbDonGiaVe.Location = new System.Drawing.Point(182, 388);
+            this.txbDonGiaVe.Name = "txbDonGiaVe";
+            this.txbDonGiaVe.Size = new System.Drawing.Size(201, 22);
+            this.txbDonGiaVe.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 391);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 17);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Đơn Giá Vé";
+            // 
             // frmBanVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 552);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txbDonGiaVe);
             this.Controls.Add(this.ThemHanhKhach_button);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Thoat_button);
@@ -410,5 +432,7 @@
         private System.Windows.Forms.TextBox txbSanBayDi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbThoiGianBay;
+        private System.Windows.Forms.TextBox txbDonGiaVe;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -31,3 +31,14 @@ C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBBUS\obj\Debug\QL
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.csproj.CopyComplete
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.dll
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBBUS.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBBUS.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBDAL.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBDAL.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\bin\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.csprojAssemblyReference.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.csproj.CoreCompileInputs.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.csproj.CopyComplete
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBBUS\obj\Debug\QLVMBBUS.pdb

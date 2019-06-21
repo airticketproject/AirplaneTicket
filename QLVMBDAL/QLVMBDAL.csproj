@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CBDAL.cs" />
+    <Compile Include="CTDAL.cs" />
     <Compile Include="HVDAL.cs" />
     <Compile Include="KHDAL.cs" />
     <Compile Include="PDVDAL.cs" />

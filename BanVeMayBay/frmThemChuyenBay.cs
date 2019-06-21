@@ -169,7 +169,7 @@ namespace BanVeMayBay
         private void buttonThemSanBayTrungGian_Click(object sender, EventArgs e)
         {
             Form themSanBayTrungGian = new frmThemSanBayTrungGian();
-            themSanBayTrungGian.Show();
+            themSanBayTrungGian.ShowDialog();
         }
 
         private void txbMaChuyenBay_KeyPress(object sender, KeyPressEventArgs e)
@@ -208,15 +208,7 @@ namespace BanVeMayBay
         {
             if (inputTextLengthCheck(txbSLGheHang2, e))
             {
-                if (
-                     char.IsLetter(e.KeyChar) || //Ký tự Alphabe
-                     char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
-                     char.IsWhiteSpace(e.KeyChar)//Khoảng cách
-                   )
-                {
-                    e.Handled = true; //Không cho thể hiện lên TextBox
-                    MessageBox.Show("Vui lòng nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
+                InputTextOnlyNumber(e);
             }
         }
     }

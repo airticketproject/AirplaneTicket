@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 45);
+            this.label1.Location = new System.Drawing.Point(38, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 17);
             this.label1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 81);
+            this.label2.Location = new System.Drawing.Point(38, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 17);
             this.label2.TabIndex = 1;
@@ -82,15 +82,16 @@
             // 
             // txbSuaTenKhachHang
             // 
-            this.txbSuaTenKhachHang.Location = new System.Drawing.Point(172, 42);
+            this.txbSuaTenKhachHang.Location = new System.Drawing.Point(172, 78);
             this.txbSuaTenKhachHang.Name = "txbSuaTenKhachHang";
             this.txbSuaTenKhachHang.Size = new System.Drawing.Size(180, 22);
             this.txbSuaTenKhachHang.TabIndex = 4;
+            this.txbSuaTenKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSuaTenKhachHang_KeyPress);
             // 
             // txbSuaMaKhachHang
             // 
             this.txbSuaMaKhachHang.Enabled = false;
-            this.txbSuaMaKhachHang.Location = new System.Drawing.Point(172, 78);
+            this.txbSuaMaKhachHang.Location = new System.Drawing.Point(172, 42);
             this.txbSuaMaKhachHang.Name = "txbSuaMaKhachHang";
             this.txbSuaMaKhachHang.Size = new System.Drawing.Size(180, 22);
             this.txbSuaMaKhachHang.TabIndex = 5;
@@ -101,6 +102,7 @@
             this.txbSuaCMND.Name = "txbSuaCMND";
             this.txbSuaCMND.Size = new System.Drawing.Size(180, 22);
             this.txbSuaCMND.TabIndex = 6;
+            this.txbSuaCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSuaCMND_KeyPress);
             // 
             // txbSuaSDT
             // 
@@ -108,6 +110,7 @@
             this.txbSuaSDT.Name = "txbSuaSDT";
             this.txbSuaSDT.Size = new System.Drawing.Size(180, 22);
             this.txbSuaSDT.TabIndex = 7;
+            this.txbSuaSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSuaSDT_KeyPress);
             // 
             // dtgvDsKhachHang
             // 

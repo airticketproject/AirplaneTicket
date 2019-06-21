@@ -24,8 +24,8 @@ namespace QLVMBDAL
         public bool ThemVeBay(VBDTO vb)
         {
             string query = string.Empty;
-            query += "INSERT INTO [Ve] [MaHanhKhach], [MaChuyenBay], [MaLoaiVe]) ";
-            query += "VALUES (@MaHanhKhach,@MaChuyenBay,@MaLoaiVe)";
+            query += "INSERT INTO [Ve] ([MaVe], [MaHanhKhach], [MaChuyenBay], [MaHangVe]) ";
+            query += "VALUES (@MaVe,@MaHanhKhach,@MaChuyenBay,@MaHangVe)";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -35,7 +35,8 @@ namespace QLVMBDAL
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@MaHanhKhach", vb.MaHanhKhach);
                     cmd.Parameters.AddWithValue("@MaChuyenBay", vb.MaChuyenBay);
-                    cmd.Parameters.AddWithValue("@MaLoaiVe", vb.MaHangVe);
+                    cmd.Parameters.AddWithValue("@MaHangVe", vb.MaHangVe);
+                    cmd.Parameters.AddWithValue("@MaVe", vb.MaVe);
                     try
                     {
                         con.Open();
@@ -57,7 +58,7 @@ namespace QLVMBDAL
         public bool XoaVeBay(VBDTO cb)
         {
             string query = string.Empty;
-            query += "DELETE FROM [Ve] WHERE [MaChuyenBay] = @MaChuyenBay";
+            query += "DELETE FROM [Ve] WHERE [MaVe] = @MaVe";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -65,7 +66,7 @@ namespace QLVMBDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaChuyenBay", cb.MaChuyenBay);
+                    cmd.Parameters.AddWithValue("@MaVe", cb.MaVe);
                     try
                     {
                         con.Open();

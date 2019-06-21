@@ -25,3 +25,12 @@ C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QL
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CopyComplete
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.dll
 C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDAL.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDAL.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\bin\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csprojAssemblyReference.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CoreCompileInputs.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.csproj.CopyComplete
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDAL\obj\Debug\QLVMBDAL.pdb
