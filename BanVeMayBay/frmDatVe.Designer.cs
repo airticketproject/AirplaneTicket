@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatVe));
             this.label1 = new System.Windows.Forms.Label();
             this.MaChuyenBay_label = new System.Windows.Forms.Label();
             this.MaHanhKhach_label = new System.Windows.Forms.Label();
@@ -66,63 +67,81 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 31);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(481, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 17);
+            this.label1.Size = new System.Drawing.Size(322, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐẶT VÉ CHUYẾN BAY";
             // 
             // MaChuyenBay_label
             // 
             this.MaChuyenBay_label.AutoSize = true;
-            this.MaChuyenBay_label.Location = new System.Drawing.Point(24, 68);
+            this.MaChuyenBay_label.BackColor = System.Drawing.Color.White;
+            this.MaChuyenBay_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaChuyenBay_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.MaChuyenBay_label.Location = new System.Drawing.Point(180, 82);
             this.MaChuyenBay_label.Name = "MaChuyenBay_label";
-            this.MaChuyenBay_label.Size = new System.Drawing.Size(107, 17);
+            this.MaChuyenBay_label.Size = new System.Drawing.Size(156, 26);
             this.MaChuyenBay_label.TabIndex = 1;
             this.MaChuyenBay_label.Text = "Mã Chuyến Bay";
             // 
             // MaHanhKhach_label
             // 
             this.MaHanhKhach_label.AutoSize = true;
-            this.MaHanhKhach_label.Location = new System.Drawing.Point(24, 235);
+            this.MaHanhKhach_label.BackColor = System.Drawing.Color.White;
+            this.MaHanhKhach_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaHanhKhach_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.MaHanhKhach_label.Location = new System.Drawing.Point(180, 263);
             this.MaHanhKhach_label.Name = "MaHanhKhach_label";
-            this.MaHanhKhach_label.Size = new System.Drawing.Size(109, 17);
+            this.MaHanhKhach_label.Size = new System.Drawing.Size(158, 26);
             this.MaHanhKhach_label.TabIndex = 1;
             this.MaHanhKhach_label.Text = "Mã Hành Khách";
             // 
             // TenHanhKhach_label
             // 
             this.TenHanhKhach_label.AutoSize = true;
-            this.TenHanhKhach_label.Location = new System.Drawing.Point(6, 30);
+            this.TenHanhKhach_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenHanhKhach_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.TenHanhKhach_label.Location = new System.Drawing.Point(11, 33);
             this.TenHanhKhach_label.Name = "TenHanhKhach_label";
-            this.TenHanhKhach_label.Size = new System.Drawing.Size(115, 17);
+            this.TenHanhKhach_label.Size = new System.Drawing.Size(163, 26);
             this.TenHanhKhach_label.TabIndex = 1;
             this.TenHanhKhach_label.Text = "Tên Hành Khách";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(427, 392);
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(679, 458);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.Size = new System.Drawing.Size(91, 26);
             this.label4.TabIndex = 1;
             this.label4.Text = "Hạng Vé";
             // 
             // CMND_label
             // 
             this.CMND_label.AutoSize = true;
-            this.CMND_label.Location = new System.Drawing.Point(6, 69);
+            this.CMND_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CMND_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.CMND_label.Location = new System.Drawing.Point(11, 92);
             this.CMND_label.Name = "CMND_label";
-            this.CMND_label.Size = new System.Drawing.Size(48, 17);
+            this.CMND_label.Size = new System.Drawing.Size(77, 26);
             this.CMND_label.TabIndex = 1;
             this.CMND_label.Text = "CMND";
             // 
             // DienThoai_label
             // 
             this.DienThoai_label.AutoSize = true;
-            this.DienThoai_label.Location = new System.Drawing.Point(400, 30);
+            this.DienThoai_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DienThoai_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.DienThoai_label.Location = new System.Drawing.Point(487, 30);
             this.DienThoai_label.Name = "DienThoai_label";
-            this.DienThoai_label.Size = new System.Drawing.Size(77, 17);
+            this.DienThoai_label.Size = new System.Drawing.Size(113, 26);
             this.DienThoai_label.TabIndex = 1;
             this.DienThoai_label.Text = "Điện Thoại";
             // 
@@ -130,23 +149,28 @@
             // 
             this.txbTenKhachHang.BackColor = System.Drawing.Color.White;
             this.txbTenKhachHang.Enabled = false;
-            this.txbTenKhachHang.Location = new System.Drawing.Point(158, 27);
+            this.txbTenKhachHang.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbTenKhachHang.Location = new System.Drawing.Point(221, 27);
             this.txbTenKhachHang.Name = "txbTenKhachHang";
             this.txbTenKhachHang.ReadOnly = true;
-            this.txbTenKhachHang.Size = new System.Drawing.Size(200, 22);
+            this.txbTenKhachHang.Size = new System.Drawing.Size(200, 32);
             this.txbTenKhachHang.TabIndex = 2;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.TenHanhKhach_label);
             this.groupBox1.Controls.Add(this.txbDienThoai);
             this.groupBox1.Controls.Add(this.txbCMND);
             this.groupBox1.Controls.Add(this.txbTenKhachHang);
             this.groupBox1.Controls.Add(this.DienThoai_label);
             this.groupBox1.Controls.Add(this.CMND_label);
-            this.groupBox1.Location = new System.Drawing.Point(27, 263);
+            this.groupBox1.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.groupBox1.Location = new System.Drawing.Point(169, 302);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(727, 105);
+            this.groupBox1.Size = new System.Drawing.Size(861, 136);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hành khách";
@@ -155,24 +179,29 @@
             // 
             this.txbDienThoai.BackColor = System.Drawing.Color.White;
             this.txbDienThoai.Enabled = false;
-            this.txbDienThoai.Location = new System.Drawing.Point(515, 27);
+            this.txbDienThoai.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbDienThoai.Location = new System.Drawing.Point(632, 27);
             this.txbDienThoai.Name = "txbDienThoai";
             this.txbDienThoai.ReadOnly = true;
-            this.txbDienThoai.Size = new System.Drawing.Size(200, 22);
+            this.txbDienThoai.Size = new System.Drawing.Size(200, 32);
             this.txbDienThoai.TabIndex = 2;
             // 
             // txbCMND
             // 
             this.txbCMND.BackColor = System.Drawing.Color.White;
             this.txbCMND.Enabled = false;
-            this.txbCMND.Location = new System.Drawing.Point(158, 66);
+            this.txbCMND.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCMND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbCMND.Location = new System.Drawing.Point(221, 89);
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.ReadOnly = true;
-            this.txbCMND.Size = new System.Drawing.Size(200, 22);
+            this.txbCMND.Size = new System.Drawing.Size(200, 32);
             this.txbCMND.TabIndex = 2;
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txbThoiGianBay);
             this.groupBox2.Controls.Add(this.SanBayDi_label);
@@ -181,9 +210,11 @@
             this.groupBox2.Controls.Add(this.txbSanBayDi);
             this.groupBox2.Controls.Add(this.SanBayDen_label);
             this.groupBox2.Controls.Add(this.NgayGio_label);
-            this.groupBox2.Location = new System.Drawing.Point(27, 95);
+            this.groupBox2.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.groupBox2.Location = new System.Drawing.Point(169, 120);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(727, 105);
+            this.groupBox2.Size = new System.Drawing.Size(861, 131);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chuyến bay";
@@ -191,9 +222,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(397, 64);
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(487, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 17);
+            this.label5.Size = new System.Drawing.Size(136, 26);
             this.label5.TabIndex = 4;
             this.label5.Text = "Thời gian bay";
             // 
@@ -201,20 +234,22 @@
             // 
             this.txbThoiGianBay.BackColor = System.Drawing.Color.White;
             this.txbThoiGianBay.Enabled = false;
-            this.txbThoiGianBay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbThoiGianBay.ForeColor = System.Drawing.Color.Black;
-            this.txbThoiGianBay.Location = new System.Drawing.Point(515, 64);
+            this.txbThoiGianBay.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbThoiGianBay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbThoiGianBay.Location = new System.Drawing.Point(632, 85);
             this.txbThoiGianBay.Name = "txbThoiGianBay";
             this.txbThoiGianBay.ReadOnly = true;
-            this.txbThoiGianBay.Size = new System.Drawing.Size(200, 22);
+            this.txbThoiGianBay.Size = new System.Drawing.Size(200, 32);
             this.txbThoiGianBay.TabIndex = 3;
             // 
             // SanBayDi_label
             // 
             this.SanBayDi_label.AutoSize = true;
-            this.SanBayDi_label.Location = new System.Drawing.Point(6, 30);
+            this.SanBayDi_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SanBayDi_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.SanBayDi_label.Location = new System.Drawing.Point(16, 34);
             this.SanBayDi_label.Name = "SanBayDi_label";
-            this.SanBayDi_label.Size = new System.Drawing.Size(78, 17);
+            this.SanBayDi_label.Size = new System.Drawing.Size(112, 26);
             this.SanBayDi_label.TabIndex = 1;
             this.SanBayDi_label.Text = "Sân Bay Đi";
             // 
@@ -222,58 +257,69 @@
             // 
             this.txbSanBayDen.BackColor = System.Drawing.Color.White;
             this.txbSanBayDen.Enabled = false;
-            this.txbSanBayDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSanBayDen.Location = new System.Drawing.Point(515, 27);
+            this.txbSanBayDen.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSanBayDen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbSanBayDen.Location = new System.Drawing.Point(632, 31);
             this.txbSanBayDen.Name = "txbSanBayDen";
             this.txbSanBayDen.ReadOnly = true;
-            this.txbSanBayDen.Size = new System.Drawing.Size(200, 22);
+            this.txbSanBayDen.Size = new System.Drawing.Size(200, 32);
             this.txbSanBayDen.TabIndex = 2;
             // 
             // txbNgayGio
             // 
             this.txbNgayGio.BackColor = System.Drawing.Color.White;
             this.txbNgayGio.Enabled = false;
-            this.txbNgayGio.Location = new System.Drawing.Point(156, 61);
+            this.txbNgayGio.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNgayGio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbNgayGio.Location = new System.Drawing.Point(221, 82);
             this.txbNgayGio.Name = "txbNgayGio";
             this.txbNgayGio.ReadOnly = true;
-            this.txbNgayGio.Size = new System.Drawing.Size(200, 22);
+            this.txbNgayGio.Size = new System.Drawing.Size(200, 32);
             this.txbNgayGio.TabIndex = 2;
             // 
             // txbSanBayDi
             // 
             this.txbSanBayDi.BackColor = System.Drawing.Color.White;
             this.txbSanBayDi.Enabled = false;
-            this.txbSanBayDi.Location = new System.Drawing.Point(158, 25);
+            this.txbSanBayDi.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSanBayDi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbSanBayDi.Location = new System.Drawing.Point(221, 31);
             this.txbSanBayDi.Name = "txbSanBayDi";
             this.txbSanBayDi.ReadOnly = true;
-            this.txbSanBayDi.Size = new System.Drawing.Size(200, 22);
+            this.txbSanBayDi.Size = new System.Drawing.Size(200, 32);
             this.txbSanBayDi.TabIndex = 2;
             // 
             // SanBayDen_label
             // 
             this.SanBayDen_label.AutoSize = true;
-            this.SanBayDen_label.Location = new System.Drawing.Point(400, 30);
+            this.SanBayDen_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SanBayDen_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.SanBayDen_label.Location = new System.Drawing.Point(487, 34);
             this.SanBayDen_label.Name = "SanBayDen_label";
-            this.SanBayDen_label.Size = new System.Drawing.Size(91, 17);
+            this.SanBayDen_label.Size = new System.Drawing.Size(128, 26);
             this.SanBayDen_label.TabIndex = 1;
             this.SanBayDen_label.Text = "Sân Bay Đến";
             // 
             // NgayGio_label
             // 
             this.NgayGio_label.AutoSize = true;
-            this.NgayGio_label.Location = new System.Drawing.Point(6, 69);
+            this.NgayGio_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgayGio_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.NgayGio_label.Location = new System.Drawing.Point(11, 85);
             this.NgayGio_label.Name = "NgayGio_label";
-            this.NgayGio_label.Size = new System.Drawing.Size(76, 17);
+            this.NgayGio_label.Size = new System.Drawing.Size(109, 26);
             this.NgayGio_label.TabIndex = 1;
             this.NgayGio_label.Text = "Ngày - Giờ";
             // 
             // MaChuyenBay_comboBox
             // 
             this.MaChuyenBay_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MaChuyenBay_comboBox.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaChuyenBay_comboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.MaChuyenBay_comboBox.FormattingEnabled = true;
-            this.MaChuyenBay_comboBox.Location = new System.Drawing.Point(183, 65);
+            this.MaChuyenBay_comboBox.Location = new System.Drawing.Point(390, 82);
             this.MaChuyenBay_comboBox.Name = "MaChuyenBay_comboBox";
-            this.MaChuyenBay_comboBox.Size = new System.Drawing.Size(200, 24);
+            this.MaChuyenBay_comboBox.Size = new System.Drawing.Size(200, 32);
             this.MaChuyenBay_comboBox.Sorted = true;
             this.MaChuyenBay_comboBox.TabIndex = 4;
             this.MaChuyenBay_comboBox.SelectedIndexChanged += new System.EventHandler(this.MaChuyenBay_comboBox_SelectedIndexChanged);
@@ -281,29 +327,36 @@
             // MaHanhKhach_comboBox
             // 
             this.MaHanhKhach_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MaHanhKhach_comboBox.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaHanhKhach_comboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.MaHanhKhach_comboBox.FormattingEnabled = true;
-            this.MaHanhKhach_comboBox.Location = new System.Drawing.Point(185, 233);
+            this.MaHanhKhach_comboBox.Location = new System.Drawing.Point(390, 264);
             this.MaHanhKhach_comboBox.Name = "MaHanhKhach_comboBox";
-            this.MaHanhKhach_comboBox.Size = new System.Drawing.Size(200, 24);
+            this.MaHanhKhach_comboBox.Size = new System.Drawing.Size(200, 32);
             this.MaHanhKhach_comboBox.TabIndex = 4;
             this.MaHanhKhach_comboBox.SelectedIndexChanged += new System.EventHandler(this.MaHanhKhach_comboBox_SelectedIndexChanged);
             // 
             // HangVe_comboBox
             // 
             this.HangVe_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HangVe_comboBox.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HangVe_comboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.HangVe_comboBox.FormattingEnabled = true;
-            this.HangVe_comboBox.Location = new System.Drawing.Point(542, 389);
+            this.HangVe_comboBox.Location = new System.Drawing.Point(801, 455);
             this.HangVe_comboBox.Name = "HangVe_comboBox";
-            this.HangVe_comboBox.Size = new System.Drawing.Size(200, 24);
+            this.HangVe_comboBox.Size = new System.Drawing.Size(200, 32);
             this.HangVe_comboBox.TabIndex = 4;
             this.HangVe_comboBox.SelectedIndexChanged += new System.EventHandler(this.HangVe_comboBox_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 395);
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(180, 458);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.Size = new System.Drawing.Size(109, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Đơn giá vé";
             // 
@@ -311,15 +364,19 @@
             // 
             this.txbGiaTien.BackColor = System.Drawing.Color.White;
             this.txbGiaTien.Enabled = false;
-            this.txbGiaTien.Location = new System.Drawing.Point(182, 432);
+            this.txbGiaTien.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbGiaTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbGiaTien.Location = new System.Drawing.Point(390, 521);
             this.txbGiaTien.Name = "txbGiaTien";
             this.txbGiaTien.ReadOnly = true;
-            this.txbGiaTien.Size = new System.Drawing.Size(201, 22);
+            this.txbGiaTien.Size = new System.Drawing.Size(201, 32);
             this.txbGiaTien.TabIndex = 5;
             // 
             // DatVe_button
             // 
-            this.DatVe_button.Location = new System.Drawing.Point(160, 483);
+            this.DatVe_button.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DatVe_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.DatVe_button.Location = new System.Drawing.Point(390, 594);
             this.DatVe_button.Name = "DatVe_button";
             this.DatVe_button.Size = new System.Drawing.Size(146, 40);
             this.DatVe_button.TabIndex = 6;
@@ -329,7 +386,9 @@
             // 
             // Thoat_button
             // 
-            this.Thoat_button.Location = new System.Drawing.Point(460, 483);
+            this.Thoat_button.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Thoat_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Thoat_button.Location = new System.Drawing.Point(712, 594);
             this.Thoat_button.Name = "Thoat_button";
             this.Thoat_button.Size = new System.Drawing.Size(138, 40);
             this.Thoat_button.TabIndex = 6;
@@ -339,9 +398,11 @@
             // 
             // ThemHanhKhach_button
             // 
-            this.ThemHanhKhach_button.Location = new System.Drawing.Point(542, 226);
+            this.ThemHanhKhach_button.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemHanhKhach_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.ThemHanhKhach_button.Location = new System.Drawing.Point(712, 257);
             this.ThemHanhKhach_button.Name = "ThemHanhKhach_button";
-            this.ThemHanhKhach_button.Size = new System.Drawing.Size(161, 36);
+            this.ThemHanhKhach_button.Size = new System.Drawing.Size(212, 36);
             this.ThemHanhKhach_button.TabIndex = 27;
             this.ThemHanhKhach_button.Text = "Thêm Hành Khách";
             this.ThemHanhKhach_button.UseVisualStyleBackColor = true;
@@ -350,9 +411,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(427, 238);
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(608, 263);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 17);
+            this.label3.Size = new System.Drawing.Size(53, 26);
             this.label3.TabIndex = 26;
             this.label3.Text = "hoặc";
             // 
@@ -360,18 +424,23 @@
             // 
             this.txbDonGia.BackColor = System.Drawing.Color.White;
             this.txbDonGia.Enabled = false;
-            this.txbDonGia.Location = new System.Drawing.Point(183, 392);
+            this.txbDonGia.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDonGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txbDonGia.Location = new System.Drawing.Point(390, 455);
             this.txbDonGia.Name = "txbDonGia";
             this.txbDonGia.ReadOnly = true;
-            this.txbDonGia.Size = new System.Drawing.Size(201, 22);
+            this.txbDonGia.Size = new System.Drawing.Size(201, 32);
             this.txbDonGia.TabIndex = 28;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 435);
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(180, 524);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 17);
+            this.label6.Size = new System.Drawing.Size(117, 26);
             this.label6.TabIndex = 29;
             this.label6.Text = "Thành Tiền";
             // 
@@ -379,7 +448,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(790, 552);
+            this.BackgroundImage = global::BanVeMayBay.Properties.Resources.background2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1161, 674);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txbDonGia);
             this.Controls.Add(this.ThemHanhKhach_button);
@@ -397,9 +468,11 @@
             this.Controls.Add(this.MaHanhKhach_label);
             this.Controls.Add(this.MaChuyenBay_label);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDatVe";
-            this.Text = "Dat Ve Chuyen Bay";
+            this.Text = "Đặt Vé Chuyến Bay";
             this.Load += new System.EventHandler(this.frmDatVe_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

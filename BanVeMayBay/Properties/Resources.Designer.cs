@@ -63,6 +63,26 @@ namespace BanVeMayBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0 {
+            get {
+                object obj = ResourceManager.GetObject("_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background2 {
+            get {
+                object obj = ResourceManager.GetObject("background2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GNCWir {
             get {
                 object obj = ResourceManager.GetObject("GNCWir", resourceCulture);
@@ -76,6 +96,16 @@ namespace BanVeMayBay.Properties {
         internal static System.Drawing.Icon Google_Noto_Emoji_Travel_Places_42586_airplane {
             get {
                 object obj = ResourceManager.GetObject("Google_Noto_Emoji_Travel_Places_42586_airplane", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon ticket_icon {
+            get {
+                object obj = ResourceManager.GetObject("ticket_icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

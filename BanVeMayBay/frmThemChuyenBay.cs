@@ -211,5 +211,10 @@ namespace BanVeMayBay
                 InputTextOnlyNumber(e);
             }
         }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

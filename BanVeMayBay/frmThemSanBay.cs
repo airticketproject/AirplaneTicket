@@ -89,6 +89,9 @@ namespace BanVeMayBay
             }
         }
 
-     
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

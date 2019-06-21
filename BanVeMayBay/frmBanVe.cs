@@ -26,7 +26,8 @@ namespace BanVeMayBay
 
         //Form_load
         private void frmBanVe_Load(object sender, EventArgs e)
-        {
+        { 
+
             vbBUS = new VBBUS();
             cbBUS = new CBBUS();
             khBUS = new KHBUS();
@@ -185,7 +186,7 @@ namespace BanVeMayBay
         }
         private void ThemHanhKhach_button_Click(object sender, EventArgs e)
         {
-            Form frmKhachHang = new frmQuanLyKhachHang();
+            Form frmKhachHang = new frmThemKhachHang();
             frmKhachHang.Show();
         }
     }

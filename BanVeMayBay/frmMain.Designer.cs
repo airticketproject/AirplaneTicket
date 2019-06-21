@@ -214,14 +214,14 @@
             // thêmHạngVéToolStripMenuItem1
             // 
             this.thêmHạngVéToolStripMenuItem1.Name = "thêmHạngVéToolStripMenuItem1";
-            this.thêmHạngVéToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.thêmHạngVéToolStripMenuItem1.Size = new System.Drawing.Size(208, 26);
             this.thêmHạngVéToolStripMenuItem1.Text = "Thêm hạng vé";
             this.thêmHạngVéToolStripMenuItem1.Click += new System.EventHandler(this.thêmHạngVéToolStripMenuItem_Click);
             // 
             // danhSáchHạngVéToolStripMenuItem1
             // 
             this.danhSáchHạngVéToolStripMenuItem1.Name = "danhSáchHạngVéToolStripMenuItem1";
-            this.danhSáchHạngVéToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.danhSáchHạngVéToolStripMenuItem1.Size = new System.Drawing.Size(208, 26);
             this.danhSáchHạngVéToolStripMenuItem1.Text = "Danh sách hạng vé";
             this.danhSáchHạngVéToolStripMenuItem1.Click += new System.EventHandler(this.danhSáchHạngVéToolStripMenuItem_Click);
             // 
@@ -256,8 +256,9 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::BanVeMayBay.Properties.Resources.GNCWir;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1362, 703);
+            this.ClientSize = new System.Drawing.Size(1362, 853);
             this.Controls.Add(menuStrip1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = menuStrip1;

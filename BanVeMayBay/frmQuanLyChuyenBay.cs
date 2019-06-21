@@ -144,10 +144,5 @@ namespace BanVeMayBay
             else
                 return;
         }
-
-        private void cbbSanBayDi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

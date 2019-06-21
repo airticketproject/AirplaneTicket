@@ -1,5 +1,8 @@
 ﻿create database QLBVMB
+--use master
+--drop database QLBVMB
 use QLBVMB
+
 
 CREATE TABLE LichChuyenBay
 (
@@ -7,7 +10,7 @@ MaChuyenBay nvarchar(5) NOT NULL PRIMARY KEY,
 SanBayDi nvarchar(5) not null,
 SanBayDen nvarchar(5) not null,
 NgayGio DATETIME2(7),
-ThoiGianBay int,
+ThoiGianBay int not null,
 SoLuongGheHang1 int,
 SoLuongGheHang2 int,
 GiaVe int
@@ -37,34 +40,36 @@ SoGheDaDat int
 
 create table HangVe
 (
-MaHangVe nvarchar(10),
+MaHangVe nvarchar(5) not null primary key,
 TenHangVe nvarchar(20),
-TiLeDonGia float   /*vd: ti le don gia = 0.9 tuong duong voi 90%, ti le don gia = 1.05 tuong duong voi 105%*/
+TiLeDonGia float  not null /*vd: ti le don gia = 0.9 tuong duong voi 90%, ti le don gia = 1.05 tuong duong voi 105%*/
 )
 
 create table PhieuDatVe
 (
-MaPhieuDat char(5) not null primary key,
-MaHanhKhach char(10) not null,
-MaChuyenBay char(5) not null,
-MaHangVe char(5) not null
+MaPhieuDat nvarchar(5) not null,
+MaHanhKhach nvarchar(10) not null,
+MaChuyenBay nvarchar(5) not null,
+MaHangVe nvarchar(5) not null
+constraint PK_PhieuDatVe primary key (MaPhieuDat,MaChuyenBay)
 )
 
 create table Ve
 (
-MaVe char(10) not null primary key,
-MaHanhKhach char(10) not null,
-MaChuyenBay char(5) not null,
-MaHangVe char(5) not null
+MaVe nvarchar(5) not null,
+MaHanhKhach nvarchar(10) not null,
+MaChuyenBay nvarchar(5) not null,
+MaHangVe nvarchar(5) not null
+constraint PK_Ve primary key (MaVe,MaChuyenBay)
 )
 
 create table ChiTietSanBayTrungGian
 (
-MaChiTietSanBayTrungGian char(5) not null primary key,
-MaChuyenBay char(5) not null,
-MaSanBay char(5) not null,
+MaChiTietSanBayTrungGian nvarchar(5) not null primary key,
+MaChuyenBay nvarchar(5) not null,
+MaSanBay nvarchar(5) not null,
 ThoiGianDung int,
-GhiChu char(30)
+GhiChu nvarchar(30)
 )
 
 create table ThamSo
@@ -79,8 +84,8 @@ ThoiGianHuyVe int
 
 create table DoanhThuTheoThang
 (
-MaDoanhThuTheoThang char(5) not null primary key,
-MaChuyenBay char(5) not null,
+MaDoanhThuTheoThang nvarchar(5) not null primary key,
+MaChuyenBay nvarchar(5) not null,
 SoLuongVe int,
 DoanhThu money,
 TiLe float
@@ -88,10 +93,10 @@ TiLe float
 
 create table DoanhThuTheoNam
 (
-MaDoanhThuTheoNam char(5) not null primary key,
-MaDoanhThuTheoThang char(5) not null,
+MaDoanhThuTheoNam nvarchar(5) not null primary key,
+MaDoanhThuTheoThang nvarchar(5) not null,
 SoChuyenBay int,
-DoanhThu money,
+DoanhThu int,
 TiLe float
 )
 
@@ -139,7 +144,9 @@ add check (SoGheTrong>=0),
 alter table HangVe
 add check (TiLeDonGia>=0)
 
-
+--Select * from LichChuyenBay
+--Update LichChuyenBay set SoLuongGheHang1 = 10
+--Where MaChuyenBay = '2'
 
 /*Trigger Thoi Gian Bay Toi Thieu*/
 create trigger tr_ThoiGianBay
@@ -176,7 +183,7 @@ create trigger tr_SanBayTrungGianToiDa
 on ChiTietSanBayTrungGian
 for insert
 as
-	declare @i char(5)
+	declare @i nvarchar(5)
 	declare @t int
 	declare @max int
 	select @i=MaChuyenBay from inserted
@@ -193,7 +200,7 @@ create trigger tr_SanBayTrungGianToiDa_Update
 on ChiTietSanBayTrungGian
 for update
 as
-	declare @i char(5)
+	declare @i nvarchar(5)
 	declare @t int
 	declare @max int
 	select @i=MaChuyenBay from inserted
@@ -212,7 +219,7 @@ create trigger tr_BanVe
 on Ve
 for insert
 as
-	declare @i char(5)
+	declare @i nvarchar(5)
 	declare @controng int
 	select @i=MaChuyenBay from inserted
 	select @controng=SoGheTrong from DanhSachChuyenBay
@@ -236,7 +243,7 @@ create trigger tr_BanVe_Update
 on Ve
 for update
 as
-	declare @i char(5)
+	declare @i nvarchar(5)
 	declare @controng int
 	select @i=MaChuyenBay from inserted
 	select @controng=SoGheTrong from DanhSachChuyenBay
@@ -264,7 +271,7 @@ create trigger tr_ThoiGianDatVeChamNhat
 on PhieuDatVe
 for insert
 as
-	declare @i char(5)
+	declare @i nvarchar(5)
 	declare @ngaykhoihanh smalldatetime
 	declare @ngaydat smalldatetime
 	declare @thoigian int
@@ -283,7 +290,7 @@ create trigger tr_ThoiGianDatVeChamNhat_Update
 on PhieuDatVe
 for update
 as
-	declare @i char(5)
+	declare @i nvarchar(5)
 	declare @ngaykhoihanh smalldatetime
 	declare @ngaydat smalldatetime
 	declare @thoigian smalldatetime
@@ -306,9 +313,6 @@ INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('5',N'a')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('6',N'b')
 INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
 VALUES ('2','2','1','2019/06/21', 40, 1, 1, 100000)
-
-INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
-VALUES ('1','2','1','2019/06/21', 40, 1, 1, 100000)
 
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
 SELECT * FROM SanBay
@@ -341,7 +345,7 @@ as
 	select @max=ThoiGianDungToiDa from ThamSo
 	if (@thoigiandung<@min or @thoigiandung>@max)
 	begin
-		print 'Thời gian không hợp lệ'
+		print 'Thoi gian dung khong hop le'
 		rollback tran
 	end
 

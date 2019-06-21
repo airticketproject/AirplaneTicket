@@ -239,10 +239,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GNCWir.jpg" />
+    <None Include="Resources\Google-Noto-Emoji-Travel-Places-42586-airplane.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Google-Noto-Emoji-Travel-Places-42586-airplane.ico" />
+    <None Include="Resources\ticket_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GNCWir.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

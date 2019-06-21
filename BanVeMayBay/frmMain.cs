@@ -74,7 +74,7 @@ namespace BanVeMayBay
         {
             Form frmDatVe = new frmDatVe();
             frmDatVe.MdiParent = this;
-            frmDatVe.Dock = DockStyle.Fill;
+            frmDatVe.Dock = DockStyle.Left;
             frmDatVe.Show();
         }
 
@@ -82,7 +82,7 @@ namespace BanVeMayBay
         {
             Form frmBanVe = new frmBanVe();
             frmBanVe.MdiParent = this;
-            frmBanVe.Dock = DockStyle.Fill;
+            frmBanVe.Dock = DockStyle.Left;
             frmBanVe.Show();
         }
 

@@ -42,6 +42,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txbSuaTenSanBay);
             this.groupBox1.Controls.Add(this.txbSuaMaSanBay);
             this.groupBox1.Controls.Add(this.label2);
@@ -50,6 +51,7 @@
             this.groupBox1.Controls.Add(this.Xoa_button);
             this.groupBox1.Controls.Add(this.Sua_button);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(836, 577);
@@ -59,34 +61,34 @@
             // 
             // txbSuaTenSanBay
             // 
-            this.txbSuaTenSanBay.Location = new System.Drawing.Point(207, 138);
+            this.txbSuaTenSanBay.Location = new System.Drawing.Point(228, 128);
             this.txbSuaTenSanBay.Name = "txbSuaTenSanBay";
-            this.txbSuaTenSanBay.Size = new System.Drawing.Size(206, 22);
+            this.txbSuaTenSanBay.Size = new System.Drawing.Size(206, 32);
             this.txbSuaTenSanBay.TabIndex = 18;
             // 
             // txbSuaMaSanBay
             // 
             this.txbSuaMaSanBay.Enabled = false;
-            this.txbSuaMaSanBay.Location = new System.Drawing.Point(207, 80);
+            this.txbSuaMaSanBay.Location = new System.Drawing.Point(228, 57);
             this.txbSuaMaSanBay.Name = "txbSuaMaSanBay";
-            this.txbSuaMaSanBay.Size = new System.Drawing.Size(206, 22);
+            this.txbSuaMaSanBay.Size = new System.Drawing.Size(206, 32);
             this.txbSuaMaSanBay.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 141);
+            this.label2.Location = new System.Drawing.Point(80, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(129, 26);
             this.label2.TabIndex = 16;
             this.label2.Text = "Tên sân bay :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 80);
+            this.label1.Location = new System.Drawing.Point(80, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.Size = new System.Drawing.Size(124, 26);
             this.label1.TabIndex = 15;
             this.label1.Text = "Mã sân bay :";
             // 
@@ -112,7 +114,7 @@
             // 
             // Xoa_button
             // 
-            this.Xoa_button.Location = new System.Drawing.Point(674, 108);
+            this.Xoa_button.Location = new System.Drawing.Point(675, 86);
             this.Xoa_button.Name = "Xoa_button";
             this.Xoa_button.Size = new System.Drawing.Size(107, 52);
             this.Xoa_button.TabIndex = 14;
@@ -122,7 +124,7 @@
             // 
             // Sua_button
             // 
-            this.Sua_button.Location = new System.Drawing.Point(507, 108);
+            this.Sua_button.Location = new System.Drawing.Point(508, 86);
             this.Sua_button.Name = "Sua_button";
             this.Sua_button.Size = new System.Drawing.Size(104, 52);
             this.Sua_button.TabIndex = 12;
@@ -134,8 +136,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BanVeMayBay.Properties.Resources._0;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(836, 577);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Name = "frmQuanLySanBay";
             this.Text = "Quản lý sân bay";
             this.Load += new System.EventHandler(this.frmQuanLySanBay_Load);
