@@ -144,5 +144,11 @@ namespace BanVeMayBay
             else
                 return;
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            frmTimKiem_DanhSachChuyenBay frmTimKiem = new frmTimKiem_DanhSachChuyenBay();
+            frmTimKiem.Show();
+        }
     }
 }

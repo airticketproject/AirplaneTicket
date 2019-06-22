@@ -364,3 +364,7 @@ as
 		print 'Thoi gian dung khong hop le'
 		rollback tran
 	end
+
+select *
+from LICHCHUYENBAY
+where SanBayDi='1' and SanBayDen='2'
