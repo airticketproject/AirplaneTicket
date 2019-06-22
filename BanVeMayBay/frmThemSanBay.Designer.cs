@@ -42,7 +42,7 @@
             // 
             // Them_button
             // 
-            this.Them_button.Location = new System.Drawing.Point(535, 71);
+            this.Them_button.Location = new System.Drawing.Point(585, 236);
             this.Them_button.Name = "Them_button";
             this.Them_button.Size = new System.Drawing.Size(119, 48);
             this.Them_button.TabIndex = 16;
@@ -52,22 +52,22 @@
             // 
             // txbTenSanBay
             // 
-            this.txbTenSanBay.Location = new System.Drawing.Point(234, 173);
+            this.txbTenSanBay.Location = new System.Drawing.Point(407, 149);
             this.txbTenSanBay.Name = "txbTenSanBay";
-            this.txbTenSanBay.Size = new System.Drawing.Size(196, 32);
+            this.txbTenSanBay.Size = new System.Drawing.Size(263, 32);
             this.txbTenSanBay.TabIndex = 13;
             // 
             // txbMaSanBay
             // 
-            this.txbMaSanBay.Location = new System.Drawing.Point(234, 68);
+            this.txbMaSanBay.Location = new System.Drawing.Point(407, 85);
             this.txbMaSanBay.Name = "txbMaSanBay";
-            this.txbMaSanBay.Size = new System.Drawing.Size(196, 32);
+            this.txbMaSanBay.Size = new System.Drawing.Size(263, 32);
             this.txbMaSanBay.TabIndex = 14;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 176);
+            this.label3.Location = new System.Drawing.Point(248, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 26);
             this.label3.TabIndex = 10;
@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 71);
+            this.label2.Location = new System.Drawing.Point(248, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 26);
             this.label2.TabIndex = 11;
@@ -96,7 +96,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(762, 631);
+            this.groupBox1.Size = new System.Drawing.Size(1116, 718);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sân bay";
@@ -112,7 +112,7 @@
             this.dtgvDsThemSanBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgvDsThemSanBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsThemSanBay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvDsThemSanBay.Location = new System.Drawing.Point(3, 277);
+            this.dtgvDsThemSanBay.Location = new System.Drawing.Point(3, 364);
             this.dtgvDsThemSanBay.MultiSelect = false;
             this.dtgvDsThemSanBay.Name = "dtgvDsThemSanBay";
             this.dtgvDsThemSanBay.ReadOnly = true;
@@ -120,14 +120,14 @@
             this.dtgvDsThemSanBay.RowTemplate.Height = 24;
             this.dtgvDsThemSanBay.ShowCellToolTips = false;
             this.dtgvDsThemSanBay.ShowEditingIcon = false;
-            this.dtgvDsThemSanBay.Size = new System.Drawing.Size(756, 351);
+            this.dtgvDsThemSanBay.Size = new System.Drawing.Size(1110, 351);
             this.dtgvDsThemSanBay.TabIndex = 17;
             // 
             // btn_Thoat
             // 
-            this.btn_Thoat.Location = new System.Drawing.Point(535, 150);
+            this.btn_Thoat.Location = new System.Drawing.Point(759, 236);
             this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(119, 55);
+            this.btn_Thoat.Size = new System.Drawing.Size(119, 48);
             this.btn_Thoat.TabIndex = 16;
             this.btn_Thoat.Text = "Thoát";
             this.btn_Thoat.UseVisualStyleBackColor = true;
@@ -139,9 +139,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BanVeMayBay.Properties.Resources.background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(762, 631);
+            this.ClientSize = new System.Drawing.Size(1116, 718);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThemSanBay";
             this.Text = "Quản lý sân bay";
             this.Load += new System.EventHandler(this.frmThemSanBay_Load);

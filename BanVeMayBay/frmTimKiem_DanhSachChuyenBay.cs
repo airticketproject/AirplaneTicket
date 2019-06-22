@@ -26,5 +26,10 @@ namespace BanVeMayBay
         {
 
         }
+
+        private void Thoat_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

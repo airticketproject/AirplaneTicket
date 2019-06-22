@@ -49,7 +49,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(121, 18);
+            this.label1.Location = new System.Drawing.Point(253, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(376, 32);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 127);
+            this.label2.Location = new System.Drawing.Point(203, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 26);
             this.label2.TabIndex = 0;
@@ -71,7 +71,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(71, 175);
+            this.label3.Location = new System.Drawing.Point(203, 249);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 26);
             this.label3.TabIndex = 0;
@@ -82,7 +82,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 227);
+            this.label4.Location = new System.Drawing.Point(203, 301);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 26);
             this.label4.TabIndex = 0;
@@ -93,7 +93,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 278);
+            this.label5.Location = new System.Drawing.Point(203, 352);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 26);
             this.label5.TabIndex = 0;
@@ -102,19 +102,19 @@
             // txbThoiGianDung
             // 
             this.txbThoiGianDung.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbThoiGianDung.Location = new System.Drawing.Point(242, 224);
+            this.txbThoiGianDung.Location = new System.Drawing.Point(374, 298);
             this.txbThoiGianDung.Name = "txbThoiGianDung";
-            this.txbThoiGianDung.Size = new System.Drawing.Size(181, 32);
+            this.txbThoiGianDung.Size = new System.Drawing.Size(228, 32);
             this.txbThoiGianDung.TabIndex = 2;
             this.txbThoiGianDung.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbThoiGianDung_KeyPress);
             // 
             // txbGhiChu
             // 
             this.txbGhiChu.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbGhiChu.Location = new System.Drawing.Point(242, 278);
+            this.txbGhiChu.Location = new System.Drawing.Point(374, 352);
             this.txbGhiChu.Multiline = true;
             this.txbGhiChu.Name = "txbGhiChu";
-            this.txbGhiChu.Size = new System.Drawing.Size(260, 113);
+            this.txbGhiChu.Size = new System.Drawing.Size(321, 113);
             this.txbGhiChu.TabIndex = 3;
             this.txbGhiChu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbGhiChu_KeyPress);
             // 
@@ -123,7 +123,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(445, 229);
+            this.label6.Location = new System.Drawing.Point(628, 301);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 26);
             this.label6.TabIndex = 0;
@@ -134,15 +134,15 @@
             this.cbbMaSanBay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaSanBay.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbMaSanBay.FormattingEnabled = true;
-            this.cbbMaSanBay.Location = new System.Drawing.Point(242, 124);
+            this.cbbMaSanBay.Location = new System.Drawing.Point(374, 198);
             this.cbbMaSanBay.Name = "cbbMaSanBay";
-            this.cbbMaSanBay.Size = new System.Drawing.Size(260, 32);
+            this.cbbMaSanBay.Size = new System.Drawing.Size(321, 32);
             this.cbbMaSanBay.TabIndex = 0;
             // 
             // buttonThem
             // 
             this.buttonThem.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThem.Location = new System.Drawing.Point(127, 430);
+            this.buttonThem.Location = new System.Drawing.Point(259, 544);
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(111, 53);
             this.buttonThem.TabIndex = 4;
@@ -153,7 +153,7 @@
             // buttonThoat
             // 
             this.buttonThoat.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThoat.Location = new System.Drawing.Point(361, 430);
+            this.buttonThoat.Location = new System.Drawing.Point(552, 544);
             this.buttonThoat.Name = "buttonThoat";
             this.buttonThoat.Size = new System.Drawing.Size(106, 53);
             this.buttonThoat.TabIndex = 5;
@@ -166,9 +166,9 @@
             this.cbbMaChuyenBay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaChuyenBay.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbMaChuyenBay.FormattingEnabled = true;
-            this.cbbMaChuyenBay.Location = new System.Drawing.Point(242, 172);
+            this.cbbMaChuyenBay.Location = new System.Drawing.Point(374, 246);
             this.cbbMaChuyenBay.Name = "cbbMaChuyenBay";
-            this.cbbMaChuyenBay.Size = new System.Drawing.Size(260, 32);
+            this.cbbMaChuyenBay.Size = new System.Drawing.Size(321, 32);
             this.cbbMaChuyenBay.TabIndex = 6;
             // 
             // label7
@@ -176,7 +176,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(71, 76);
+            this.label7.Location = new System.Drawing.Point(203, 150);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 26);
             this.label7.TabIndex = 7;
@@ -185,9 +185,9 @@
             // txbMaChiTietTrungGian
             // 
             this.txbMaChiTietTrungGian.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaChiTietTrungGian.Location = new System.Drawing.Point(242, 73);
+            this.txbMaChiTietTrungGian.Location = new System.Drawing.Point(374, 147);
             this.txbMaChiTietTrungGian.Name = "txbMaChiTietTrungGian";
-            this.txbMaChiTietTrungGian.Size = new System.Drawing.Size(260, 32);
+            this.txbMaChiTietTrungGian.Size = new System.Drawing.Size(321, 32);
             this.txbMaChiTietTrungGian.TabIndex = 8;
             // 
             // frmThemSanBayTrungGian
@@ -196,7 +196,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BanVeMayBay.Properties.Resources._0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(639, 532);
+            this.ClientSize = new System.Drawing.Size(907, 703);
             this.Controls.Add(this.txbMaChiTietTrungGian);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbbMaChuyenBay);
@@ -212,6 +212,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThemSanBayTrungGian";
             this.Text = "Thêm Sân Bay Trung Gian";
             this.Load += new System.EventHandler(this.frmThemSanBayTrungGian_Load);
