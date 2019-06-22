@@ -1,0 +1,24 @@
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDTO\bin\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDTO\bin\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDTO\obj\Debug\QLVMBDTO.csprojAssemblyReference.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDTO\obj\Debug\QLVMBDTO.csproj.CoreCompileInputs.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDTO\obj\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\Air ticket\QLVMBDTO\obj\Debug\QLVMBDTO.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDTO\bin\Debug\QLVMBDTO.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDTO\bin\Debug\QLVMBDTO.pdb
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.csprojAssemblyReference.cache
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.csproj.CoreCompileInputs.cache
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.dll
+E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDTO\bin\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDTO\bin\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.csprojAssemblyReference.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.csproj.CoreCompileInputs.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDTO\bin\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDTO\bin\Debug\QLVMBDTO.pdb
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.csprojAssemblyReference.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.csproj.CoreCompileInputs.cache
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.dll
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\Test\AirplaneTicket\QLVMBDTO\obj\Debug\QLVMBDTO.pdb
