@@ -38,5 +38,10 @@ namespace QLVMBBUS
             return vbmDAL.select();
         }
 
+        public List<CBDTO> search(string valueDen, string valueDi)
+        {
+            return vbmDAL.search(valueDen, valueDi);
+        }
+
     }
 }

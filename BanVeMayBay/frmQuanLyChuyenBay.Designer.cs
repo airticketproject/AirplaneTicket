@@ -48,7 +48,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.btnThoat = new System.Windows.Forms.Button();
+=======
+            this.btnTimKiem = new System.Windows.Forms.Button();
+>>>>>>> branchC
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsChuyenBay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +66,11 @@
             this.dtgvDsChuyenBay.Location = new System.Drawing.Point(3, 469);
             this.dtgvDsChuyenBay.Name = "dtgvDsChuyenBay";
             this.dtgvDsChuyenBay.RowTemplate.Height = 24;
+<<<<<<< HEAD
             this.dtgvDsChuyenBay.Size = new System.Drawing.Size(1169, 330);
+=======
+            this.dtgvDsChuyenBay.Size = new System.Drawing.Size(894, 308);
+>>>>>>> branchC
             this.dtgvDsChuyenBay.TabIndex = 0;
             this.dtgvDsChuyenBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsChuyenBay_CellClick);
             // 
@@ -75,6 +83,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cbbSanBayDen);
             this.groupBox1.Controls.Add(this.cbbSanBayDi);
+            this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.btnXoaChuyenBay);
             this.groupBox1.Controls.Add(this.btnCapNhatChuyenBay);
             this.groupBox1.Controls.Add(this.label7);
@@ -95,7 +104,11 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
+<<<<<<< HEAD
             this.groupBox1.Size = new System.Drawing.Size(1175, 802);
+=======
+            this.groupBox1.Size = new System.Drawing.Size(900, 586);
+>>>>>>> branchC
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cập nhật chuyến bay";
@@ -135,9 +148,13 @@
             // 
             // btnXoaChuyenBay
             // 
+<<<<<<< HEAD
             this.btnXoaChuyenBay.Location = new System.Drawing.Point(689, 308);
+=======
+            this.btnXoaChuyenBay.Location = new System.Drawing.Point(636, 185);
+>>>>>>> branchC
             this.btnXoaChuyenBay.Name = "btnXoaChuyenBay";
-            this.btnXoaChuyenBay.Size = new System.Drawing.Size(152, 55);
+            this.btnXoaChuyenBay.Size = new System.Drawing.Size(113, 55);
             this.btnXoaChuyenBay.TabIndex = 18;
             this.btnXoaChuyenBay.Text = "Xoá";
             this.btnXoaChuyenBay.UseVisualStyleBackColor = true;
@@ -147,7 +164,7 @@
             // 
             this.btnCapNhatChuyenBay.Location = new System.Drawing.Point(482, 308);
             this.btnCapNhatChuyenBay.Name = "btnCapNhatChuyenBay";
-            this.btnCapNhatChuyenBay.Size = new System.Drawing.Size(152, 55);
+            this.btnCapNhatChuyenBay.Size = new System.Drawing.Size(113, 55);
             this.btnCapNhatChuyenBay.TabIndex = 17;
             this.btnCapNhatChuyenBay.Text = "Cập nhật";
             this.btnCapNhatChuyenBay.UseVisualStyleBackColor = true;
@@ -253,6 +270,7 @@
             this.txbMaChuyenBay.Size = new System.Drawing.Size(294, 32);
             this.txbMaChuyenBay.TabIndex = 1;
             // 
+<<<<<<< HEAD
             // btnThoat
             // 
             this.btnThoat.Location = new System.Drawing.Point(907, 308);
@@ -262,6 +280,17 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+=======
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(771, 185);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(117, 55);
+            this.btnTimKiem.TabIndex = 18;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+>>>>>>> branchC
             // 
             // frmQuanLyChuyenBay
             // 
@@ -269,7 +298,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BanVeMayBay.Properties.Resources._0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1175, 802);
+=======
+            this.ClientSize = new System.Drawing.Size(900, 586);
+>>>>>>> branchC
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -307,6 +340,10 @@
         private System.Windows.Forms.ComboBox cbbSanBayDi;
         private System.Windows.Forms.TextBox txbDonGiaVe;
         private System.Windows.Forms.Label label8;
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnThoat;
+=======
+        private System.Windows.Forms.Button btnTimKiem;
+>>>>>>> branchC
     }
 }
