@@ -23,8 +23,8 @@ namespace QLVMBDAL
         public bool ThemChiTietSanBay(CTDTO ct)
         {
             string query = string.Empty;
-            query += "INSERT INTO [ChiTietSanBayTrungGian] ([MaChiTietSanBayTrungGian], [MaChuyenBay], [MaSanBay], [ThoiGianDung], [GhiChu]) ";
-            query += "VALUES (@MaChiTietSanBayTrungGian,@MaChuyenBay,@MaSanBay,@ThoiGianDung,@GhiChu)";
+            query += "INSERT INTO [ChiTietSanBayTrungGian] ([MaChuyenBay], [MaSanBay], [ThoiGianDung], [GhiChu]) ";
+            query += "VALUES (@MaChuyenBay,@MaSanBay,@ThoiGianDung,@GhiChu)";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -32,7 +32,6 @@ namespace QLVMBDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaChiTietSanBayTrungGian", ct.MaChiTietSanBayTrungGian);
                     cmd.Parameters.AddWithValue("@MaChuyenBay", ct.MaChuyenBay);
                     cmd.Parameters.AddWithValue("@MaSanBay", ct.MaSanBay);
                     cmd.Parameters.AddWithValue("@ThoiGianDung", ct.TGDung);
@@ -145,7 +144,6 @@ namespace QLVMBDAL
 
                                 cttg.MaChuyenBay = reader["MaChuyenBay"].ToString();
                                 cttg.MaSanBay = reader["MaSanBay"].ToString();
-                                cttg.MaChiTietSanBayTrungGian = reader["MaChiTietSanBayTrungGian"].ToString();
                                 cttg.TGDung = int.Parse(reader["ThoiGianDung"].ToString());
                                 cttg.GhiChu = reader["GhiChu"].ToString();
 

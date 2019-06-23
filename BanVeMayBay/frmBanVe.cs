@@ -175,10 +175,10 @@ namespace BanVeMayBay
             //2. Kiểm tra data hợp lệ or not
 
             //1. Map data from GUI
+            vbDTO.MaVe = txbMaVe.Text.ToString();
             vbDTO.MaChuyenBay = MaChuyenBay_comboBox.SelectedValue.ToString();
             vbDTO.MaHangVe = HangVe_comboBox.SelectedValue.ToString();
             vbDTO.MaHanhKhach = MaHanhKhach_comboBox.SelectedValue.ToString();
-            vbDTO.MaVe = RandomString(8, true);
 
             //3. Thêm vào DB
             bool kq = vbBUS.ThemVeBay(vbDTO);

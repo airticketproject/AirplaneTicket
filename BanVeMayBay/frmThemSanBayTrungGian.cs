@@ -48,12 +48,6 @@ namespace BanVeMayBay
                 txbThoiGianDung.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(txbMaChiTietTrungGian.Text))
-            {
-                MessageBox.Show("Bạn chưa nhập mã chi tiết!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbMaChiTietTrungGian.Focus();
-                return false;
-            }
             return true;
         }
 
@@ -165,7 +159,6 @@ namespace BanVeMayBay
             if (checkNullData())
             {
                 //1. Map data from GUI
-                ctDTO.MaChiTietSanBayTrungGian = txbMaChiTietTrungGian.Text;
                 ctDTO.MaChuyenBay = cbbMaSanBay.SelectedValue.ToString();
                 ctDTO.MaSanBay = cbbMaSanBay.SelectedValue.ToString();
                 ctDTO.TGDung = int.Parse(txbThoiGianDung.Text);

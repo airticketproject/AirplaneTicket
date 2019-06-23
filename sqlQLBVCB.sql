@@ -30,10 +30,10 @@ CMND nvarchar(9),
 DienThoai nvarchar(11)
 )
 
+
 create table DanhSachChuyenBay
 (
-MaDanhSach nvarchar(5) not null primary key,
-MaChuyenBay nvarchar(5) not null,
+MaChuyenBay nvarchar(5) not null primary key,
 SoGheTrong int,
 SoGheDaDat int
 )
@@ -65,11 +65,11 @@ constraint PK_Ve primary key (MaVe,MaChuyenBay)
 
 create table ChiTietSanBayTrungGian
 (
-MaChiTietSanBayTrungGian nvarchar(5) not null primary key,
 MaChuyenBay nvarchar(5) not null,
 MaSanBay nvarchar(5) not null,
 ThoiGianDung int,
 GhiChu nvarchar(30)
+constraint FK_ChiTietSanBayTrungGian primary key (MaChuyenBay,MaSanBay)
 )
 
 create table ThamSo
@@ -107,15 +107,15 @@ add constraint FK_LichChuyenBay_SanBayDi foreign key (SanBayDi) references SanBa
 	constraint FK_LichChuyenBay_SanBayDen foreign key (SanBayDen) references SanBay(MaSanBay)
 
 alter table DanhSachChuyenBay
-add constraint FK_DanhSachChuyenBay_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay)
+add constraint FK_DanhSachChuyenBay_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade
 
 alter table PhieuDatVe
-add constraint FK_PhieuDatVe_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay),
+add constraint FK_PhieuDatVe_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade,
 	constraint FK_PhieuDatVe_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach),
 	constraint FK_PhieuDatVe_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe)
 
 alter table Ve
-add constraint FK_Ve_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay),
+add constraint FK_Ve_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade,
 	constraint FK_Ve_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach),
 	constraint FK_Ve_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe)
 
@@ -213,56 +213,6 @@ as
 		rollback tran
 	end
 
-/*Trigger Chi ban ve khi con cho*/
-
-create trigger tr_BanVe
-on Ve
-for insert
-as
-	declare @i nvarchar(5)
-	declare @controng int
-	select @i=MaChuyenBay from inserted
-	select @controng=SoGheTrong from DanhSachChuyenBay
-	where @i=MaChuyenBay
-	if (@controng<=0)
-	begin
-		print 'Da het ve'
-		rollback tran
-	end
-	else
-	begin
-		update DanhSachChuyenBay
-		set SoGheTrong=SoGheTrong-1
-		where MaChuyenBay=@i
-		update DanhSachChuyenBay
-		set SoGheDaDat=SoGheDaDat+1
-		where MaChuyenBay=@i
-	end
-
-create trigger tr_BanVe_Update
-on Ve
-for update
-as
-	declare @i nvarchar(5)
-	declare @controng int
-	select @i=MaChuyenBay from inserted
-	select @controng=SoGheTrong from DanhSachChuyenBay
-	where @i=MaChuyenBay
-	if (@controng<=0)
-	begin
-		print 'Da het ve'
-		rollback tran
-	end
-	else
-	begin
-		update DanhSachChuyenBay
-		set SoGheTrong=SoGheTrong-1
-		where MaChuyenBay=@i
-		update DanhSachChuyenBay
-		set SoGheDaDat=SoGheDaDat+1
-		where MaChuyenBay=@i
-	end
-
 
 /*Update 11/6*/
 
@@ -312,8 +262,8 @@ INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('5',N'a')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('6',N'b')
 INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
-VALUES ('2','2','1','2019/06/21', 40, 1, 1, 100000)
-
+VALUES ('2','2','1','2019/06/29', 40, 1, 1, 100000)
+insert into ThamSo values (10,2,100,10,24,24)
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
 SELECT * FROM ChiTietSanBayTrungGian
 
@@ -367,3 +317,83 @@ as
 		print 'Thoi gian dung khong hop le'
 		rollback tran
 	end
+
+create trigger tr_DanhSachChuyenBay_insert
+on LichChuyenBay
+for insert
+as
+begin
+	declare @ma nvarchar(5)
+	declare @ghe int
+	select @ma=MaChuyenBay from inserted
+	select @ghe=SoLuongGheHang1+SoLuongGheHang2 from inserted
+	insert into DanhSachChuyenBay values (@ma,@ghe,0)
+end
+
+create trigger tr_DanhSachChuyenBay_update
+on LichChuyenBay
+for insert
+as
+begin
+	declare @ma nvarchar(5)
+	declare @ghe int
+	select @ma=MaChuyenBay from inserted
+	select @ghe=SoLuongGheHang1+SoLuongGheHang2 from inserted
+	update DanhSachChuyenBay
+	set SoGheTrong=@ghe, SoGheDaDat=0
+	where MaChuyenBay=@ma
+end
+
+
+/*Trigger chi ban ve khi con cho*/
+create trigger tr_BanVe
+on Ve
+for insert
+as
+	declare @i nvarchar(5)
+	declare @controng int
+	select @i=MaChuyenBay from inserted
+	select @controng=SoGheTrong from DanhSachChuyenBay
+	where @i=MaChuyenBay
+	if (@controng<=0)
+	begin
+		print 'Da het ve'
+		rollback tran
+	end
+	else
+	begin
+		update DanhSachChuyenBay
+		set SoGheTrong=SoGheTrong-1
+		where MaChuyenBay=@i
+		update DanhSachChuyenBay
+		set SoGheDaDat=SoGheDaDat+1
+		where MaChuyenBay=@i
+	end
+
+
+
+create trigger tr_BanVe_Update
+on Ve
+for update
+as
+	declare @i nvarchar(5)
+	declare @controng int
+	select @i=MaChuyenBay from inserted
+	select @controng=SoGheTrong from DanhSachChuyenBay
+	where @i=MaChuyenBay
+	if (@controng<=0)
+	begin
+		print 'Da het ve'
+		rollback tran
+	end
+	else
+	begin
+		update DanhSachChuyenBay
+		set SoGheTrong=SoGheTrong-1
+		where MaChuyenBay=@i
+		update DanhSachChuyenBay
+		set SoGheDaDat=SoGheDaDat+1
+		where MaChuyenBay=@i
+	end
+
+	

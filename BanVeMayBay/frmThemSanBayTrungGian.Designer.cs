@@ -40,8 +40,6 @@
             this.buttonThem = new System.Windows.Forms.Button();
             this.buttonThoat = new System.Windows.Forms.Button();
             this.cbbMaChuyenBay = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txbMaChiTietTrungGian = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(203, 201);
+            this.label2.Location = new System.Drawing.Point(203, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 26);
             this.label2.TabIndex = 0;
@@ -71,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(203, 249);
+            this.label3.Location = new System.Drawing.Point(203, 189);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 26);
             this.label3.TabIndex = 0;
@@ -134,7 +132,7 @@
             this.cbbMaSanBay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaSanBay.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbMaSanBay.FormattingEnabled = true;
-            this.cbbMaSanBay.Location = new System.Drawing.Point(374, 198);
+            this.cbbMaSanBay.Location = new System.Drawing.Point(374, 241);
             this.cbbMaSanBay.Name = "cbbMaSanBay";
             this.cbbMaSanBay.Size = new System.Drawing.Size(321, 32);
             this.cbbMaSanBay.TabIndex = 0;
@@ -166,29 +164,10 @@
             this.cbbMaChuyenBay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaChuyenBay.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbMaChuyenBay.FormattingEnabled = true;
-            this.cbbMaChuyenBay.Location = new System.Drawing.Point(374, 246);
+            this.cbbMaChuyenBay.Location = new System.Drawing.Point(374, 186);
             this.cbbMaChuyenBay.Name = "cbbMaChuyenBay";
             this.cbbMaChuyenBay.Size = new System.Drawing.Size(321, 32);
             this.cbbMaChuyenBay.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(203, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 26);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Mã Chi Tiết";
-            // 
-            // txbMaChiTietTrungGian
-            // 
-            this.txbMaChiTietTrungGian.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaChiTietTrungGian.Location = new System.Drawing.Point(374, 147);
-            this.txbMaChiTietTrungGian.Name = "txbMaChiTietTrungGian";
-            this.txbMaChiTietTrungGian.Size = new System.Drawing.Size(321, 32);
-            this.txbMaChiTietTrungGian.TabIndex = 8;
             // 
             // frmThemSanBayTrungGian
             // 
@@ -197,8 +176,6 @@
             this.BackgroundImage = global::BanVeMayBay.Properties.Resources._0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(907, 703);
-            this.Controls.Add(this.txbMaChiTietTrungGian);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.cbbMaChuyenBay);
             this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.buttonThem);
@@ -235,7 +212,5 @@
         private System.Windows.Forms.Button buttonThem;
         private System.Windows.Forms.Button buttonThoat;
         private System.Windows.Forms.ComboBox cbbMaChuyenBay;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txbMaChiTietTrungGian;
     }
 }
