@@ -12,6 +12,7 @@ namespace BanVeMayBay
 {
     public partial class frmMain : Form
     {
+        private Form frmUser;
         public frmMain()
         {
             InitializeComponent();
@@ -20,78 +21,141 @@ namespace BanVeMayBay
         //Chuyến bay
         private void thêmChuyếnBayToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmThemChuyenBay = new frmThemChuyenBay();
-            frmThemChuyenBay.MdiParent = this;
-            frmThemChuyenBay.Dock = DockStyle.Fill;
-            frmThemChuyenBay.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmThemChuyenBay();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void danhSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmQuanLyChuyenBay = new frmQuanLyChuyenBay();
-            frmQuanLyChuyenBay.MdiParent = this;
-            frmQuanLyChuyenBay.Dock = DockStyle.Fill;
-            frmQuanLyChuyenBay.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmQuanLyChuyenBay();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
 
         //Khách hàng
         private void thêmKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmThemKhachHang = new frmThemKhachHang();
-            frmThemKhachHang.MdiParent = this;
-            frmThemKhachHang.Dock = DockStyle.Fill;
-            frmThemKhachHang.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmThemKhachHang();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void danhSáchKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmQuanLyKhachHang = new frmQuanLyKhachHang();
-            frmQuanLyKhachHang.MdiParent = this;
-            frmQuanLyKhachHang.Dock = DockStyle.Fill;
-            frmQuanLyKhachHang.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmQuanLyKhachHang();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-
 
         //Sân bay
         private void danhSáchSânBayToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmQuanLySanBay = new frmQuanLySanBay();
-            frmQuanLySanBay.MdiParent = this;
-            frmQuanLySanBay.Dock = DockStyle.Fill;
-            frmQuanLySanBay.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmQuanLySanBay();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void thêmSânBayToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmThemSanBay= new frmThemSanBay();
-            frmThemSanBay.MdiParent = this;
-            frmThemSanBay.Dock = DockStyle.Fill;
-            frmThemSanBay.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmThemSanBay();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void đặtVéToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form frmDatVe = new frmDatVe();
-            frmDatVe.MdiParent = this;
-            frmDatVe.Dock = DockStyle.Left;
-            frmDatVe.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmDatVe();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void bánVéToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form frmBanVe = new frmBanVe();
-            frmBanVe.MdiParent = this;
-            frmBanVe.Dock = DockStyle.Left;
-            frmBanVe.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmBanVe();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
 
         private void hạngVéToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmHangVe = new frmThemHangVe();
-            frmHangVe.MdiParent = this;
-            frmHangVe.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmThemHangVe();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void đóngỨngDụngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,9 +165,17 @@ namespace BanVeMayBay
 
         private void thayĐổiThamSốToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmThamSo = new frmThamSo();
-            frmThamSo.MdiParent = this;
-            frmThamSo.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmThamSo();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,32 +190,62 @@ namespace BanVeMayBay
 
         private void báoCáoThángToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmBaoCaoDoanhThuThang = new frmBaoCaoDoanhThuThang();
-            frmBaoCaoDoanhThuThang.MdiParent = this;
-            frmBaoCaoDoanhThuThang.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmBaoCaoDoanhThuThang();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void báoCáoNămToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmBaoCaoDoanhThuNam = new frmBaoCaoDoanhThuNam();
-            frmBaoCaoDoanhThuNam.MdiParent = this;
-            frmBaoCaoDoanhThuNam.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmBaoCaoDoanhThuNam();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void thêmHạngVéToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmThemHangVe = new frmThemHangVe();
-            frmThemHangVe.MdiParent = this;
-            frmThemHangVe.Dock = DockStyle.Fill;
-            frmThemHangVe.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmThemHangVe();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void danhSáchHạngVéToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmQuanLyHangVe = new frmQuanLyHangVe();
-            frmQuanLyHangVe.MdiParent = this;
-            frmQuanLyHangVe.Dock = DockStyle.Fill;
-            frmQuanLyHangVe.Show();
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmQuanLyHangVe();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,5 +255,6 @@ namespace BanVeMayBay
             frmTimKiem_DanhSachChuyenBay.Dock = DockStyle.Fill;
             frmTimKiem_DanhSachChuyenBay.Show();
         }
+    
     }
 }
