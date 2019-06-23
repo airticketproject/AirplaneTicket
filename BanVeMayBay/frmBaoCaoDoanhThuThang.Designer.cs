@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Thang_label = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Thang_comboBox = new System.Windows.Forms.ComboBox();
             this.Nam_label = new System.Windows.Forms.Label();
             this.Nam_comboBox = new System.Windows.Forms.ComboBox();
@@ -40,32 +41,39 @@
             this.TiLe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Thang_label
             // 
             this.Thang_label.AutoSize = true;
-            this.Thang_label.Location = new System.Drawing.Point(189, 78);
+            this.Thang_label.Location = new System.Drawing.Point(12, 75);
             this.Thang_label.Name = "Thang_label";
             this.Thang_label.Size = new System.Drawing.Size(49, 17);
             this.Thang_label.TabIndex = 0;
             this.Thang_label.Text = "Tháng";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(213, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "BÁO CÁO DOANH THU";
+            // 
             // Thang_comboBox
             // 
             this.Thang_comboBox.FormattingEnabled = true;
-            this.Thang_comboBox.Location = new System.Drawing.Point(279, 75);
+            this.Thang_comboBox.Location = new System.Drawing.Point(133, 72);
             this.Thang_comboBox.Name = "Thang_comboBox";
-            this.Thang_comboBox.Size = new System.Drawing.Size(196, 24);
+            this.Thang_comboBox.Size = new System.Drawing.Size(90, 24);
             this.Thang_comboBox.TabIndex = 2;
             // 
             // Nam_label
             // 
             this.Nam_label.AutoSize = true;
-            this.Nam_label.Location = new System.Drawing.Point(189, 124);
+            this.Nam_label.Location = new System.Drawing.Point(333, 75);
             this.Nam_label.Name = "Nam_label";
             this.Nam_label.Size = new System.Drawing.Size(37, 17);
             this.Nam_label.TabIndex = 0;
@@ -74,16 +82,13 @@
             // Nam_comboBox
             // 
             this.Nam_comboBox.FormattingEnabled = true;
-            this.Nam_comboBox.Location = new System.Drawing.Point(279, 124);
+            this.Nam_comboBox.Location = new System.Drawing.Point(444, 72);
             this.Nam_comboBox.Name = "Nam_comboBox";
-            this.Nam_comboBox.Size = new System.Drawing.Size(196, 24);
+            this.Nam_comboBox.Size = new System.Drawing.Size(90, 24);
             this.Nam_comboBox.TabIndex = 2;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -91,15 +96,10 @@
             this.SoVe,
             this.DoanhThu,
             this.TiLe});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 409);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 188);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.ShowCellErrors = false;
-            this.dataGridView1.ShowCellToolTips = false;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1145, 347);
+            this.dataGridView1.Size = new System.Drawing.Size(551, 230);
             this.dataGridView1.TabIndex = 3;
             // 
             // STT
@@ -129,7 +129,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(750, 210);
+            this.btnThoat.Location = new System.Drawing.Point(357, 126);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 38);
             this.btnThoat.TabIndex = 5;
@@ -139,48 +139,38 @@
             // 
             // btnBaoCao
             // 
-            this.btnBaoCao.Location = new System.Drawing.Point(570, 210);
+            this.btnBaoCao.Location = new System.Drawing.Point(102, 126);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(110, 38);
             this.btnBaoCao.TabIndex = 6;
-            this.btnBaoCao.Text = "Xem";
+            this.btnBaoCao.Text = "Báo cáo";
             this.btnBaoCao.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Thang_label);
-            this.groupBox1.Controls.Add(this.btnThoat);
-            this.groupBox1.Controls.Add(this.Nam_label);
-            this.groupBox1.Controls.Add(this.btnBaoCao);
-            this.groupBox1.Controls.Add(this.Thang_comboBox);
-            this.groupBox1.Controls.Add(this.Nam_comboBox);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1145, 409);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Báo cáo doanh thu tháng";
             // 
             // frmBaoCaoDoanhThuThang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 756);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(578, 430);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnBaoCao);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Nam_comboBox);
+            this.Controls.Add(this.Thang_comboBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Nam_label);
+            this.Controls.Add(this.Thang_label);
             this.Name = "frmBaoCaoDoanhThuThang";
             this.Text = "BaoCaoDoanhThuThang";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label Thang_label;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox Thang_comboBox;
         private System.Windows.Forms.Label Nam_label;
         private System.Windows.Forms.ComboBox Nam_comboBox;
@@ -192,6 +182,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TiLe;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnBaoCao;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

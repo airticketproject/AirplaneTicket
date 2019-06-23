@@ -154,7 +154,7 @@ namespace BanVeMayBay
 
         private void buttonThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void buttonThem_Click(object sender, EventArgs e)

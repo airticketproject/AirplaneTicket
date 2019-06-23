@@ -36,7 +36,6 @@
             this.dtgvSanBay = new System.Windows.Forms.DataGridView();
             this.Xoa_button = new System.Windows.Forms.Button();
             this.Sua_button = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanBay)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +43,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Controls.Add(this.txbSuaTenSanBay);
             this.groupBox1.Controls.Add(this.txbSuaMaSanBay);
             this.groupBox1.Controls.Add(this.label2);
@@ -56,30 +54,30 @@
             this.groupBox1.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1090, 718);
+            this.groupBox1.Size = new System.Drawing.Size(836, 577);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sân bay";
             // 
             // txbSuaTenSanBay
             // 
-            this.txbSuaTenSanBay.Location = new System.Drawing.Point(284, 141);
+            this.txbSuaTenSanBay.Location = new System.Drawing.Point(228, 128);
             this.txbSuaTenSanBay.Name = "txbSuaTenSanBay";
-            this.txbSuaTenSanBay.Size = new System.Drawing.Size(250, 32);
+            this.txbSuaTenSanBay.Size = new System.Drawing.Size(206, 32);
             this.txbSuaTenSanBay.TabIndex = 18;
             // 
             // txbSuaMaSanBay
             // 
             this.txbSuaMaSanBay.Enabled = false;
-            this.txbSuaMaSanBay.Location = new System.Drawing.Point(284, 70);
+            this.txbSuaMaSanBay.Location = new System.Drawing.Point(228, 57);
             this.txbSuaMaSanBay.Name = "txbSuaMaSanBay";
-            this.txbSuaMaSanBay.Size = new System.Drawing.Size(250, 32);
+            this.txbSuaMaSanBay.Size = new System.Drawing.Size(206, 32);
             this.txbSuaMaSanBay.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(136, 144);
+            this.label2.Location = new System.Drawing.Point(80, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 26);
             this.label2.TabIndex = 16;
@@ -88,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(136, 73);
+            this.label1.Location = new System.Drawing.Point(80, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 26);
             this.label1.TabIndex = 15;
@@ -105,18 +103,18 @@
             this.dtgvSanBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgvSanBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvSanBay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvSanBay.Location = new System.Drawing.Point(3, 357);
+            this.dtgvSanBay.Location = new System.Drawing.Point(3, 216);
             this.dtgvSanBay.Name = "dtgvSanBay";
             this.dtgvSanBay.RowTemplate.Height = 24;
             this.dtgvSanBay.ShowCellToolTips = false;
             this.dtgvSanBay.ShowEditingIcon = false;
-            this.dtgvSanBay.Size = new System.Drawing.Size(1084, 358);
+            this.dtgvSanBay.Size = new System.Drawing.Size(830, 358);
             this.dtgvSanBay.TabIndex = 0;
             this.dtgvSanBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvSanBay_CellClick);
             // 
             // Xoa_button
             // 
-            this.Xoa_button.Location = new System.Drawing.Point(682, 212);
+            this.Xoa_button.Location = new System.Drawing.Point(675, 86);
             this.Xoa_button.Name = "Xoa_button";
             this.Xoa_button.Size = new System.Drawing.Size(107, 52);
             this.Xoa_button.TabIndex = 14;
@@ -126,7 +124,7 @@
             // 
             // Sua_button
             // 
-            this.Sua_button.Location = new System.Drawing.Point(515, 212);
+            this.Sua_button.Location = new System.Drawing.Point(508, 86);
             this.Sua_button.Name = "Sua_button";
             this.Sua_button.Size = new System.Drawing.Size(104, 52);
             this.Sua_button.TabIndex = 12;
@@ -134,26 +132,15 @@
             this.Sua_button.UseVisualStyleBackColor = true;
             this.Sua_button.Click += new System.EventHandler(this.Sua_button_Click);
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(862, 212);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(107, 52);
-            this.btnThoat.TabIndex = 19;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // frmQuanLySanBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BanVeMayBay.Properties.Resources._0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1090, 718);
+            this.ClientSize = new System.Drawing.Size(836, 577);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLySanBay";
             this.Text = "Quản lý sân bay";
             this.Load += new System.EventHandler(this.frmQuanLySanBay_Load);
@@ -174,6 +161,5 @@
         private System.Windows.Forms.TextBox txbSuaMaSanBay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnThoat;
     }
 }

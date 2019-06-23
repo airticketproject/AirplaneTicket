@@ -21,9 +21,9 @@ namespace BanVeMayBay
         //Chuyến bay
         private void thêmChuyếnBayToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
             {
-                frmUser = new frmThemChuyenBay ();
+                frmUser = new frmThemChuyenBay();
                 frmUser.MdiParent = this;
                 frmUser.Dock = DockStyle.Fill;
                 frmUser.Show();
@@ -247,5 +247,14 @@ namespace BanVeMayBay
                 MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmTimKiem_DanhSachChuyenBay = new frmTimKiem_DanhSachChuyenBay();
+            frmTimKiem_DanhSachChuyenBay.MdiParent = this;
+            frmTimKiem_DanhSachChuyenBay.Dock = DockStyle.Fill;
+            frmTimKiem_DanhSachChuyenBay.Show();
+        }
+    
     }
 }
