@@ -106,6 +106,16 @@ namespace BanVeMayBay
             }
         }
         
+        //Clear input
+        private void ClearInput ()
+        {
+            txbDonGiaVe.Clear();
+            txbMaChuyenBay.Clear();
+            txbSLGheHang1.Clear();
+            txbSLGheHang2.Clear();
+            txbThoiGianBay.Clear();
+        }
+        
         //frm_Load
         private void frmLichChuyenBay_Load(object sender, EventArgs e)
         {
@@ -161,7 +171,10 @@ namespace BanVeMayBay
                 if (kq == false)
                     MessageBox.Show("Thêm Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
+                {
                     MessageBox.Show("Thêm Chuyến bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ClearInput();
+                }
             }
 
         }
@@ -214,7 +227,12 @@ namespace BanVeMayBay
 
         private void thoat_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

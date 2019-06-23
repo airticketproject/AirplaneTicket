@@ -161,7 +161,12 @@ namespace BanVeMayBay
 
         private void Thoat_button_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
         private void Luu_button_Click(object sender, EventArgs e)
         {

@@ -53,22 +53,12 @@ namespace BanVeMayBay
         //Kiểm tra null của textbox
         private bool checkNullData()
         {
-            if (string.IsNullOrEmpty(txbSuaTenKhachHang.Text))
+            if (
+                string.IsNullOrEmpty(txbSuaTenKhachHang.Text) ||
+                string.IsNullOrEmpty(txbSuaCMND.Text) ||
+                string.IsNullOrEmpty(txbSuaSDT.Text)
+                )
             {
-                MessageBox.Show("Bạn chưa nhập tên khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbSuaTenKhachHang.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(txbSuaCMND.Text))
-            {
-                MessageBox.Show("Bạn chưa nhập số CMND khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbSuaCMND.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(txbSuaSDT.Text))
-            {
-                MessageBox.Show("Bạn chưa nhập điện thoại khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbSuaSDT.Focus();
                 return false;
             }
             return true;
@@ -167,6 +157,10 @@ namespace BanVeMayBay
                     MessageBox.Show("Cập nhật khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.loadData_Vao_dtgvDsKhachHang();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

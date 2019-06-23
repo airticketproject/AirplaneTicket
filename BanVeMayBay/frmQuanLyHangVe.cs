@@ -30,22 +30,12 @@ namespace BanVeMayBay
         //Kiểm tra null
         private bool checkNullData()
         {
-            if (string.IsNullOrEmpty(txbMaHangVe.Text))
+            if (
+                string.IsNullOrEmpty(txbMaHangVe.Text) ||
+                string.IsNullOrEmpty(txbTenHangVe.Text) ||
+                string.IsNullOrEmpty(txbTiLeDonGia.Text)
+                )
             {
-                MessageBox.Show("Bạn chưa nhập mã hạng vé!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbMaHangVe.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(txbTenHangVe.Text))
-            {
-                MessageBox.Show("Bạn chưa tên hạng vé!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbTenHangVe.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(txbTiLeDonGia.Text))
-            {
-                MessageBox.Show("Bạn chưa nhập tỉ lệ đơn giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbTiLeDonGia.Focus();
                 return false;
             }
 
@@ -138,20 +128,22 @@ namespace BanVeMayBay
             if (checkNullData())
             {
                 hvDTO.MaHangVe = txbMaHangVe.Text;
-                hvDTO.TenHangVe = txbTenHangVe.Text;
-                hvDTO.TiLeDonGia = float.Parse(txbTiLeDonGia.Text);
+                //3. Thêm vào DBn
+                bool kq = hvBUS.XoaHangVe(hvDTO);
+                if (kq == false)
+                    MessageBox.Show("Xoá Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("Xoá Hạng vé thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.loadData_Vao_dtgvDsHangVe();
+                    this.clearInputText();
+                }
             }
-
-            //3. Thêm vào DBn
-            bool kq = hvBUS.XoaHangVe(hvDTO);
-            if (kq == false)
-                MessageBox.Show("Xoá Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                MessageBox.Show("Xoá Hạng vé thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.loadData_Vao_dtgvDsHangVe();
-                this.clearInputText();
+                MessageBox.Show("Vui lòng chọn thông tin cần xoá", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void btnSuaHangVe_Click(object sender, EventArgs e)
@@ -163,17 +155,21 @@ namespace BanVeMayBay
                 hvDTO.MaHangVe = txbMaHangVe.Text;
                 hvDTO.TenHangVe = txbTenHangVe.Text;
                 hvDTO.TiLeDonGia = float.Parse(txbTiLeDonGia.Text);
+                //3. Thêm vào DBn
+                bool kq = hvBUS.SuaHangVe(hvDTO);
+                if (kq == false)
+                    MessageBox.Show("Cập nhật Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("Cập nhật Hạng vé thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.loadData_Vao_dtgvDsHangVe();
+                }
             }
-
-            //3. Thêm vào DBn
-            bool kq = hvBUS.SuaHangVe(hvDTO);
-            if (kq == false)
-                MessageBox.Show("Cập nhật Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                MessageBox.Show("Cập nhật Hạng vé thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.loadData_Vao_dtgvDsHangVe();
+                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+         
         }
 
         private void txbTenHangVe_KeyPress(object sender, KeyPressEventArgs e)

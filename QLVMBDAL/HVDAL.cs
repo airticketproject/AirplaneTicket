@@ -57,8 +57,7 @@ namespace QLVMBDAL
         public bool XoaHangVe(HVDTO hv)
         {
             string query = string.Empty;
-            query += "DELETE [HangVe] ";
-            query += "WHERE MaHangVe = @MaHangVe";
+            query += "DELETE FROM [HangVe] WHERE MaHangVe = @MaHangVe";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())

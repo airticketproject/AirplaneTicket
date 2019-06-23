@@ -31,6 +31,22 @@ namespace BanVeMayBay
             this.loadSanBayVao_Combobox(cbbSanBayDen);
         }
 
+        //Kiểm tra null của textbox
+        private bool checkNullData()
+        {
+            if (string.IsNullOrEmpty(txbMaChuyenBay.Text) ||
+                string.IsNullOrEmpty(txbSuaThoiGianBay.Text) ||
+                string.IsNullOrEmpty(txbSuaSLGheHang1.Text) ||
+                string.IsNullOrEmpty(txbSuaSLGheHang2.Text) ||
+                string.IsNullOrEmpty(txbDonGiaVe.Text)
+                )
+            {
+                return false;
+            }
+           
+            return true;
+        }
+
         //Load dữ liệu chuyến bay vào danh sách
         private void loadData_Vao_dtgvDsChuyenBay()
         {
@@ -84,18 +100,24 @@ namespace BanVeMayBay
             CBDTO cbDTO = new CBDTO();
 
             //2. Kiểm tra data hợp lệ or not
+            if (checkNullData())
+            {
+                //1. Map data from GUI
+                cbDTO.MaChuyenBay = txbMaChuyenBay.Text;
 
-            //1. Map data from GUI
-            cbDTO.MaChuyenBay = txbMaChuyenBay.Text;
-
-            //3. Thêm vào DB
-            bool kq = cbBUS.XoaChuyenBay(cbDTO);
-            if (kq == false)
-                MessageBox.Show("Xoá Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //3. Thêm vào DB
+                bool kq = cbBUS.XoaChuyenBay(cbDTO);
+                if (kq == false)
+                    MessageBox.Show("Xoá Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("Xoá Chuyến bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.loadData_Vao_dtgvDsChuyenBay();
+                }
+            }
             else
             {
-                MessageBox.Show("Xoá Chuyến bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.loadData_Vao_dtgvDsChuyenBay();
+                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -105,25 +127,31 @@ namespace BanVeMayBay
             CBDTO cbDTO = new CBDTO();
 
             //2. Kiểm tra data hợp lệ or not
+            if(checkNullData())
+            {
+                //1. Map data from GUI
+                cbDTO.MaChuyenBay = txbMaChuyenBay.Text;
+                cbDTO.SanBayDi = cbbSanBayDi.SelectedValue.ToString();
+                cbDTO.SanBayDen = cbbSanBayDen.SelectedValue.ToString();
+                cbDTO.TGKhoiHanh = suaThoiGianKhoiHanh.Value.ToShortDateString();
+                cbDTO.TGBay = int.Parse(txbSuaThoiGianBay.Text);
+                cbDTO.SLGheHang1 = int.Parse(txbSuaSLGheHang1.Text);
+                cbDTO.SLGheHang2 = int.Parse(txbSuaSLGheHang2.Text);
+                cbDTO.GiaVe = int.Parse(txbDonGiaVe.Text);
 
-            //1. Map data from GUI
-            cbDTO.MaChuyenBay = txbMaChuyenBay.Text;
-            cbDTO.SanBayDi = cbbSanBayDi.SelectedValue.ToString();
-            cbDTO.SanBayDen = cbbSanBayDen.SelectedValue.ToString();
-            cbDTO.TGKhoiHanh = suaThoiGianKhoiHanh.Value.ToShortDateString();
-            cbDTO.TGBay = int.Parse(txbSuaThoiGianBay.Text);
-            cbDTO.SLGheHang1 = int.Parse(txbSuaSLGheHang1.Text);
-            cbDTO.SLGheHang2 = int.Parse(txbSuaSLGheHang2.Text);
-            cbDTO.GiaVe = int.Parse(txbDonGiaVe.Text);
-
-            //3. Thêm vào DB
-            bool kq = cbBUS.SuaChuyenBay(cbDTO);
-            if (kq == false)
-                MessageBox.Show("Cập nhật Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //3. Thêm vào DB
+                bool kq = cbBUS.SuaChuyenBay(cbDTO);
+                if (kq == false)
+                    MessageBox.Show("Cập nhật Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("Cập nhật Chuyến bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.loadData_Vao_dtgvDsChuyenBay();
+                }
+            }
             else
             {
-                MessageBox.Show("Cập nhật Chuyến bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.loadData_Vao_dtgvDsChuyenBay();
+                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -147,7 +175,12 @@ namespace BanVeMayBay
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

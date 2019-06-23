@@ -30,16 +30,11 @@ namespace BanVeMayBay
         //Kiểm tra null của textbox
         private bool checkNullData()
         {
-            if (string.IsNullOrEmpty(txbSuaMaSanBay.Text))
+            if (
+                string.IsNullOrEmpty(txbSuaMaSanBay.Text) ||
+                string.IsNullOrEmpty(txbSuaTenSanBay.Text)
+                )
             {
-                MessageBox.Show("Bạn chưa nhập mã sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbSuaMaSanBay.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(txbSuaTenSanBay.Text))
-            {
-                MessageBox.Show("Bạn chưa nhập tên sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbSuaTenSanBay.Focus();
                 return false;
             }
             return true;
@@ -120,6 +115,10 @@ namespace BanVeMayBay
                     MessageBox.Show("Cập nhật Sân bay thành công");
                     this.loadData_Vao_dtgvDsThemSanBay();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn sân bay cần chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -93,6 +93,7 @@
             // txbMaHangVe
             // 
             this.txbMaHangVe.BackColor = System.Drawing.Color.White;
+            this.txbMaHangVe.Enabled = false;
             this.txbMaHangVe.Location = new System.Drawing.Point(307, 77);
             this.txbMaHangVe.Name = "txbMaHangVe";
             this.txbMaHangVe.Size = new System.Drawing.Size(254, 32);

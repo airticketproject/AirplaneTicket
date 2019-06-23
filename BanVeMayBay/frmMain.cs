@@ -180,7 +180,12 @@ namespace BanVeMayBay
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void thôngTinToolStripMenuItem_Click_1(object sender, EventArgs e)

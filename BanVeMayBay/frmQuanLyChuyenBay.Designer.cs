@@ -30,6 +30,7 @@
         {
             this.dtgvDsChuyenBay = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.txbDonGiaVe = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbbSanBayDen = new System.Windows.Forms.ComboBox();
@@ -48,21 +49,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
-            this.btnThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsChuyenBay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvDsChuyenBay
             // 
+            this.dtgvDsChuyenBay.AllowUserToOrderColumns = true;
+            this.dtgvDsChuyenBay.AllowUserToResizeColumns = false;
+            this.dtgvDsChuyenBay.AllowUserToResizeRows = false;
             this.dtgvDsChuyenBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvDsChuyenBay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dtgvDsChuyenBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgvDsChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsChuyenBay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvDsChuyenBay.Location = new System.Drawing.Point(3, 469);
+            this.dtgvDsChuyenBay.Location = new System.Drawing.Point(3, 422);
             this.dtgvDsChuyenBay.Name = "dtgvDsChuyenBay";
             this.dtgvDsChuyenBay.RowTemplate.Height = 24;
-            this.dtgvDsChuyenBay.Size = new System.Drawing.Size(1169, 330);
+            this.dtgvDsChuyenBay.ShowCellToolTips = false;
+            this.dtgvDsChuyenBay.ShowEditingIcon = false;
+            this.dtgvDsChuyenBay.Size = new System.Drawing.Size(1169, 377);
             this.dtgvDsChuyenBay.TabIndex = 0;
             this.dtgvDsChuyenBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsChuyenBay_CellClick);
             // 
@@ -99,6 +105,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cập nhật chuyến bay";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(907, 308);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(152, 55);
+            this.btnThoat.TabIndex = 23;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txbDonGiaVe
             // 
@@ -187,6 +203,7 @@
             // 
             // suaThoiGianKhoiHanh
             // 
+            this.suaThoiGianKhoiHanh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.suaThoiGianKhoiHanh.Location = new System.Drawing.Point(252, 192);
             this.suaThoiGianKhoiHanh.Name = "suaThoiGianKhoiHanh";
             this.suaThoiGianKhoiHanh.Size = new System.Drawing.Size(294, 32);
@@ -252,16 +269,6 @@
             this.txbMaChuyenBay.Name = "txbMaChuyenBay";
             this.txbMaChuyenBay.Size = new System.Drawing.Size(294, 32);
             this.txbMaChuyenBay.TabIndex = 1;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(907, 308);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(152, 55);
-            this.btnThoat.TabIndex = 23;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmQuanLyChuyenBay
             // 

@@ -315,9 +315,12 @@ INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBa
 VALUES ('2','2','1','2019/06/21', 40, 1, 1, 100000)
 
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
-SELECT * FROM SanBay
+SELECT * FROM ChiTietSanBayTrungGian
 
-SELECT * FROM HangVe
+select MaSanBay
+from ChiTietSanBayTrungGian
+Where MaChuyenBay = '2';
+
 INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('1','Thuong',1) /*hang thuong co gia ve = 1*gia ve*/
 INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('2','VIP',1.05) /*hang vip co gia ve = 1.05*gia ve*/
 /*UPDATE HangVe set GiaTien = 10000 where MaHangVe = '1'*/

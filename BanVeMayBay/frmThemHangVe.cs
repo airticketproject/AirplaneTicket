@@ -26,10 +26,7 @@ namespace BanVeMayBay
             this.loadData_Vao_dtgvDsHangVe();
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+   
 
         //Kiểm tra null
         private bool checkNullData()
@@ -153,7 +150,15 @@ namespace BanVeMayBay
             }
 
         }
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
 
         private void txbMaHangVe_KeyPress(object sender, KeyPressEventArgs e)
         {
