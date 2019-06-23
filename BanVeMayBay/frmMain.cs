@@ -145,5 +145,13 @@ namespace BanVeMayBay
             frmQuanLyHangVe.Dock = DockStyle.Fill;
             frmQuanLyHangVe.Show();
         }
+
+        private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmTimKiem_DanhSachChuyenBay = new frmTimKiem_DanhSachChuyenBay();
+            frmTimKiem_DanhSachChuyenBay.MdiParent = this;
+            frmTimKiem_DanhSachChuyenBay.Dock = DockStyle.Fill;
+            frmTimKiem_DanhSachChuyenBay.Show();
+        }
     }
 }
