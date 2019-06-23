@@ -155,7 +155,7 @@ namespace BanVeMayBay
 
         private void Thoat_button_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void ThemHanhKhach_button_Click(object sender, EventArgs e)
