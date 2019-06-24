@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.txbSuaTenSanBay = new System.Windows.Forms.TextBox();
             this.txbSuaMaSanBay = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
             this.dtgvSanBay = new System.Windows.Forms.DataGridView();
             this.Xoa_button = new System.Windows.Forms.Button();
             this.Sua_button = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanBay)).BeginInit();
             this.SuspendLayout();
@@ -61,12 +61,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sân bay";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(862, 212);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(107, 52);
+            this.btnThoat.TabIndex = 4;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // txbSuaTenSanBay
             // 
             this.txbSuaTenSanBay.Location = new System.Drawing.Point(284, 141);
             this.txbSuaTenSanBay.Name = "txbSuaTenSanBay";
             this.txbSuaTenSanBay.Size = new System.Drawing.Size(250, 32);
-            this.txbSuaTenSanBay.TabIndex = 18;
+            this.txbSuaTenSanBay.TabIndex = 1;
             // 
             // txbSuaMaSanBay
             // 
@@ -74,7 +84,7 @@
             this.txbSuaMaSanBay.Location = new System.Drawing.Point(284, 70);
             this.txbSuaMaSanBay.Name = "txbSuaMaSanBay";
             this.txbSuaMaSanBay.Size = new System.Drawing.Size(250, 32);
-            this.txbSuaMaSanBay.TabIndex = 17;
+            this.txbSuaMaSanBay.TabIndex = 0;
             // 
             // label2
             // 
@@ -119,30 +129,20 @@
             this.Xoa_button.Location = new System.Drawing.Point(682, 212);
             this.Xoa_button.Name = "Xoa_button";
             this.Xoa_button.Size = new System.Drawing.Size(107, 52);
-            this.Xoa_button.TabIndex = 14;
+            this.Xoa_button.TabIndex = 3;
             this.Xoa_button.Text = "Xóa";
             this.Xoa_button.UseVisualStyleBackColor = true;
             this.Xoa_button.Click += new System.EventHandler(this.Xoa_button_Click);
             // 
             // Sua_button
             // 
-            this.Sua_button.Location = new System.Drawing.Point(515, 212);
+            this.Sua_button.Location = new System.Drawing.Point(468, 212);
             this.Sua_button.Name = "Sua_button";
-            this.Sua_button.Size = new System.Drawing.Size(104, 52);
-            this.Sua_button.TabIndex = 12;
-            this.Sua_button.Text = "Sửa";
+            this.Sua_button.Size = new System.Drawing.Size(134, 52);
+            this.Sua_button.TabIndex = 2;
+            this.Sua_button.Text = "Cập nhật";
             this.Sua_button.UseVisualStyleBackColor = true;
             this.Sua_button.Click += new System.EventHandler(this.Sua_button_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(862, 212);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(107, 52);
-            this.btnThoat.TabIndex = 19;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmQuanLySanBay
             // 

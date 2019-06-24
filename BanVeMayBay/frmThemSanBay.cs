@@ -43,7 +43,15 @@ namespace BanVeMayBay
             }
             return true;
         }
+        
+        //Clear input
+        private void ClearInput ()
+        {
+            txbMaSanBay.Clear();
+            txbTenSanBay.Clear();
+        }
 
+        //Load danh sách sân bay sao dtgv
         private void loadData_Vao_dtgvDsThemSanBay()
         {
             List<SBDTO> listSanBay = sbBUS.select();
@@ -61,6 +69,7 @@ namespace BanVeMayBay
             dtgvDsThemSanBay.AllowUserToResizeColumns = false;
             dtgvDsThemSanBay.AllowUserToResizeRows = false;
             dtgvDsThemSanBay.DataSource = listSanBay;
+            dtgvDsThemSanBay.Columns["Error"].Visible = false;
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsThemSanBay.DataSource];
             myCurrencyManager.Refresh();
@@ -80,10 +89,12 @@ namespace BanVeMayBay
                 //Them vao DTB
                 bool kq = sbBUS.ThemSanBay(sbDTO);
                 if (kq == false)
-                    MessageBox.Show("Thêm sân bay thất bại. Vui lòng kiểm tra lại dũ liệu");
+                    MessageBox.Show("Thêm sân bay thất bại. Vui lòng kiểm tra lại dữ liệu! \n", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 else
                 {
-                    MessageBox.Show("Thêm sân bay thành công");
+                    MessageBox.Show("Thêm sân bay thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ClearInput();
                     this.loadData_Vao_dtgvDsThemSanBay();
                 }
             }

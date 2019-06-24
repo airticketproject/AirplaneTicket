@@ -46,6 +46,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        kh.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -79,6 +80,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        kh.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -107,6 +109,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        kh.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }

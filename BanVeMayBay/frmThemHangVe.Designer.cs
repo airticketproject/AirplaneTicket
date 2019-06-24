@@ -65,7 +65,7 @@
             this.txbMaHangVe.Location = new System.Drawing.Point(442, 56);
             this.txbMaHangVe.Name = "txbMaHangVe";
             this.txbMaHangVe.Size = new System.Drawing.Size(248, 32);
-            this.txbMaHangVe.TabIndex = 2;
+            this.txbMaHangVe.TabIndex = 0;
             this.txbMaHangVe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMaHangVe_KeyPress);
             // 
             // txbTenHangVe
@@ -73,7 +73,7 @@
             this.txbTenHangVe.Location = new System.Drawing.Point(442, 114);
             this.txbTenHangVe.Name = "txbTenHangVe";
             this.txbTenHangVe.Size = new System.Drawing.Size(248, 32);
-            this.txbTenHangVe.TabIndex = 2;
+            this.txbTenHangVe.TabIndex = 1;
             this.txbTenHangVe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTenHangVe_KeyPress);
             // 
             // label4
@@ -108,18 +108,30 @@
             this.btnThoat.Location = new System.Drawing.Point(796, 263);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(119, 56);
-            this.btnThoat.TabIndex = 3;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // dtgvDsHangVe
             // 
-            this.dtgvDsHangVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDsHangVe.AllowUserToAddRows = false;
+            this.dtgvDsHangVe.AllowUserToDeleteRows = false;
+            this.dtgvDsHangVe.AllowUserToResizeColumns = false;
+            this.dtgvDsHangVe.AllowUserToResizeRows = false;
+            this.dtgvDsHangVe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvDsHangVe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsHangVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsHangVe.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsHangVe.Location = new System.Drawing.Point(3, 389);
             this.dtgvDsHangVe.Name = "dtgvDsHangVe";
+            this.dtgvDsHangVe.RowHeadersVisible = false;
+            this.dtgvDsHangVe.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvDsHangVe.RowTemplate.Height = 24;
+            this.dtgvDsHangVe.ShowCellErrors = false;
+            this.dtgvDsHangVe.ShowCellToolTips = false;
+            this.dtgvDsHangVe.ShowEditingIcon = false;
+            this.dtgvDsHangVe.ShowRowErrors = false;
             this.dtgvDsHangVe.Size = new System.Drawing.Size(1157, 345);
             this.dtgvDsHangVe.TabIndex = 4;
             // 

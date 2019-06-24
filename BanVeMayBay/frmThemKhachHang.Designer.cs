@@ -72,7 +72,7 @@
             this.btn_Thoat.Location = new System.Drawing.Point(809, 277);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(125, 53);
-            this.btn_Thoat.TabIndex = 9;
+            this.btn_Thoat.TabIndex = 5;
             this.btn_Thoat.Text = "Thoát";
             this.btn_Thoat.UseVisualStyleBackColor = true;
             this.btn_Thoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -82,7 +82,7 @@
             this.btnThemKhachHang.Location = new System.Drawing.Point(645, 277);
             this.btnThemKhachHang.Name = "btnThemKhachHang";
             this.btnThemKhachHang.Size = new System.Drawing.Size(125, 53);
-            this.btnThemKhachHang.TabIndex = 9;
+            this.btnThemKhachHang.TabIndex = 4;
             this.btnThemKhachHang.Text = "Lưu";
             this.btnThemKhachHang.UseVisualStyleBackColor = true;
             this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
@@ -107,7 +107,6 @@
             this.dtgvDsThemKhachHang.ShowRowErrors = false;
             this.dtgvDsThemKhachHang.Size = new System.Drawing.Size(1101, 360);
             this.dtgvDsThemKhachHang.TabIndex = 8;
-            this.dtgvDsThemKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsThemKhachHang_CellContentClick);
             // 
             // label4
             // 
@@ -151,6 +150,7 @@
             this.txbDienThoaiKhachHang.Name = "txbDienThoaiKhachHang";
             this.txbDienThoaiKhachHang.Size = new System.Drawing.Size(289, 32);
             this.txbDienThoaiKhachHang.TabIndex = 3;
+            this.txbDienThoaiKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDienThoaiKhachHang_KeyPress);
             // 
             // txbCmndKhachHang
             // 
@@ -158,6 +158,7 @@
             this.txbCmndKhachHang.Name = "txbCmndKhachHang";
             this.txbCmndKhachHang.Size = new System.Drawing.Size(289, 32);
             this.txbCmndKhachHang.TabIndex = 2;
+            this.txbCmndKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCmndKhachHang_KeyPress);
             // 
             // txbTenKhachHang
             // 

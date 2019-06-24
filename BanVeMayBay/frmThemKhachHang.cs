@@ -54,6 +54,63 @@ namespace BanVeMayBay
             return true;
         }
 
+        //Clear input
+        private void ClearInput ()
+        {
+            txbCmndKhachHang.Clear();
+            txbDienThoaiKhachHang.Clear();
+            txbMaKhachHang.Clear();
+            txbTenKhachHang.Clear();
+        }
+
+        //Kiểm tra độ dài của textbox
+        private bool inputTextLengthCheck(TextBox textBox, KeyPressEventArgs e)
+        {
+            if (textBox.Text.Length > 30)
+            {
+                MessageBox.Show("Bạn nhập quá số kí tự cho phép", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                textBox.Clear();
+                e.Handled = true;
+                return false;
+            }
+            return true;
+
+        }
+
+        //Kiểm tra dấu và kí tự đặc biệt
+        private void inputTextNonCharacter(TextBox textBox, KeyPressEventArgs e)
+        {
+
+            if (char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+                char.IsPunctuation(e.KeyChar))//Dấu chấm 
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng không nhập kí tự đặc biệt !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            if (char.IsControl(e.KeyChar) && //Cho phép chữ và só
+                !char.IsDigit(e.KeyChar) && !(e.KeyChar == 8)) //có dấu sẽ loại bỏ
+            {
+                e.Handled = true;
+                MessageBox.Show("Vui lòng không viết dấu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                textBox.Clear();//Clear
+                textBox.Focus();//Focus vào textBox
+            }
+
+        }
+
+        //Kiểm tra số
+        private void InputTextOnlyNumber(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || //Ký tự Alphabe
+                char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
+                char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+                char.IsPunctuation(e.KeyChar)) //Dấu chấm              
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
         private void loadData_Vao_dtgvDsKhachHang()
         {
             List<KHDTO> listKhachHang = khBUS.select();
@@ -71,6 +128,7 @@ namespace BanVeMayBay
             dtgvDsThemKhachHang.AllowUserToResizeColumns = false;
             dtgvDsThemKhachHang.AllowUserToResizeRows = false;
             dtgvDsThemKhachHang.DataSource = listKhachHang;
+            dtgvDsThemKhachHang.Columns["Error"].Visible = false;
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsThemKhachHang.DataSource];
             myCurrencyManager.Refresh();
@@ -93,18 +151,14 @@ namespace BanVeMayBay
                 //3. Thêm vào DB
                 bool kq = khBUS.ThemKhachHang(khDTO);
                 if (kq == false)
-                    MessageBox.Show("Thêm khách hàng thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm khách hàng thất bại. Vui lòng kiểm tra lại dũ liệu! \n" + khDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     this.loadData_Vao_dtgvDsKhachHang();
+                    this.ClearInput();
                     MessageBox.Show("Thêm khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void dtgvDsThemKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dtgvDsThemKhachHang.ReadOnly = true;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -114,6 +168,23 @@ namespace BanVeMayBay
             if (dr == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+
+        private void txbCmndKhachHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (inputTextLengthCheck(txbCmndKhachHang, e))
+            {
+                InputTextOnlyNumber(e);
+            }
+        }
+
+        private void txbDienThoaiKhachHang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (inputTextLengthCheck(txbCmndKhachHang, e))
+            {
+                InputTextOnlyNumber(e);
             }
         }
     }

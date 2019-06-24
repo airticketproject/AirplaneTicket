@@ -17,11 +17,12 @@ namespace QLVMBDAL
         {
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
-
+        
+        //Thêm sân bay
         public bool ThemSanBay(SBDTO sb)
         {
             string query = string.Empty;
-            query += "INSERT INTO [SanBay] ([MaSanBay], [TenSanBay])";
+            query += "INSERT INTO [SanBay] ([MaSanBay], [TenSanBay]) ";
             query += "VALUES (@MaSanBay, @TenSanBay)";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -42,6 +43,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        sb.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -49,6 +51,8 @@ namespace QLVMBDAL
             }
             return true;
         }
+
+        //Sửa sân bay
         public bool SuaSanBay(SBDTO sb)
         {
             string query = string.Empty;
@@ -71,6 +75,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        sb.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -78,6 +83,8 @@ namespace QLVMBDAL
             }
             return true;
         }
+
+        //Xoá sân bay
         public bool XoaSanBay(SBDTO sb)
         {
             string query = string.Empty;
@@ -99,6 +106,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        sb.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -110,7 +118,7 @@ namespace QLVMBDAL
         public List<SBDTO> select()
         {
             string query = string.Empty;
-            query += "SELECT [MaSanBay], [TenSanBay]";
+            query += "SELECT * ";
             query += "FROM [SanBay]";
 
             List<SBDTO> lsSanBay = new List<SBDTO>();

@@ -13,24 +13,18 @@ using QLVMBDTO;
 
 namespace BanVeMayBay
 {
-    public partial class frmThemSanBayTrungGian : Form
+    public partial class frmQuanLySanBayTrungGian : Form
     {
-        private SBBUS sbBUS;
-        private CBBUS cbBUS;
         private CTBUS ctBUS;
-        public frmThemSanBayTrungGian()
+
+        public frmQuanLySanBayTrungGian()
         {
             InitializeComponent();
         }
 
-        private void frmThemSanBayTrungGian_Load(object sender, EventArgs e)
+        private void frmQuanLySanBayTrungGian_Load(object sender, EventArgs e)
         {
-            sbBUS = new SBBUS();
-            cbBUS = new CBBUS();
             ctBUS = new CTBUS();
-
-            this.loadSanBayVao_Combobox(cbbMaSanBay);
-            this.loadChuyenBayVao_Combobox(cbbMaChuyenBay);
             this.loadData_Vao_dtgvDsSanBayTrungGian();
         }
 
@@ -53,57 +47,12 @@ namespace BanVeMayBay
         }
 
         //Clear input
-        private void ClearInput ()
+        private void ClearInput()
         {
             txbGhiChu.Clear();
             txbThoiGianDung.Clear();
-        }
-
-        //Load dữ liệu sân bay vào combobox
-        private void loadSanBayVao_Combobox(ComboBox comboBox)
-        {
-            List<SBDTO> listSanBay = sbBUS.select();
-
-            if (listSanBay == null)
-            {
-                MessageBox.Show("Có lỗi khi lấy Sân bay từ cơ sở dữ liệu");
-                return;
-            }
-            comboBox.DataSource = new BindingSource(listSanBay, String.Empty);
-            comboBox.DisplayMember = "TenSanBay";
-            comboBox.ValueMember = "MaSanBay";
-
-            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[comboBox.DataSource];
-            myCurrencyManager.Refresh();
-
-            if (comboBox.Items.Count > 0)
-            {
-                comboBox.SelectedIndex = 0;
-            }
-        }
-
-        //Load dữ liệu chuyến bay vào combobox
-        private void loadChuyenBayVao_Combobox(ComboBox comboBox)
-        {
-            List<CBDTO> listChuyenBay = cbBUS.select();
-
-            if (listChuyenBay == null)
-            {
-                MessageBox.Show("Có lỗi khi lấy Sân bay từ cơ sở dữ liệu");
-                return;
-            }
-            comboBox.DataSource = new BindingSource(listChuyenBay, String.Empty);
-            comboBox.DisplayMember = "MaChuyenBay";
-            comboBox.ValueMember = "MaChuyenBay";
-
-
-            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[comboBox.DataSource];
-            myCurrencyManager.Refresh();
-
-            if (comboBox.Items.Count > 0)
-            {
-                comboBox.SelectedIndex = 0;
-            }
+            txbMaChuyenBay.Clear();
+            txbMaSanBay.Clear();
         }
 
         //Load dữ liệu chuyến bay vào danh sách
@@ -149,8 +98,7 @@ namespace BanVeMayBay
         private void inputTextNonCharacter(TextBox textBox, KeyPressEventArgs e)
         {
 
-            if (char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
-                char.IsPunctuation(e.KeyChar))//Dấu chấm 
+            if (char.IsPunctuation(e.KeyChar))//Dấu chấm 
             {
                 e.Handled = true; //Không cho thể hiện lên TextBox
                 MessageBox.Show("Vui lòng không nhập kí tự đặc biệt !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -180,7 +128,22 @@ namespace BanVeMayBay
         }
 
 
-        private void buttonThem_Click(object sender, EventArgs e)
+        private void dtgvDsSanBayTrungGian_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int Row = e.RowIndex;
+            if (Row != -1)
+            {
+                txbGhiChu.Text = dtgvDsSanBayTrungGian.Rows[Row].Cells["GhiChu"].Value.ToString();
+                txbThoiGianDung.Text = dtgvDsSanBayTrungGian.Rows[Row].Cells["TGDung"].Value.ToString();
+                txbMaChuyenBay.Text = dtgvDsSanBayTrungGian.Rows[Row].Cells["MaChuyenBay"].Value.ToString();
+                txbMaSanBay.Text = dtgvDsSanBayTrungGian.Rows[Row].Cells["MaSanBay"].Value.ToString();
+            }
+            else
+                return;
+        }
+
+
+        private void buttonSua_Click(object sender, EventArgs e)
         {
             CTDTO ctDTO = new CTDTO();
 
@@ -188,21 +151,63 @@ namespace BanVeMayBay
             if (checkNullData())
             {
                 //1. Map data from GUI
-                ctDTO.MaChuyenBay = cbbMaChuyenBay.SelectedValue.ToString();
-                ctDTO.MaSanBay = cbbMaSanBay.SelectedValue.ToString();
+                ctDTO.MaChuyenBay = txbMaChuyenBay.Text.ToString();
+                ctDTO.MaSanBay = txbMaSanBay.Text.ToString();
                 ctDTO.TGDung = int.Parse(txbThoiGianDung.Text);
                 ctDTO.GhiChu = txbGhiChu.Text;
 
                 //3. Thêm vào DB
-                bool kq = ctBUS.ThemChiTietSanBay(ctDTO);
+                bool kq = ctBUS.SuaChiTietSanBay(ctDTO);
                 if (kq == false)
-                    MessageBox.Show("Thêm Sân bay trung gian thất bại. Vui lòng kiểm tra lại dữ liệu! \n" + ctDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cập nhật Sân bay trung gian thất bại. Vui lòng kiểm tra lại dũ liệu! \n" + ctDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    MessageBox.Show("Thêm Sân bay trung gian thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật Sân bay trung gian thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.ClearInput();
                     this.loadData_Vao_dtgvDsSanBayTrungGian();
                 }
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            CTDTO ctDTO = new CTDTO();
+
+            //2. Kiểm tra data hợp lệ or not
+            if (checkNullData())
+            {
+                //1. Map data from GUI
+                ctDTO.MaChuyenBay = txbMaChuyenBay.Text.ToString();
+                ctDTO.MaSanBay = txbMaSanBay.Text.ToString();
+
+                //3. Thêm vào DB
+                bool kq = ctBUS.XoaChiTietSanBay(ctDTO);
+                if (kq == false)
+                    MessageBox.Show("Cập nhật Sân bay trung gian thất bại. Vui lòng kiểm tra lại dũ liệu! \n" + ctDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("Cập nhật Sân bay trung gian thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ClearInput();
+                    this.loadData_Vao_dtgvDsSanBayTrungGian();
+                }
+            }
+        }
+
+        private void txbThoiGianDung_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (inputTextLengthCheck(txbThoiGianDung, e))
+            {
+                inputTextOnlyNumber(e);
+            }
+        }
+
+        private void txbGhiChu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txbGhiChu.Text.Length > 300)
+            {
+                MessageBox.Show("Bạn nhập quá số kí tự cho phép", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txbGhiChu.Clear();
+                e.Handled = true;
             }
         }
 
@@ -215,38 +220,5 @@ namespace BanVeMayBay
                 this.Close();
             }
         }
-
-        private void txbThoiGianDung_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(inputTextLengthCheck(txbThoiGianDung,e))
-            {
-                inputTextOnlyNumber(e);
-            }
-        }
-
-        private void txbGhiChu_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(txbGhiChu.Text.Length >300)
-            {
-                MessageBox.Show("Bạn nhập quá số kí tự cho phép", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                txbGhiChu.Clear();
-                e.Handled = true;
-            }
-        }
-
-        private void dtgvDsSanBayTrungGian_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int Row = e.RowIndex;
-            if (Row != -1)
-            {
-                txbGhiChu.Text = dtgvDsSanBayTrungGian.Rows[Row].Cells["GhiChu"].Value.ToString();
-                txbThoiGianDung.Text = dtgvDsSanBayTrungGian.Rows[Row].Cells["TGDung"].Value.ToString();
-                cbbMaChuyenBay.SelectedValue = dtgvDsSanBayTrungGian.Rows[Row].Cells["MaChuyenBay"].Value.ToString();
-                cbbMaSanBay.SelectedValue = dtgvDsSanBayTrungGian.Rows[Row].Cells["MaSanBay"].Value.ToString();
-            }
-            else
-                return;
-        }
-
     }
 }

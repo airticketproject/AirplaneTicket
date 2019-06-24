@@ -97,14 +97,14 @@
             this.txbMaHangVe.Location = new System.Drawing.Point(307, 77);
             this.txbMaHangVe.Name = "txbMaHangVe";
             this.txbMaHangVe.Size = new System.Drawing.Size(254, 32);
-            this.txbMaHangVe.TabIndex = 5;
+            this.txbMaHangVe.TabIndex = 0;
             // 
             // txbTiLeDonGia
             // 
             this.txbTiLeDonGia.Location = new System.Drawing.Point(307, 186);
             this.txbTiLeDonGia.Name = "txbTiLeDonGia";
             this.txbTiLeDonGia.Size = new System.Drawing.Size(254, 32);
-            this.txbTiLeDonGia.TabIndex = 6;
+            this.txbTiLeDonGia.TabIndex = 2;
             this.txbTiLeDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTiLeDonGia_KeyPress);
             // 
             // txbTenHangVe
@@ -112,7 +112,7 @@
             this.txbTenHangVe.Location = new System.Drawing.Point(307, 130);
             this.txbTenHangVe.Name = "txbTenHangVe";
             this.txbTenHangVe.Size = new System.Drawing.Size(254, 32);
-            this.txbTenHangVe.TabIndex = 7;
+            this.txbTenHangVe.TabIndex = 1;
             this.txbTenHangVe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTenHangVe_KeyPress);
             // 
             // btnSuaHangVe
@@ -120,7 +120,7 @@
             this.btnSuaHangVe.Location = new System.Drawing.Point(440, 284);
             this.btnSuaHangVe.Name = "btnSuaHangVe";
             this.btnSuaHangVe.Size = new System.Drawing.Size(121, 59);
-            this.btnSuaHangVe.TabIndex = 8;
+            this.btnSuaHangVe.TabIndex = 3;
             this.btnSuaHangVe.Text = "Cập nhật";
             this.btnSuaHangVe.UseVisualStyleBackColor = true;
             this.btnSuaHangVe.Click += new System.EventHandler(this.btnSuaHangVe_Click);
@@ -130,7 +130,7 @@
             this.btnXoaHangVe.Location = new System.Drawing.Point(596, 284);
             this.btnXoaHangVe.Name = "btnXoaHangVe";
             this.btnXoaHangVe.Size = new System.Drawing.Size(113, 59);
-            this.btnXoaHangVe.TabIndex = 9;
+            this.btnXoaHangVe.TabIndex = 4;
             this.btnXoaHangVe.Text = "Xoá";
             this.btnXoaHangVe.UseVisualStyleBackColor = true;
             this.btnXoaHangVe.Click += new System.EventHandler(this.btnXoaHangVe_Click);
@@ -162,7 +162,7 @@
             this.btnThoat.Location = new System.Drawing.Point(762, 284);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(113, 59);
-            this.btnThoat.TabIndex = 10;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);

@@ -45,7 +45,7 @@
             this.Them_button.Location = new System.Drawing.Point(585, 236);
             this.Them_button.Name = "Them_button";
             this.Them_button.Size = new System.Drawing.Size(119, 48);
-            this.Them_button.TabIndex = 16;
+            this.Them_button.TabIndex = 2;
             this.Them_button.Text = "Thêm";
             this.Them_button.UseVisualStyleBackColor = true;
             this.Them_button.Click += new System.EventHandler(this.Them_button_Click);
@@ -55,14 +55,14 @@
             this.txbTenSanBay.Location = new System.Drawing.Point(407, 149);
             this.txbTenSanBay.Name = "txbTenSanBay";
             this.txbTenSanBay.Size = new System.Drawing.Size(263, 32);
-            this.txbTenSanBay.TabIndex = 13;
+            this.txbTenSanBay.TabIndex = 1;
             // 
             // txbMaSanBay
             // 
             this.txbMaSanBay.Location = new System.Drawing.Point(407, 85);
             this.txbMaSanBay.Name = "txbMaSanBay";
             this.txbMaSanBay.Size = new System.Drawing.Size(263, 32);
-            this.txbMaSanBay.TabIndex = 14;
+            this.txbMaSanBay.TabIndex = 0;
             // 
             // label3
             // 
@@ -128,7 +128,7 @@
             this.btn_Thoat.Location = new System.Drawing.Point(759, 236);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(119, 48);
-            this.btn_Thoat.TabIndex = 16;
+            this.btn_Thoat.TabIndex = 3;
             this.btn_Thoat.Text = "Thoát";
             this.btn_Thoat.UseVisualStyleBackColor = true;
             this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);

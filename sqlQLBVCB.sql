@@ -30,10 +30,10 @@ CMND nvarchar(9),
 DienThoai nvarchar(11)
 )
 
+
 create table DanhSachChuyenBay
 (
-MaDanhSach nvarchar(5) not null primary key,
-MaChuyenBay nvarchar(5) not null,
+MaChuyenBay nvarchar(5) not null primary key,
 SoGheTrong int,
 SoGheDaDat int
 )
@@ -65,11 +65,11 @@ constraint PK_Ve primary key (MaVe,MaChuyenBay)
 
 create table ChiTietSanBayTrungGian
 (
-MaChiTietSanBayTrungGian nvarchar(5) not null primary key,
 MaChuyenBay nvarchar(5) not null,
 MaSanBay nvarchar(5) not null,
 ThoiGianDung int,
 GhiChu nvarchar(30)
+constraint FK_ChiTietSanBayTrungGian primary key (MaChuyenBay,MaSanBay)
 )
 
 create table ThamSo
@@ -107,15 +107,15 @@ add constraint FK_LichChuyenBay_SanBayDi foreign key (SanBayDi) references SanBa
 	constraint FK_LichChuyenBay_SanBayDen foreign key (SanBayDen) references SanBay(MaSanBay)
 
 alter table DanhSachChuyenBay
-add constraint FK_DanhSachChuyenBay_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay)
+add constraint FK_DanhSachChuyenBay_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade
 
 alter table PhieuDatVe
-add constraint FK_PhieuDatVe_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay),
+add constraint FK_PhieuDatVe_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade,
 	constraint FK_PhieuDatVe_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach),
 	constraint FK_PhieuDatVe_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe)
 
 alter table Ve
-add constraint FK_Ve_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay),
+add constraint FK_Ve_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade,
 	constraint FK_Ve_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach),
 	constraint FK_Ve_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe)
 
@@ -159,7 +159,7 @@ as
 	select @min=ThoiGianBayToiThieu from ThamSo
 	if (@t<@min)
 	begin
-		print 'Thoi gian bay < Thoi gian bay toi thieu'
+		print 'Thời gian bay phải nhỏ hơn thời gian bay tối thiểu'
 		rollback tran
 	end
 
@@ -173,7 +173,7 @@ as
 	select @min=ThoiGianBayToiThieu from ThamSo
 	if (@t<@min)
 	begin
-		print 'Thoi gian bay < Thoi gian bay toi thieu'
+		print 'Thời gian bay phải nhỏ hơn thời gian bay tối thiểu'
 		rollback tran
 	end
 
@@ -192,7 +192,7 @@ as
 	select @max=SoLuongSanBayTrungGianToiDa from ThamSo
 	if (@t>@max)
 	begin
-		print 'So luong san bay trung gian vuot qua so luong toi da'
+		print 'Số lượng sân bay trung gian vượt quá số lượng sân bay trung gian tối đa'
 		rollback tran
 	end
 
@@ -209,58 +209,8 @@ as
 	select @max=SoLuongSanBayTrungGianToiDa from ThamSo
 	if (@t>@max)
 	begin
-		print 'So luong san bay trung gian vuot qua so luong san bay trung gian toi da'
+		print 'Số lượng sân bay trung gian vượt quá số lượng sân bay trung gian tối đa'
 		rollback tran
-	end
-
-/*Trigger Chi ban ve khi con cho*/
-
-create trigger tr_BanVe
-on Ve
-for insert
-as
-	declare @i nvarchar(5)
-	declare @controng int
-	select @i=MaChuyenBay from inserted
-	select @controng=SoGheTrong from DanhSachChuyenBay
-	where @i=MaChuyenBay
-	if (@controng<=0)
-	begin
-		print 'Da het ve'
-		rollback tran
-	end
-	else
-	begin
-		update DanhSachChuyenBay
-		set SoGheTrong=SoGheTrong-1
-		where MaChuyenBay=@i
-		update DanhSachChuyenBay
-		set SoGheDaDat=SoGheDaDat+1
-		where MaChuyenBay=@i
-	end
-
-create trigger tr_BanVe_Update
-on Ve
-for update
-as
-	declare @i nvarchar(5)
-	declare @controng int
-	select @i=MaChuyenBay from inserted
-	select @controng=SoGheTrong from DanhSachChuyenBay
-	where @i=MaChuyenBay
-	if (@controng<=0)
-	begin
-		print 'Da het ve'
-		rollback tran
-	end
-	else
-	begin
-		update DanhSachChuyenBay
-		set SoGheTrong=SoGheTrong-1
-		where MaChuyenBay=@i
-		update DanhSachChuyenBay
-		set SoGheDaDat=SoGheDaDat+1
-		where MaChuyenBay=@i
 	end
 
 
@@ -282,7 +232,7 @@ as
 	where @i=MaChuyenBay
 	if (DATEDIFF(hour,@ngaydat,@ngaykhoihanh)<=@thoigian)
 	begin
-		print 'Thoi gian dat ve da het'
+		print 'Thời gian đặt vé đã hết'
 		rollback tran
 	end
 
@@ -301,7 +251,7 @@ as
 		where @i=MaChuyenBay
 	if (DATEDIFF(hour,@ngaydat,@ngaykhoihanh)<=@thoigian)
 	begin
-		print 'Thoi gian dat ve da het'
+		print 'Thời gian đặt vé đã hết'
 		rollback tran
 	end
 
@@ -309,19 +259,19 @@ as
 /*Dữ liệu mẫu*/
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('1',N'Nội Bài')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
-INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('5',N'a')
-INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('6',N'b')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('3',N'Đà Nẵng')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('4',N'Liên Khương')
 INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
-VALUES ('2','2','1','2019/06/21', 40, 1, 1, 100000)
+VALUES ('1','2','1','2019/06/29', 40, 1, 1, 100000)
 
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
 SELECT * FROM ChiTietSanBayTrungGian
 
-select MaSanBay
-from ChiTietSanBayTrungGian
+select *
+from ThamSo
 Where MaChuyenBay = '2';
 
-INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('1','Thuong',1) /*hang thuong co gia ve = 1*gia ve*/
+INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('1','Thường',1) /*hang thuong co gia ve = 1*gia ve*/
 INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('2','VIP',1.05) /*hang vip co gia ve = 1.05*gia ve*/
 /*UPDATE HangVe set GiaTien = 10000 where MaHangVe = '1'*/
 
@@ -348,7 +298,7 @@ as
 	select @max=ThoiGianDungToiDa from ThamSo
 	if (@thoigiandung<@min or @thoigiandung>@max)
 	begin
-		print 'Thoi gian dung khong hop le'
+		print 'Thời gian dừng không hợp lệ'
 		rollback tran
 	end
 
@@ -364,6 +314,98 @@ as
 	select @max=ThoiGianDungToiDa from ThamSo
 	if (@thoigiandung<@min or @thoigiandung>@max)
 	begin
-		print 'Thoi gian dung khong hop le'
+		print 'Thời gian dừng không hợp lệ'
 		rollback tran
 	end
+
+create trigger tr_DanhSachChuyenBay_insert
+on LichChuyenBay
+for insert
+as
+begin
+	declare @ma nvarchar(5)
+	declare @ghe int
+	select @ma=MaChuyenBay from inserted
+	select @ghe=SoLuongGheHang1+SoLuongGheHang2 from inserted
+	insert into DanhSachChuyenBay values (@ma,@ghe,0)
+end
+
+create trigger tr_DanhSachChuyenBay_update
+on LichChuyenBay
+for insert
+as
+begin
+	declare @ma nvarchar(5)
+	declare @ghe int
+	select @ma=MaChuyenBay from inserted
+	select @ghe=SoLuongGheHang1+SoLuongGheHang2 from inserted
+	update DanhSachChuyenBay
+	set SoGheTrong=@ghe, SoGheDaDat=0
+	where MaChuyenBay=@ma
+end
+
+drop trigger tr_BanVe
+create trigger tr_BanVe
+on Ve
+for insert
+as
+	declare @i nvarchar(5)
+	declare @controng int
+	select @i=MaChuyenBay from inserted
+	select @controng=SoGheTrong from DanhSachChuyenBay
+	where @i=MaChuyenBay
+	if (@controng<=0)
+	begin
+		print 'Đã hết vé'
+		rollback tran
+	end
+	else
+	begin
+		update DanhSachChuyenBay
+		set SoGheTrong=SoGheTrong-1
+		where MaChuyenBay=@i
+		update DanhSachChuyenBay
+		set SoGheDaDat=SoGheDaDat+1
+		where MaChuyenBay=@i
+	end
+
+
+
+create trigger tr_BanVe_Update
+on Ve
+for update
+as
+	declare @i nvarchar(5)
+	declare @controng int
+	select @i=MaChuyenBay from inserted
+	select @controng=SoGheTrong from DanhSachChuyenBay
+	where @i=MaChuyenBay
+	if (@controng<=0)
+	begin
+		print 'Đã hết vé'
+		rollback tran
+	end
+	else
+	begin
+		update DanhSachChuyenBay
+		set SoGheTrong=SoGheTrong-1
+		where MaChuyenBay=@i
+		update DanhSachChuyenBay
+		set SoGheDaDat=SoGheDaDat+1
+		where MaChuyenBay=@i
+	end
+
+INSERT INTO [ChiTietSanBayTrungGian] ([MaChuyenBay], [MaSanBay], [ThoiGianDung], [GhiChu]) VALUES ('2','5',40,'Không có')
+INSERT INTO ThamSo VALUES (10,2,100,10,24,24)
+
+Select MaChuyenBay, sb.TenSanBay, ThoiGianDung, GhiChu
+From ChiTietSanBayTrungGian ct, SanBay sb
+Where ct.MaSanBay = sb.MaSanBay 
+
+Select * 
+From ChiTietSanBayTrungGian
+
+Delete From ChiTietSanBayTrungGian 
+Where MaChuyenBay = '2'
+
+Update ChiTietSanBayTrungGian set ThoiGianDung = 42, GhiChu = 'a' where MaChuyenBay = '11'

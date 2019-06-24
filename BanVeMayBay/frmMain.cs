@@ -167,7 +167,7 @@ namespace BanVeMayBay
         {
             if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
             {
-                frmUser = new frmThamSo();
+                frmUser = new frmQuanLyThamSo();
                 frmUser.MdiParent = this;
                 frmUser.Dock = DockStyle.Fill;
                 frmUser.Show();
@@ -243,6 +243,36 @@ namespace BanVeMayBay
             if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
             {
                 frmUser = new frmQuanLyHangVe();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void thêmSânBayTrungGianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmThemSanBayTrungGian();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void thôngTinSânBayTrungGianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmQuanLySanBayTrungGian();
                 frmUser.MdiParent = this;
                 frmUser.Dock = DockStyle.Fill;
                 frmUser.Show();
