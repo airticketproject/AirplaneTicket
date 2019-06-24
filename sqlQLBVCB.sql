@@ -406,4 +406,6 @@ Select *
 From ChiTietSanBayTrungGian
 
 Delete From ChiTietSanBayTrungGian 
-Where MaChuyenBay = '2' And MaSanBay = '2'
+Where MaChuyenBay = '2'
+
+Update ChiTietSanBayTrungGian set ThoiGianDung = 42, GhiChu = 'a' where MaChuyenBay = '11'
