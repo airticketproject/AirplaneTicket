@@ -44,6 +44,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        pd.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -73,6 +74,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        pd.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -84,7 +86,7 @@ namespace QLVMBDAL
         public List<PDVDTO> select()
         {
             string query = string.Empty;
-            query += "SELECT *";
+            query += "SELECT * ";
             query += "FROM [PhieuDatVe]";
 
             List<PDVDTO> listPhieuDatVe = new List<PDVDTO>();

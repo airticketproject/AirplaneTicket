@@ -31,6 +31,7 @@ namespace BanVeMayBay
 
             this.loadSanBayVao_Combobox(cbbMaSanBay);
             this.loadChuyenBayVao_Combobox(cbbMaChuyenBay);
+            this.loadData_Vao_dtgvDsSanBayTrungGian();
         }
 
         //Kiểm tra null của textbox
@@ -49,6 +50,13 @@ namespace BanVeMayBay
                 return false;
             }
             return true;
+        }
+
+        //Clear input
+        private void ClearInput ()
+        {
+            txbGhiChu.Clear();
+            txbThoiGianDung.Clear();
         }
 
         //Load dữ liệu sân bay vào combobox
@@ -96,6 +104,31 @@ namespace BanVeMayBay
             {
                 comboBox.SelectedIndex = 0;
             }
+        }
+
+        //Load dữ liệu chuyến bay vào danh sách
+        private void loadData_Vao_dtgvDsSanBayTrungGian()
+        {
+            List<CTDTO> listSanBayTrungGian = ctBUS.select();
+
+            if (listSanBayTrungGian == null)
+            {
+                MessageBox.Show("Có lỗi khi lấy danh sách chuyến bay từ DB");
+                return;
+            }
+
+            dtgvDsSanBayTrungGian.Columns.Clear();
+            dtgvDsSanBayTrungGian.DataSource = null;
+
+            dtgvDsSanBayTrungGian.AllowUserToAddRows = false;
+            dtgvDsSanBayTrungGian.AllowUserToResizeColumns = false;
+            dtgvDsSanBayTrungGian.AllowUserToResizeRows = false;
+            dtgvDsSanBayTrungGian.DataSource = listSanBayTrungGian;
+            dtgvDsSanBayTrungGian.Columns["Error"].Visible = false;
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsSanBayTrungGian.DataSource];
+            myCurrencyManager.Refresh();
+
         }
 
         //Kiểm tra độ dài của textbox
@@ -146,10 +179,6 @@ namespace BanVeMayBay
             }
         }
 
-        private void buttonThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void buttonThem_Click(object sender, EventArgs e)
         {
@@ -159,7 +188,7 @@ namespace BanVeMayBay
             if (checkNullData())
             {
                 //1. Map data from GUI
-                ctDTO.MaChuyenBay = cbbMaSanBay.SelectedValue.ToString();
+                ctDTO.MaChuyenBay = cbbMaChuyenBay.SelectedValue.ToString();
                 ctDTO.MaSanBay = cbbMaSanBay.SelectedValue.ToString();
                 ctDTO.TGDung = int.Parse(txbThoiGianDung.Text);
                 ctDTO.GhiChu = txbGhiChu.Text;
@@ -167,13 +196,25 @@ namespace BanVeMayBay
                 //3. Thêm vào DB
                 bool kq = ctBUS.ThemChiTietSanBay(ctDTO);
                 if (kq == false)
-                    MessageBox.Show("Thêm Sân bay trung gian thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm Sân bay trung gian thất bại. Vui lòng kiểm tra lại dữ liệu! \n" + ctDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
+                {
                     MessageBox.Show("Thêm Sân bay trung gian thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ClearInput();
+                    this.loadData_Vao_dtgvDsSanBayTrungGian();
+                }
             }
         }
 
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
 
         private void txbThoiGianDung_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -192,5 +233,20 @@ namespace BanVeMayBay
                 e.Handled = true;
             }
         }
+
+        private void dtgvDsSanBayTrungGian_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int Row = e.RowIndex;
+            if (Row != -1)
+            {
+                txbGhiChu.Text = dtgvDsSanBayTrungGian.Rows[Row].Cells["GhiChu"].Value.ToString();
+                txbThoiGianDung.Text = dtgvDsSanBayTrungGian.Rows[Row].Cells["TGDung"].Value.ToString();
+                cbbMaChuyenBay.SelectedValue = dtgvDsSanBayTrungGian.Rows[Row].Cells["MaChuyenBay"].Value.ToString();
+                cbbMaSanBay.SelectedValue = dtgvDsSanBayTrungGian.Rows[Row].Cells["MaSanBay"].Value.ToString();
+            }
+            else
+                return;
+        }
+
     }
 }

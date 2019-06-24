@@ -158,7 +158,6 @@ namespace BanVeMayBay
             return builder.ToString();
         }
 
-
         private void Thoat_button_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -168,6 +167,7 @@ namespace BanVeMayBay
                 this.Close();
             }
         }
+
         private void Luu_button_Click(object sender, EventArgs e)
         {
             VBDTO vbDTO = new VBDTO();
@@ -175,7 +175,7 @@ namespace BanVeMayBay
             //2. Kiểm tra data hợp lệ or not
 
             //1. Map data from GUI
-            vbDTO.MaVe = txbMaVe.Text.ToString();
+            vbDTO.MaVe = RandomString(5, true);
             vbDTO.MaChuyenBay = MaChuyenBay_comboBox.SelectedValue.ToString();
             vbDTO.MaHangVe = HangVe_comboBox.SelectedValue.ToString();
             vbDTO.MaHanhKhach = MaHanhKhach_comboBox.SelectedValue.ToString();
@@ -183,7 +183,7 @@ namespace BanVeMayBay
             //3. Thêm vào DB
             bool kq = vbBUS.ThemVeBay(vbDTO);
             if (kq == false)
-                MessageBox.Show("Thêm vé bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm vé bay thất bại" + vbDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 MessageBox.Show("Thêm vé bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -61,6 +61,12 @@
     <Compile Include="frmQuanLyHangVe.Designer.cs">
       <DependentUpon>frmQuanLyHangVe.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLySanBayTrungGian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLySanBayTrungGian.Designer.cs">
+      <DependentUpon>frmQuanLySanBayTrungGian.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThemHangVe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,11 +103,11 @@
     <Compile Include="frmBanVe.Designer.cs">
       <DependentUpon>frmBanVe.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThamSo.cs">
+    <Compile Include="frmQuanLyThamSo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThamSo.Designer.cs">
-      <DependentUpon>frmThamSo.cs</DependentUpon>
+    <Compile Include="frmQuanLyThamSo.Designer.cs">
+      <DependentUpon>frmQuanLyThamSo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemChuyenBay.cs">
       <SubType>Form</SubType>
@@ -168,14 +174,17 @@
     <EmbeddedResource Include="frmQuanLyHangVe.resx">
       <DependentUpon>frmQuanLyHangVe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLySanBayTrungGian.resx">
+      <DependentUpon>frmQuanLySanBayTrungGian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThemHangVe.resx">
       <DependentUpon>frmThemHangVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyKhachHang.resx">
       <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThamSo.resx">
-      <DependentUpon>frmThamSo.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanLyThamSo.resx">
+      <DependentUpon>frmQuanLyThamSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemChuyenBay.resx">
       <DependentUpon>frmThemChuyenBay.cs</DependentUpon>

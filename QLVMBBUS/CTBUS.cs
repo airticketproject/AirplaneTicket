@@ -34,9 +34,9 @@ namespace QLVMBBUS
             return re;
         }
 
-        public List<CTDTO> select(CTDTO ct)
+        public List<CTDTO> select()
         {
-            return ctDAL.select(ct);
+            return ctDAL.select();
         }
     }
 }

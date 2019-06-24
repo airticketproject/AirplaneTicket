@@ -159,7 +159,7 @@ as
 	select @min=ThoiGianBayToiThieu from ThamSo
 	if (@t<@min)
 	begin
-		print 'Thoi gian bay < Thoi gian bay toi thieu'
+		print 'Thời gian bay phải nhỏ hơn thời gian bay tối thiểu'
 		rollback tran
 	end
 
@@ -173,7 +173,7 @@ as
 	select @min=ThoiGianBayToiThieu from ThamSo
 	if (@t<@min)
 	begin
-		print 'Thoi gian bay < Thoi gian bay toi thieu'
+		print 'Thời gian bay phải nhỏ hơn thời gian bay tối thiểu'
 		rollback tran
 	end
 
@@ -192,7 +192,7 @@ as
 	select @max=SoLuongSanBayTrungGianToiDa from ThamSo
 	if (@t>@max)
 	begin
-		print 'So luong san bay trung gian vuot qua so luong toi da'
+		print 'Số lượng sân bay trung gian vượt quá số lượng sân bay trung gian tối đa'
 		rollback tran
 	end
 
@@ -209,7 +209,7 @@ as
 	select @max=SoLuongSanBayTrungGianToiDa from ThamSo
 	if (@t>@max)
 	begin
-		print 'So luong san bay trung gian vuot qua so luong san bay trung gian toi da'
+		print 'Số lượng sân bay trung gian vượt quá số lượng sân bay trung gian tối đa'
 		rollback tran
 	end
 
@@ -232,7 +232,7 @@ as
 	where @i=MaChuyenBay
 	if (DATEDIFF(hour,@ngaydat,@ngaykhoihanh)<=@thoigian)
 	begin
-		print 'Thoi gian dat ve da het'
+		print 'Thời gian đặt vé đã hết'
 		rollback tran
 	end
 
@@ -251,7 +251,7 @@ as
 		where @i=MaChuyenBay
 	if (DATEDIFF(hour,@ngaydat,@ngaykhoihanh)<=@thoigian)
 	begin
-		print 'Thoi gian dat ve da het'
+		print 'Thời gian đặt vé đã hết'
 		rollback tran
 	end
 
@@ -259,19 +259,19 @@ as
 /*Dữ liệu mẫu*/
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('1',N'Nội Bài')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
-INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('5',N'a')
-INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('6',N'b')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('3',N'Đà Nẵng')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('4',N'Liên Khương')
 INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
-VALUES ('2','2','1','2019/06/29', 40, 1, 1, 100000)
-insert into ThamSo values (10,2,100,10,24,24)
+VALUES ('1','2','1','2019/06/29', 40, 1, 1, 100000)
+
 SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
 SELECT * FROM ChiTietSanBayTrungGian
 
-select MaSanBay
-from ChiTietSanBayTrungGian
+select *
+from ThamSo
 Where MaChuyenBay = '2';
 
-INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('1','Thuong',1) /*hang thuong co gia ve = 1*gia ve*/
+INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('1','Thường',1) /*hang thuong co gia ve = 1*gia ve*/
 INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('2','VIP',1.05) /*hang vip co gia ve = 1.05*gia ve*/
 /*UPDATE HangVe set GiaTien = 10000 where MaHangVe = '1'*/
 
@@ -298,7 +298,7 @@ as
 	select @max=ThoiGianDungToiDa from ThamSo
 	if (@thoigiandung<@min or @thoigiandung>@max)
 	begin
-		print 'Thoi gian dung khong hop le'
+		print 'Thời gian dừng không hợp lệ'
 		rollback tran
 	end
 
@@ -314,7 +314,7 @@ as
 	select @max=ThoiGianDungToiDa from ThamSo
 	if (@thoigiandung<@min or @thoigiandung>@max)
 	begin
-		print 'Thoi gian dung khong hop le'
+		print 'Thời gian dừng không hợp lệ'
 		rollback tran
 	end
 
@@ -344,8 +344,7 @@ begin
 	where MaChuyenBay=@ma
 end
 
-
-/*Trigger chi ban ve khi con cho*/
+drop trigger tr_BanVe
 create trigger tr_BanVe
 on Ve
 for insert
@@ -357,7 +356,7 @@ as
 	where @i=MaChuyenBay
 	if (@controng<=0)
 	begin
-		print 'Da het ve'
+		print 'Đã hết vé'
 		rollback tran
 	end
 	else
@@ -383,7 +382,7 @@ as
 	where @i=MaChuyenBay
 	if (@controng<=0)
 	begin
-		print 'Da het ve'
+		print 'Đã hết vé'
 		rollback tran
 	end
 	else
@@ -396,4 +395,15 @@ as
 		where MaChuyenBay=@i
 	end
 
-	
+INSERT INTO [ChiTietSanBayTrungGian] ([MaChuyenBay], [MaSanBay], [ThoiGianDung], [GhiChu]) VALUES ('2','5',40,'Không có')
+INSERT INTO ThamSo VALUES (10,2,100,10,24,24)
+
+Select MaChuyenBay, sb.TenSanBay, ThoiGianDung, GhiChu
+From ChiTietSanBayTrungGian ct, SanBay sb
+Where ct.MaSanBay = sb.MaSanBay 
+
+Select * 
+From ChiTietSanBayTrungGian
+
+Delete From ChiTietSanBayTrungGian 
+Where MaChuyenBay = '2' And MaSanBay = '2'

@@ -93,6 +93,7 @@
             // 
             // cbbSanBayDi
             // 
+            this.cbbSanBayDi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSanBayDi.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSanBayDi.FormattingEnabled = true;
             this.cbbSanBayDi.Location = new System.Drawing.Point(517, 86);
@@ -102,6 +103,7 @@
             // 
             // cbbSanBayDen
             // 
+            this.cbbSanBayDen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSanBayDen.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSanBayDen.FormattingEnabled = true;
             this.cbbSanBayDen.Location = new System.Drawing.Point(517, 139);

@@ -108,6 +108,7 @@ namespace BanVeMayBay
             dtgvDsHangVe.AllowUserToResizeColumns = false;
             dtgvDsHangVe.AllowUserToResizeRows = false;
             dtgvDsHangVe.DataSource = listChuyenBay;
+            dtgvDsHangVe.Columns["Error"].Visible = false;
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsHangVe.DataSource];
             myCurrencyManager.Refresh();
@@ -158,16 +159,17 @@ namespace BanVeMayBay
                 //3. Thêm vào DBn
                 bool kq = hvBUS.SuaHangVe(hvDTO);
                 if (kq == false)
-                    MessageBox.Show("Cập nhật Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu! \n" + hvDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     MessageBox.Show("Cập nhật Hạng vé thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.loadData_Vao_dtgvDsHangVe();
+                    this.clearInputText();
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
          
         }
@@ -203,7 +205,12 @@ namespace BanVeMayBay
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

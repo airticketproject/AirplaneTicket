@@ -44,6 +44,7 @@ namespace BanVeMayBay
             dtgvDsKhachHang.AllowUserToResizeColumns = false;
             dtgvDsKhachHang.AllowUserToResizeRows = false;
             dtgvDsKhachHang.DataSource = listKhachHang;
+            dtgvDsKhachHang.Columns["Error"].Visible = false;
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsKhachHang.DataSource];
             myCurrencyManager.Refresh();
@@ -63,6 +64,15 @@ namespace BanVeMayBay
             }
             return true;
         }
+
+        //Clear input
+        private void ClearInput ()
+        {
+            txbSuaCMND.Clear();
+            txbSuaSDT.Clear();
+            txbSuaTenKhachHang.Clear();
+            txbSuaMaKhachHang.Clear();
+        } 
 
         //Kiểm tra độ dài của textbox
         private bool inputTextLengthCheck(TextBox textBox, KeyPressEventArgs e)
@@ -126,10 +136,11 @@ namespace BanVeMayBay
                 //3. Thêm vào DB
                 bool kq = khBUS.XoaKhachHang(khDTO);
                 if (kq == false)
-                    MessageBox.Show("Xoá khách hàng thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xoá khách hàng thất bại. Vui lòng kiểm tra lại dũ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     MessageBox.Show("Xoá khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ClearInput();
                     this.loadData_Vao_dtgvDsKhachHang();
                 }
             }
@@ -151,10 +162,11 @@ namespace BanVeMayBay
                 //3. Thêm vào DB
                 bool kq = khBUS.SuaKhachHang(khDTO);
                 if (kq == false)
-                    MessageBox.Show("Cập nhật khách hàng thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật khách hàng thất bại. Vui lòng kiểm tra lại dũ liệu! \n" + khDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     MessageBox.Show("Cập nhật khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ClearInput();
                     this.loadData_Vao_dtgvDsKhachHang();
                 }
             }
@@ -198,7 +210,12 @@ namespace BanVeMayBay
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

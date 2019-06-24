@@ -36,6 +36,7 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLíChuyếnBayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmChuyếnBayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thêmSânBayTrungGianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLíKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoThángToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoNămToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngTinSânBayTrungGianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +116,9 @@
             // 
             this.quảnLíChuyếnBayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thêmChuyếnBayToolStripMenuItem,
-            this.danhSáchToolStripMenuItem});
+            this.danhSáchToolStripMenuItem,
+            this.thêmSânBayTrungGianToolStripMenuItem,
+            this.thôngTinSânBayTrungGianToolStripMenuItem});
             this.quảnLíChuyếnBayToolStripMenuItem.Name = "quảnLíChuyếnBayToolStripMenuItem";
             this.quảnLíChuyếnBayToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
             this.quảnLíChuyếnBayToolStripMenuItem.Text = "Quản lí chuyến bay";
@@ -122,14 +126,21 @@
             // thêmChuyếnBayToolStripMenuItem
             // 
             this.thêmChuyếnBayToolStripMenuItem.Name = "thêmChuyếnBayToolStripMenuItem";
-            this.thêmChuyếnBayToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.thêmChuyếnBayToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
             this.thêmChuyếnBayToolStripMenuItem.Text = "Thêm chuyến bay";
             this.thêmChuyếnBayToolStripMenuItem.Click += new System.EventHandler(this.thêmChuyếnBayToolStripMenuItem_Click);
+            // 
+            // thêmSânBayTrungGianToolStripMenuItem
+            // 
+            this.thêmSânBayTrungGianToolStripMenuItem.Name = "thêmSânBayTrungGianToolStripMenuItem";
+            this.thêmSânBayTrungGianToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.thêmSânBayTrungGianToolStripMenuItem.Text = "Thêm sân bay trung gian";
+            this.thêmSânBayTrungGianToolStripMenuItem.Click += new System.EventHandler(this.thêmSânBayTrungGianToolStripMenuItem_Click);
             // 
             // danhSáchToolStripMenuItem
             // 
             this.danhSáchToolStripMenuItem.Name = "danhSáchToolStripMenuItem";
-            this.danhSáchToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.danhSáchToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
             this.danhSáchToolStripMenuItem.Text = "Danh sách chuyến bay";
             this.danhSáchToolStripMenuItem.Click += new System.EventHandler(this.danhSáchToolStripMenuItem_Click);
             // 
@@ -248,6 +259,13 @@
             this.báoCáoNămToolStripMenuItem.Text = "Báo cáo năm";
             this.báoCáoNămToolStripMenuItem.Click += new System.EventHandler(this.báoCáoNămToolStripMenuItem_Click);
             // 
+            // thôngTinSânBayTrungGianToolStripMenuItem
+            // 
+            this.thôngTinSânBayTrungGianToolStripMenuItem.Name = "thôngTinSânBayTrungGianToolStripMenuItem";
+            this.thôngTinSânBayTrungGianToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.thôngTinSânBayTrungGianToolStripMenuItem.Text = "Thông tin sân bay trung gian";
+            this.thôngTinSânBayTrungGianToolStripMenuItem.Click += new System.EventHandler(this.thôngTinSânBayTrungGianToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,5 +314,7 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLíHạngVéToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thêmHạngVéToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem danhSáchHạngVéToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem thêmSânBayTrungGianToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinSânBayTrungGianToolStripMenuItem;
     }
 }

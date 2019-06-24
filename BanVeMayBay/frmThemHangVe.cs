@@ -53,6 +53,15 @@ namespace BanVeMayBay
             return true;
         }
 
+        //Clear input
+        private void ClearInput ()
+        {
+            txbMaHangVe.Clear();
+            txbTenHangVe.Clear();
+            txbTiLe.Clear();
+        }
+
+
         //Kiểm tra dấu và kí tự đặc biệt
         private void inputTextNonCharacter(TextBox textBox, KeyPressEventArgs e)
         {
@@ -120,12 +129,12 @@ namespace BanVeMayBay
             dtgvDsHangVe.AllowUserToResizeColumns = false;
             dtgvDsHangVe.AllowUserToResizeRows = false;
             dtgvDsHangVe.DataSource = listChuyenBay;
+            dtgvDsHangVe.Columns["Error"].Visible = false;
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsHangVe.DataSource];
             myCurrencyManager.Refresh();
 
         }
-
 
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -142,7 +151,7 @@ namespace BanVeMayBay
             //3. Thêm vào DBn
             bool kq = hvBUS.ThemHangVe(hvDTO);
             if (kq == false)
-                MessageBox.Show("Thêm Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu! \n" + hvDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 MessageBox.Show("Thêm Hạng vé thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

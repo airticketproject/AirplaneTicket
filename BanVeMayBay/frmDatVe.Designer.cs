@@ -155,7 +155,7 @@
             this.txbTenKhachHang.Name = "txbTenKhachHang";
             this.txbTenKhachHang.ReadOnly = true;
             this.txbTenKhachHang.Size = new System.Drawing.Size(200, 32);
-            this.txbTenKhachHang.TabIndex = 2;
+            this.txbTenKhachHang.TabIndex = 7;
             // 
             // groupBox1
             // 
@@ -185,7 +185,7 @@
             this.txbDienThoai.Name = "txbDienThoai";
             this.txbDienThoai.ReadOnly = true;
             this.txbDienThoai.Size = new System.Drawing.Size(200, 32);
-            this.txbDienThoai.TabIndex = 2;
+            this.txbDienThoai.TabIndex = 8;
             // 
             // txbCMND
             // 
@@ -197,7 +197,7 @@
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.ReadOnly = true;
             this.txbCMND.Size = new System.Drawing.Size(200, 32);
-            this.txbCMND.TabIndex = 2;
+            this.txbCMND.TabIndex = 9;
             // 
             // groupBox2
             // 
@@ -240,7 +240,7 @@
             this.txbThoiGianBay.Name = "txbThoiGianBay";
             this.txbThoiGianBay.ReadOnly = true;
             this.txbThoiGianBay.Size = new System.Drawing.Size(200, 32);
-            this.txbThoiGianBay.TabIndex = 3;
+            this.txbThoiGianBay.TabIndex = 4;
             // 
             // SanBayDi_label
             // 
@@ -275,7 +275,7 @@
             this.txbNgayGio.Name = "txbNgayGio";
             this.txbNgayGio.ReadOnly = true;
             this.txbNgayGio.Size = new System.Drawing.Size(200, 32);
-            this.txbNgayGio.TabIndex = 2;
+            this.txbNgayGio.TabIndex = 3;
             // 
             // txbSanBayDi
             // 
@@ -287,7 +287,7 @@
             this.txbSanBayDi.Name = "txbSanBayDi";
             this.txbSanBayDi.ReadOnly = true;
             this.txbSanBayDi.Size = new System.Drawing.Size(200, 32);
-            this.txbSanBayDi.TabIndex = 2;
+            this.txbSanBayDi.TabIndex = 1;
             // 
             // SanBayDen_label
             // 
@@ -321,7 +321,7 @@
             this.MaChuyenBay_comboBox.Name = "MaChuyenBay_comboBox";
             this.MaChuyenBay_comboBox.Size = new System.Drawing.Size(200, 32);
             this.MaChuyenBay_comboBox.Sorted = true;
-            this.MaChuyenBay_comboBox.TabIndex = 4;
+            this.MaChuyenBay_comboBox.TabIndex = 0;
             this.MaChuyenBay_comboBox.SelectedIndexChanged += new System.EventHandler(this.MaChuyenBay_comboBox_SelectedIndexChanged);
             // 
             // MaHanhKhach_comboBox
@@ -333,7 +333,7 @@
             this.MaHanhKhach_comboBox.Location = new System.Drawing.Point(390, 264);
             this.MaHanhKhach_comboBox.Name = "MaHanhKhach_comboBox";
             this.MaHanhKhach_comboBox.Size = new System.Drawing.Size(200, 32);
-            this.MaHanhKhach_comboBox.TabIndex = 4;
+            this.MaHanhKhach_comboBox.TabIndex = 5;
             this.MaHanhKhach_comboBox.SelectedIndexChanged += new System.EventHandler(this.MaHanhKhach_comboBox_SelectedIndexChanged);
             // 
             // HangVe_comboBox
@@ -345,7 +345,7 @@
             this.HangVe_comboBox.Location = new System.Drawing.Point(801, 455);
             this.HangVe_comboBox.Name = "HangVe_comboBox";
             this.HangVe_comboBox.Size = new System.Drawing.Size(200, 32);
-            this.HangVe_comboBox.TabIndex = 4;
+            this.HangVe_comboBox.TabIndex = 11;
             this.HangVe_comboBox.SelectedIndexChanged += new System.EventHandler(this.HangVe_comboBox_SelectedIndexChanged);
             // 
             // label2
@@ -370,7 +370,7 @@
             this.txbGiaTien.Name = "txbGiaTien";
             this.txbGiaTien.ReadOnly = true;
             this.txbGiaTien.Size = new System.Drawing.Size(201, 32);
-            this.txbGiaTien.TabIndex = 5;
+            this.txbGiaTien.TabIndex = 12;
             // 
             // DatVe_button
             // 
@@ -379,7 +379,7 @@
             this.DatVe_button.Location = new System.Drawing.Point(390, 594);
             this.DatVe_button.Name = "DatVe_button";
             this.DatVe_button.Size = new System.Drawing.Size(146, 40);
-            this.DatVe_button.TabIndex = 6;
+            this.DatVe_button.TabIndex = 13;
             this.DatVe_button.Text = "Đặt vé";
             this.DatVe_button.UseVisualStyleBackColor = true;
             this.DatVe_button.Click += new System.EventHandler(this.DatVe_button_Click);
@@ -391,7 +391,7 @@
             this.Thoat_button.Location = new System.Drawing.Point(712, 594);
             this.Thoat_button.Name = "Thoat_button";
             this.Thoat_button.Size = new System.Drawing.Size(138, 40);
-            this.Thoat_button.TabIndex = 6;
+            this.Thoat_button.TabIndex = 14;
             this.Thoat_button.Text = "Thoát";
             this.Thoat_button.UseVisualStyleBackColor = true;
             this.Thoat_button.Click += new System.EventHandler(this.Thoat_button_Click);
@@ -403,7 +403,7 @@
             this.ThemHanhKhach_button.Location = new System.Drawing.Point(712, 257);
             this.ThemHanhKhach_button.Name = "ThemHanhKhach_button";
             this.ThemHanhKhach_button.Size = new System.Drawing.Size(212, 36);
-            this.ThemHanhKhach_button.TabIndex = 27;
+            this.ThemHanhKhach_button.TabIndex = 6;
             this.ThemHanhKhach_button.Text = "Thêm Hành Khách";
             this.ThemHanhKhach_button.UseVisualStyleBackColor = true;
             this.ThemHanhKhach_button.Click += new System.EventHandler(this.ThemHanhKhach_button_Click);
@@ -430,7 +430,7 @@
             this.txbDonGia.Name = "txbDonGia";
             this.txbDonGia.ReadOnly = true;
             this.txbDonGia.Size = new System.Drawing.Size(201, 32);
-            this.txbDonGia.TabIndex = 28;
+            this.txbDonGia.TabIndex = 10;
             // 
             // label6
             // 
