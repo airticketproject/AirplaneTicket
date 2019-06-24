@@ -65,6 +65,7 @@ namespace BanVeMayBay
             dtgvDsChuyenBay.AllowUserToResizeColumns = false;
             dtgvDsChuyenBay.AllowUserToResizeRows = false;
             dtgvDsChuyenBay.DataSource = listChuyenBay;
+            dtgvDsChuyenBay.Columns["Error"].Visible = false;
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsChuyenBay.DataSource];
             myCurrencyManager.Refresh();
@@ -117,7 +118,7 @@ namespace BanVeMayBay
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -142,7 +143,7 @@ namespace BanVeMayBay
                 //3. Thêm vào DB
                 bool kq = cbBUS.SuaChuyenBay(cbDTO);
                 if (kq == false)
-                    MessageBox.Show("Cập nhật Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu \n" + cbDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     MessageBox.Show("Cập nhật Chuyến bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -151,7 +152,7 @@ namespace BanVeMayBay
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn thông tin cần chỉnh sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -181,6 +182,12 @@ namespace BanVeMayBay
             {
                 this.Close();
             }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            Form form = new frmTimKiem_DanhSachChuyenBay();
+            form.ShowDialog();
         }
     }
 }

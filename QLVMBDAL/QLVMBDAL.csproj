@@ -49,6 +49,7 @@
     <Compile Include="PDVDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SBDAL.cs" />
+    <Compile Include="TSDAL.cs" />
     <Compile Include="VBDAL.cs" />
   </ItemGroup>
   <ItemGroup>

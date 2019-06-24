@@ -185,7 +185,7 @@ namespace BanVeMayBay
             //3. Thêm vào DB
             bool kq = pdvBUS.ThemPhieuDatVe(pdvDTO);
             if (kq == false)
-                MessageBox.Show("Thêm vé đặt thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm vé đặt thất bại \n"+ pdvDTO.Error , "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("Thêm vé đặt thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

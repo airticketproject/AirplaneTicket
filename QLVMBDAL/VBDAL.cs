@@ -46,6 +46,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        vb.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -55,7 +56,7 @@ namespace QLVMBDAL
         }
 
         //Xoá chuyến bay
-        public bool XoaVeBay(VBDTO cb)
+        public bool XoaVeBay(VBDTO vb)
         {
             string query = string.Empty;
             query += "DELETE FROM [Ve] WHERE [MaVe] = @MaVe";
@@ -66,7 +67,7 @@ namespace QLVMBDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaVe", cb.MaVe);
+                    cmd.Parameters.AddWithValue("@MaVe", vb.MaVe);
                     try
                     {
                         con.Open();
@@ -76,6 +77,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        vb.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return false;
                     }
@@ -100,6 +102,7 @@ namespace QLVMBDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
+                    VBDTO vb = new VBDTO();
 
                     try
                     {
@@ -110,7 +113,6 @@ namespace QLVMBDAL
                         {
                             while (reader.Read())
                             {
-                                VBDTO vb = new VBDTO();
                                 vb.MaChuyenBay = reader["MaChuyenBay"].ToString();
                                 vb.MaHanhKhach = reader["MaHanhKhach"].ToString();
                                 vb.MaHangVe = reader["MaHangVe"].ToString();
@@ -124,6 +126,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        vb.Error = ex.Message.Remove(0, 65).Trim();
                         con.Close();
                         return null;
                     }

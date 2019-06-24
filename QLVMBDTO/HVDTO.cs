@@ -11,9 +11,12 @@ namespace QLVMBDTO
         private string maHangVe;
         private string tenHangVe;
         private float tiLeDonGia;
+        private string error;
 
         public string MaHangVe { get => maHangVe; set => maHangVe = value; }
         public string TenHangVe { get => tenHangVe; set => tenHangVe = value; }
         public float TiLeDonGia { get => tiLeDonGia; set => tiLeDonGia = value; }
+        public string Error { get => error; set => error = value; }
+
     }
 }

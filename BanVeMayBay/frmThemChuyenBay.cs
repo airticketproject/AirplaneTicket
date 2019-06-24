@@ -121,8 +121,9 @@ namespace BanVeMayBay
         {
             cbBUS = new CBBUS();
             sbBUS = new SBBUS();
-            loadSanBayVao_Combobox(cbbSanBayDi);
-            loadSanBayVao_Combobox(cbbSanBayDen);
+            this.loadSanBayVao_Combobox(cbbSanBayDi);
+            this.loadSanBayVao_Combobox(cbbSanBayDen);
+            this.loadData_Vao_dtgvDsChuyenBay();
         }
 
 
@@ -149,6 +150,31 @@ namespace BanVeMayBay
             }
         }
 
+        //Load dữ liệu chuyến bay vào danh sách
+        private void loadData_Vao_dtgvDsChuyenBay()
+        {
+            List<CBDTO> listChuyenBay = cbBUS.select();
+
+            if (listChuyenBay == null)
+            {
+                MessageBox.Show("Có lỗi khi lấy danh sách chuyến bay từ DB");
+                return;
+            }
+
+            dtgvDsChuyenBay.Columns.Clear();
+            dtgvDsChuyenBay.DataSource = null;
+
+            dtgvDsChuyenBay.AllowUserToAddRows = false;
+            dtgvDsChuyenBay.AllowUserToResizeColumns = false;
+            dtgvDsChuyenBay.AllowUserToResizeRows = false;
+            dtgvDsChuyenBay.DataSource = listChuyenBay;
+            dtgvDsChuyenBay.Columns["Error"].Visible = false;
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvDsChuyenBay.DataSource];
+            myCurrencyManager.Refresh();
+
+        }
+
         private void themChuyenBay_Click(object sender, EventArgs e)
         {
             CBDTO cbDTO = new CBDTO();
@@ -169,10 +195,11 @@ namespace BanVeMayBay
                 //3. Thêm vào DB
                 bool kq = cbBUS.ThemChuyenBay(cbDTO);
                 if (kq == false)
-                    MessageBox.Show("Thêm Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm Chuyến bay thất bại. Vui lòng kiểm tra lại dũ liệu! \n" + cbDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     MessageBox.Show("Thêm Chuyến bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.loadData_Vao_dtgvDsChuyenBay();
                     this.ClearInput();
                 }
             }

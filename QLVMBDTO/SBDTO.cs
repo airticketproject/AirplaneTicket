@@ -10,8 +10,11 @@ namespace QLVMBDTO
     {
         private string maSanBay;
         private string tenSanBay;
+        private string error;
 
         public string MaSanBay { get => maSanBay; set => maSanBay = value; }
         public string TenSanBay { get => tenSanBay; set => tenSanBay = value; }
+        public string Error { get => error; set => error = value; }
+
     }
 }

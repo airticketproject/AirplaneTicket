@@ -12,10 +12,13 @@ namespace QLVMBDTO
         private string maChuyenBay;
         private string maHangVe;
         private string maPhieuDat;
+        private string error;
 
         public string MaHanhKhach { get => maHanhKhach; set => maHanhKhach = value; }
         public string MaChuyenBay { get => maChuyenBay; set => maChuyenBay = value; }
         public string MaHangVe { get => maHangVe; set => maHangVe = value; }
         public string MaPhieuDat { get => maPhieuDat; set => maPhieuDat = value; }
+        public string Error { get => error; set => error = value; }
+
     }
 }

@@ -49,25 +49,32 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsChuyenBay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvDsChuyenBay
             // 
+            this.dtgvDsChuyenBay.AllowUserToAddRows = false;
+            this.dtgvDsChuyenBay.AllowUserToDeleteRows = false;
             this.dtgvDsChuyenBay.AllowUserToOrderColumns = true;
             this.dtgvDsChuyenBay.AllowUserToResizeColumns = false;
             this.dtgvDsChuyenBay.AllowUserToResizeRows = false;
             this.dtgvDsChuyenBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvDsChuyenBay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dtgvDsChuyenBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgvDsChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsChuyenBay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsChuyenBay.Location = new System.Drawing.Point(3, 422);
             this.dtgvDsChuyenBay.Name = "dtgvDsChuyenBay";
+            this.dtgvDsChuyenBay.ReadOnly = true;
+            this.dtgvDsChuyenBay.RowHeadersVisible = false;
+            this.dtgvDsChuyenBay.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvDsChuyenBay.RowTemplate.Height = 24;
+            this.dtgvDsChuyenBay.ShowCellErrors = false;
             this.dtgvDsChuyenBay.ShowCellToolTips = false;
             this.dtgvDsChuyenBay.ShowEditingIcon = false;
+            this.dtgvDsChuyenBay.ShowRowErrors = false;
             this.dtgvDsChuyenBay.Size = new System.Drawing.Size(1169, 377);
             this.dtgvDsChuyenBay.TabIndex = 0;
             this.dtgvDsChuyenBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDsChuyenBay_CellClick);
@@ -76,6 +83,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Controls.Add(this.txbDonGiaVe);
             this.groupBox1.Controls.Add(this.label8);
@@ -111,7 +119,7 @@
             this.btnThoat.Location = new System.Drawing.Point(907, 308);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(152, 55);
-            this.btnThoat.TabIndex = 23;
+            this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -122,7 +130,7 @@
             this.txbDonGiaVe.Location = new System.Drawing.Point(890, 144);
             this.txbDonGiaVe.Name = "txbDonGiaVe";
             this.txbDonGiaVe.Size = new System.Drawing.Size(253, 32);
-            this.txbDonGiaVe.TabIndex = 22;
+            this.txbDonGiaVe.TabIndex = 6;
             // 
             // label8
             // 
@@ -139,7 +147,7 @@
             this.cbbSanBayDen.Location = new System.Drawing.Point(252, 150);
             this.cbbSanBayDen.Name = "cbbSanBayDen";
             this.cbbSanBayDen.Size = new System.Drawing.Size(294, 32);
-            this.cbbSanBayDen.TabIndex = 20;
+            this.cbbSanBayDen.TabIndex = 2;
             // 
             // cbbSanBayDi
             // 
@@ -147,14 +155,14 @@
             this.cbbSanBayDi.Location = new System.Drawing.Point(252, 110);
             this.cbbSanBayDi.Name = "cbbSanBayDi";
             this.cbbSanBayDi.Size = new System.Drawing.Size(294, 32);
-            this.cbbSanBayDi.TabIndex = 19;
+            this.cbbSanBayDi.TabIndex = 1;
             // 
             // btnXoaChuyenBay
             // 
             this.btnXoaChuyenBay.Location = new System.Drawing.Point(689, 308);
             this.btnXoaChuyenBay.Name = "btnXoaChuyenBay";
             this.btnXoaChuyenBay.Size = new System.Drawing.Size(152, 55);
-            this.btnXoaChuyenBay.TabIndex = 18;
+            this.btnXoaChuyenBay.TabIndex = 9;
             this.btnXoaChuyenBay.Text = "Xoá";
             this.btnXoaChuyenBay.UseVisualStyleBackColor = true;
             this.btnXoaChuyenBay.Click += new System.EventHandler(this.btnXoaChuyenBay_Click);
@@ -164,7 +172,7 @@
             this.btnCapNhatChuyenBay.Location = new System.Drawing.Point(482, 308);
             this.btnCapNhatChuyenBay.Name = "btnCapNhatChuyenBay";
             this.btnCapNhatChuyenBay.Size = new System.Drawing.Size(152, 55);
-            this.btnCapNhatChuyenBay.TabIndex = 17;
+            this.btnCapNhatChuyenBay.TabIndex = 8;
             this.btnCapNhatChuyenBay.Text = "Cập nhật";
             this.btnCapNhatChuyenBay.UseVisualStyleBackColor = true;
             this.btnCapNhatChuyenBay.Click += new System.EventHandler(this.btnCapNhatChuyenBay_Click);
@@ -192,14 +200,14 @@
             this.txbSuaSLGheHang2.Location = new System.Drawing.Point(890, 104);
             this.txbSuaSLGheHang2.Name = "txbSuaSLGheHang2";
             this.txbSuaSLGheHang2.Size = new System.Drawing.Size(253, 32);
-            this.txbSuaSLGheHang2.TabIndex = 14;
+            this.txbSuaSLGheHang2.TabIndex = 5;
             // 
             // txbSuaSLGheHang1
             // 
             this.txbSuaSLGheHang1.Location = new System.Drawing.Point(890, 66);
             this.txbSuaSLGheHang1.Name = "txbSuaSLGheHang1";
             this.txbSuaSLGheHang1.Size = new System.Drawing.Size(253, 32);
-            this.txbSuaSLGheHang1.TabIndex = 13;
+            this.txbSuaSLGheHang1.TabIndex = 4;
             // 
             // suaThoiGianKhoiHanh
             // 
@@ -207,14 +215,14 @@
             this.suaThoiGianKhoiHanh.Location = new System.Drawing.Point(252, 192);
             this.suaThoiGianKhoiHanh.Name = "suaThoiGianKhoiHanh";
             this.suaThoiGianKhoiHanh.Size = new System.Drawing.Size(294, 32);
-            this.suaThoiGianKhoiHanh.TabIndex = 12;
+            this.suaThoiGianKhoiHanh.TabIndex = 3;
             // 
             // txbSuaThoiGianBay
             // 
             this.txbSuaThoiGianBay.Location = new System.Drawing.Point(890, 189);
             this.txbSuaThoiGianBay.Name = "txbSuaThoiGianBay";
             this.txbSuaThoiGianBay.Size = new System.Drawing.Size(253, 32);
-            this.txbSuaThoiGianBay.TabIndex = 11;
+            this.txbSuaThoiGianBay.TabIndex = 7;
             // 
             // label6
             // 
@@ -268,7 +276,17 @@
             this.txbMaChuyenBay.Location = new System.Drawing.Point(252, 69);
             this.txbMaChuyenBay.Name = "txbMaChuyenBay";
             this.txbMaChuyenBay.Size = new System.Drawing.Size(294, 32);
-            this.txbMaChuyenBay.TabIndex = 1;
+            this.txbMaChuyenBay.TabIndex = 0;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(272, 308);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(152, 55);
+            this.btnTimKiem.TabIndex = 22;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // frmQuanLyChuyenBay
             // 
@@ -315,5 +333,6 @@
         private System.Windows.Forms.TextBox txbDonGiaVe;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

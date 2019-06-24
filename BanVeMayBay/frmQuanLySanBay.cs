@@ -58,6 +58,7 @@ namespace BanVeMayBay
             dtgvSanBay.AllowUserToResizeColumns = false;
             dtgvSanBay.AllowUserToResizeRows = false;
             dtgvSanBay.DataSource = listSanBay;
+            dtgvSanBay.Columns["Error"].Visible = false;
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvSanBay.DataSource];
             myCurrencyManager.Refresh();
@@ -81,17 +82,23 @@ namespace BanVeMayBay
         private void Xoa_button_Click(object sender, EventArgs e)
         {
             SBDTO sbDTO = new SBDTO();
+            if (checkNullData())
+            {
+                sbDTO.MaSanBay = txbSuaMaSanBay.Text;
 
-            sbDTO.MaSanBay = txbSuaMaSanBay.Text;
-
-            //Them vao DTB
-            bool kq = sbBUS.XoaSanBay(sbDTO);
-            if (kq == false)
-                MessageBox.Show("Xoá Sân bay thất bại. Vui lòng kiểm tra lại dũ liệu");
+                //Them vao DTB
+                bool kq = sbBUS.XoaSanBay(sbDTO);
+                if (kq == false)
+                    MessageBox.Show("Xoá Sân bay thất bại. Vui lòng kiểm tra lại dữ liệu! \n" + sbDTO.Error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("Xoá Sân bay thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.loadData_Vao_dtgvDsThemSanBay();
+                }
+            }
             else
             {
-                MessageBox.Show("Xoá Sân bay thành công");
-                this.loadData_Vao_dtgvDsThemSanBay();
+                MessageBox.Show("Vui lòng chọn sân bay cần chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -109,7 +116,7 @@ namespace BanVeMayBay
                 //Them vao DTB
                 bool kq = sbBUS.SuaSanBay(sbDTO);
                 if (kq == false)
-                    MessageBox.Show("Cập nhật Sân bay thất bại. Vui lòng kiểm tra lại dũ liệu");
+                    MessageBox.Show("Cập nhật Sân bay thất bại. Vui lòng kiểm tra lại dữ liệu! \n" + sbDTO.Error, "lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     MessageBox.Show("Cập nhật Sân bay thành công");
@@ -124,7 +131,12 @@ namespace BanVeMayBay
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

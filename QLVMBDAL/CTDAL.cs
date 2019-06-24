@@ -23,8 +23,8 @@ namespace QLVMBDAL
         public bool ThemChiTietSanBay(CTDTO ct)
         {
             string query = string.Empty;
-            query += "INSERT INTO [ChiTietSanBayTrungGian] ([MaChiTietSanBayTrungGian], [MaChuyenBay], [MaSanBay], [ThoiGianDung], [GhiChu]) ";
-            query += "VALUES (@MaChiTietSanBayTrungGian,@MaChuyenBay,@MaSanBay,@ThoiGianDung,@GhiChu)";
+            query += "INSERT INTO [ChiTietSanBayTrungGian] ([MaChuyenBay], [MaSanBay], [ThoiGianDung], [GhiChu]) ";
+            query += "VALUES (@MaChuyenBay,@MaSanBay,@ThoiGianDung,@GhiChu)";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -32,7 +32,6 @@ namespace QLVMBDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaChiTietSanBayTrungGian", ct.MaChiTietSanBayTrungGian);
                     cmd.Parameters.AddWithValue("@MaChuyenBay", ct.MaChuyenBay);
                     cmd.Parameters.AddWithValue("@MaSanBay", ct.MaSanBay);
                     cmd.Parameters.AddWithValue("@ThoiGianDung", ct.TGDung);
@@ -47,6 +46,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        ct.Error = ex.Message.Remove(0,65).Trim();
                         con.Close();
                         return false;
                     }
@@ -59,7 +59,7 @@ namespace QLVMBDAL
         public bool SuaChiTietSanBay(CTDTO ct)
         {
             string query = string.Empty;
-            query += "DELETE FROM [ChiTietSanBayTrungGian] WHERE [MaChuyenBay] = @MaChuyenBay";
+            query += "UPDATE [ChiTietSanBayTrungGian] SET [ThoiGianDung] = @ThoiGianDung, [GhiChu] = @GhiChu WHERE [MaChuyenBay] = @MaChuyenBay and [MaSanBay] = @MaSanBay";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -68,6 +68,9 @@ namespace QLVMBDAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@MaChuyenBay", ct.MaChuyenBay);
+                    cmd.Parameters.AddWithValue("@MaSanBay", ct.MaSanBay);
+                    cmd.Parameters.AddWithValue("@ThoiGianDung", ct.TGDung);
+                    cmd.Parameters.AddWithValue("@GhiChu", ct.GhiChu);
                     try
                     {
                         con.Open();
@@ -77,6 +80,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        ct.Error = ex.Message;
                         con.Close();
                         return false;
                     }
@@ -89,7 +93,7 @@ namespace QLVMBDAL
         public bool XoaChiTietSanBay(CTDTO ct)
         {
             string query = string.Empty;
-            query += "DELETE FROM [ChiTietSanBayTrungGian] WHERE [MaChuyenBay] = @MaChuyenBay";
+            query += "DELETE FROM [ChiTietSanBayTrungGian] WHERE [MaChuyenBay] = @MaChuyenBay AND [MaSanBay] = @MaSanBay";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -98,6 +102,8 @@ namespace QLVMBDAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@MaChuyenBay", ct.MaChuyenBay);
+                    cmd.Parameters.AddWithValue("@MaSanBay", ct.MaSanBay);
+
                     try
                     {
                         con.Open();
@@ -107,6 +113,7 @@ namespace QLVMBDAL
                     }
                     catch (Exception ex)
                     {
+                        ct.Error = ex.Message;
                         con.Close();
                         return false;
                     }
@@ -115,12 +122,13 @@ namespace QLVMBDAL
             return true;
         }
 
-        public List<CTDTO> select(CTDTO ct)
+        public List<CTDTO> select()
         {
             string query = string.Empty;
-            query += "SELECT *";
-            query += "FROM [ChiTietSanBayTrungGian] WHERE MaChuyenBay = @MaChuyenBay";
-
+            //query += "SELECT MaChuyenBay, sb.TenSanBay, ThoiGianDung, GhiChu ";
+            //query += "From ChiTietSanBayTrungGian ct, SanBay sb ";
+            //query += "Where ct.MaSanBay = sb.MaSanBay ";
+            query += "SELECT * From [ChiTietSanBayTrungGian]";
             List<CTDTO> lsChiTiet = new List<CTDTO>();
 
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -131,7 +139,7 @@ namespace QLVMBDAL
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@MaChuyenBay", ct.MaChuyenBay);
+
                     try
                     {
                         con.Open();
@@ -142,14 +150,12 @@ namespace QLVMBDAL
                             while (reader.Read())
                             {
                                 CTDTO cttg = new CTDTO();
-
                                 cttg.MaChuyenBay = reader["MaChuyenBay"].ToString();
                                 cttg.MaSanBay = reader["MaSanBay"].ToString();
-                                cttg.MaChiTietSanBayTrungGian = reader["MaChiTietSanBayTrungGian"].ToString();
                                 cttg.TGDung = int.Parse(reader["ThoiGianDung"].ToString());
                                 cttg.GhiChu = reader["GhiChu"].ToString();
 
-                                lsChiTiet.Add(ct);
+                                lsChiTiet.Add(cttg);
                             }
                         }
 
