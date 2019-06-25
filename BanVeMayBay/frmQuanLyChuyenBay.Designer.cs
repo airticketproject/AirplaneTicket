@@ -30,6 +30,7 @@
         {
             this.dtgvDsChuyenBay = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txbDonGiaVe = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsChuyenBay)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,8 @@
             this.dtgvDsChuyenBay.AllowUserToResizeRows = false;
             this.dtgvDsChuyenBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDsChuyenBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsChuyenBay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvDsChuyenBay.ColumnHeadersHeight = 30;
             this.dtgvDsChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsChuyenBay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsChuyenBay.Location = new System.Drawing.Point(3, 422);
@@ -113,6 +115,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cập nhật chuyến bay";
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(272, 308);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(152, 55);
+            this.btnTimKiem.TabIndex = 22;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnThoat
             // 
@@ -277,16 +289,6 @@
             this.txbMaChuyenBay.Name = "txbMaChuyenBay";
             this.txbMaChuyenBay.Size = new System.Drawing.Size(294, 32);
             this.txbMaChuyenBay.TabIndex = 0;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(272, 308);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(152, 55);
-            this.btnTimKiem.TabIndex = 22;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // frmQuanLyChuyenBay
             // 

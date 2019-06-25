@@ -180,6 +180,7 @@
             this.dtgvDsSanBayTrungGian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDsSanBayTrungGian.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgvDsSanBayTrungGian.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dtgvDsSanBayTrungGian.ColumnHeadersHeight = 30;
             this.dtgvDsSanBayTrungGian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsSanBayTrungGian.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsSanBayTrungGian.EnableHeadersVisualStyles = false;

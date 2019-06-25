@@ -145,6 +145,7 @@
             // 
             this.dtgvDsSanBayTrungGian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDsSanBayTrungGian.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsSanBayTrungGian.ColumnHeadersHeight = 30;
             this.dtgvDsSanBayTrungGian.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsSanBayTrungGian.Location = new System.Drawing.Point(0, 455);
             this.dtgvDsSanBayTrungGian.Name = "dtgvDsSanBayTrungGian";

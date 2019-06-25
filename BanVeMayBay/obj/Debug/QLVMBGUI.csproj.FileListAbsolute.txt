@@ -474,3 +474,4 @@ C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLySanBayTrungGian.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLyThamSo.resources
 E:\Học tập\Nhập môn công nghệ phần mềm\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmDanhSachChuyenBay.resources
+C:\Users\PhiDuy\Desktop\Nmcnpm\C#-Airticket\AirplaneTicket\BanVeMayBay\obj\Debug\BanVeMayBay.frmDanhSachChuyenBay.resources

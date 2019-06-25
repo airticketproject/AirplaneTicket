@@ -114,12 +114,13 @@
             // dtgvDsChuyenBay
             // 
             this.dtgvDsChuyenBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgvDsChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDsChuyenBay.ColumnHeadersHeight = 30;
+            this.dtgvDsChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsChuyenBay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvDsChuyenBay.Location = new System.Drawing.Point(0, 251);
+            this.dtgvDsChuyenBay.Location = new System.Drawing.Point(0, 410);
             this.dtgvDsChuyenBay.Name = "dtgvDsChuyenBay";
             this.dtgvDsChuyenBay.RowTemplate.Height = 24;
-            this.dtgvDsChuyenBay.Size = new System.Drawing.Size(977, 240);
+            this.dtgvDsChuyenBay.Size = new System.Drawing.Size(1044, 240);
             this.dtgvDsChuyenBay.TabIndex = 7;
             // 
             // frmTimKiem_DanhSachChuyenBay
@@ -129,7 +130,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BanVeMayBay.Properties.Resources._0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(977, 491);
+            this.ClientSize = new System.Drawing.Size(1044, 650);
             this.Controls.Add(this.dtgvDsChuyenBay);
             this.Controls.Add(this.cbbSanBayDen);
             this.Controls.Add(this.cbbSanBayDi);
@@ -139,6 +140,7 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTimKiem_DanhSachChuyenBay";
             this.Text = "Tìm Kiếm Chuyến Bay";
             this.Load += new System.EventHandler(this.frmTimKiem_DanhSachChuyenBay_Load);

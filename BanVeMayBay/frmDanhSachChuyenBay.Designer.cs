@@ -48,14 +48,14 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(882, 453);
+            this.groupBox1.Size = new System.Drawing.Size(1080, 694);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách chuyến bay";
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(526, 60);
+            this.btnThoat.Location = new System.Drawing.Point(665, 125);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(164, 67);
             this.btnThoat.TabIndex = 23;
@@ -65,7 +65,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(164, 60);
+            this.btnTimKiem.Location = new System.Drawing.Point(279, 125);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(175, 67);
             this.btnTimKiem.TabIndex = 17;
@@ -79,16 +79,18 @@
             this.dtgvDsChuyenBay.AllowUserToResizeColumns = false;
             this.dtgvDsChuyenBay.AllowUserToResizeRows = false;
             this.dtgvDsChuyenBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvDsChuyenBay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dtgvDsChuyenBay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvDsChuyenBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsChuyenBay.ColumnHeadersHeight = 30;
             this.dtgvDsChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsChuyenBay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvDsChuyenBay.Location = new System.Drawing.Point(3, 173);
+            this.dtgvDsChuyenBay.Location = new System.Drawing.Point(3, 288);
             this.dtgvDsChuyenBay.Name = "dtgvDsChuyenBay";
             this.dtgvDsChuyenBay.RowTemplate.Height = 24;
+            this.dtgvDsChuyenBay.ShowCellErrors = false;
             this.dtgvDsChuyenBay.ShowCellToolTips = false;
             this.dtgvDsChuyenBay.ShowEditingIcon = false;
-            this.dtgvDsChuyenBay.Size = new System.Drawing.Size(876, 277);
+            this.dtgvDsChuyenBay.Size = new System.Drawing.Size(1074, 403);
             this.dtgvDsChuyenBay.TabIndex = 0;
             // 
             // frmDanhSachChuyenBay
@@ -97,9 +99,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BanVeMayBay.Properties.Resources._0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(882, 453);
+            this.ClientSize = new System.Drawing.Size(1080, 694);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDanhSachChuyenBay";
             this.Text = "Danh sách chuyến bay";
             this.Load += new System.EventHandler(this.frmDanhSachChuyenBay_Load);

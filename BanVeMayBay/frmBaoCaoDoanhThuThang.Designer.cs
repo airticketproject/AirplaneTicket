@@ -101,16 +101,19 @@
             this.dtgvDTT.AllowUserToResizeColumns = false;
             this.dtgvDTT.AllowUserToResizeRows = false;
             this.dtgvDTT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvDTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDTT.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgvDTT.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDTT.ColumnHeadersHeight = 30;
+            this.dtgvDTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDTT.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvDTT.Location = new System.Drawing.Point(0, 409);
+            this.dtgvDTT.Location = new System.Drawing.Point(0, 352);
             this.dtgvDTT.Name = "dtgvDTT";
             this.dtgvDTT.RowTemplate.Height = 24;
             this.dtgvDTT.ShowCellErrors = false;
             this.dtgvDTT.ShowCellToolTips = false;
             this.dtgvDTT.ShowEditingIcon = false;
             this.dtgvDTT.ShowRowErrors = false;
-            this.dtgvDTT.Size = new System.Drawing.Size(1145, 347);
+            this.dtgvDTT.Size = new System.Drawing.Size(1145, 404);
             this.dtgvDTT.TabIndex = 3;
             // 
             // btnThoat
@@ -146,7 +149,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1145, 409);
+            this.groupBox1.Size = new System.Drawing.Size(1145, 352);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Báo cáo doanh thu tháng";
@@ -162,6 +165,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgvDTT);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaoCaoDoanhThuThang";
             this.Text = "Báo cáo doanh thu tháng";
             this.Load += new System.EventHandler(this.frmBaoCaoDoanhThuThang_Load);

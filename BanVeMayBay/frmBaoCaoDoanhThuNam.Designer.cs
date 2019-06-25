@@ -41,7 +41,7 @@
             // Nam_label
             // 
             this.Nam_label.AutoSize = true;
-            this.Nam_label.Location = new System.Drawing.Point(243, 152);
+            this.Nam_label.Location = new System.Drawing.Point(332, 160);
             this.Nam_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nam_label.Name = "Nam_label";
             this.Nam_label.Size = new System.Drawing.Size(56, 26);
@@ -60,7 +60,7 @@
             "2023",
             "2024",
             "2025"});
-            this.Nam_comboBox.Location = new System.Drawing.Point(425, 152);
+            this.Nam_comboBox.Location = new System.Drawing.Point(514, 160);
             this.Nam_comboBox.Margin = new System.Windows.Forms.Padding(4);
             this.Nam_comboBox.Name = "Nam_comboBox";
             this.Nam_comboBox.Size = new System.Drawing.Size(237, 32);
@@ -68,18 +68,27 @@
             // 
             // dtgvDTN
             // 
+            this.dtgvDTN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvDTN.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgvDTN.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgvDTN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDTN.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDTN.Location = new System.Drawing.Point(0, 460);
             this.dtgvDTN.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvDTN.Name = "dtgvDTN";
+            this.dtgvDTN.RowHeadersVisible = false;
+            this.dtgvDTN.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvDTN.RowTemplate.Height = 24;
+            this.dtgvDTN.ShowCellErrors = false;
+            this.dtgvDTN.ShowCellToolTips = false;
+            this.dtgvDTN.ShowEditingIcon = false;
+            this.dtgvDTN.ShowRowErrors = false;
             this.dtgvDTN.Size = new System.Drawing.Size(1304, 490);
             this.dtgvDTN.TabIndex = 3;
             // 
             // btnBaoCao
             // 
-            this.btnBaoCao.Location = new System.Drawing.Point(248, 219);
+            this.btnBaoCao.Location = new System.Drawing.Point(435, 270);
             this.btnBaoCao.Margin = new System.Windows.Forms.Padding(4);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(137, 50);
@@ -90,7 +99,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(525, 219);
+            this.btnThoat.Location = new System.Drawing.Point(623, 270);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(137, 50);

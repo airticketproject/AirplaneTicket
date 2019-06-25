@@ -52,6 +52,7 @@
             this.dtgvDsHangVe.AllowUserToResizeRows = false;
             this.dtgvDsHangVe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDsHangVe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsHangVe.ColumnHeadersHeight = 30;
             this.dtgvDsHangVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsHangVe.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsHangVe.Location = new System.Drawing.Point(3, 421);

@@ -96,7 +96,8 @@
             this.dtgvDsThemKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDsThemKhachHang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dtgvDsThemKhachHang.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgvDsThemKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDsThemKhachHang.ColumnHeadersHeight = 30;
+            this.dtgvDsThemKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsThemKhachHang.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsThemKhachHang.Location = new System.Drawing.Point(3, 388);
             this.dtgvDsThemKhachHang.Name = "dtgvDsThemKhachHang";

@@ -192,7 +192,7 @@ namespace BanVeMayBay
         private void ThemHanhKhach_button_Click(object sender, EventArgs e)
         {
             Form frmKhachHang = new frmThemKhachHang();
-            frmKhachHang.Show();
+            frmKhachHang.ShowDialog();
         }
     }
 }

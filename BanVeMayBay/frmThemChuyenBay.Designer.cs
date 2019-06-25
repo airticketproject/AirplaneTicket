@@ -47,8 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txbDonGiaVe = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_Thoat = new System.Windows.Forms.Button();
             this.dtgvDsChuyenBay = new System.Windows.Forms.DataGridView();
+            this.btn_Thoat = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsChuyenBay)).BeginInit();
             this.SuspendLayout();
@@ -243,18 +243,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chuyến bay";
             // 
-            // btn_Thoat
-            // 
-            this.btn_Thoat.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Thoat.ForeColor = System.Drawing.Color.Navy;
-            this.btn_Thoat.Location = new System.Drawing.Point(850, 286);
-            this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(106, 40);
-            this.btn_Thoat.TabIndex = 9;
-            this.btn_Thoat.Text = "Thoát";
-            this.btn_Thoat.UseVisualStyleBackColor = true;
-            this.btn_Thoat.Click += new System.EventHandler(this.thoat_Click);
-            // 
             // dtgvDsChuyenBay
             // 
             this.dtgvDsChuyenBay.AllowUserToAddRows = false;
@@ -263,6 +251,7 @@
             this.dtgvDsChuyenBay.AllowUserToResizeRows = false;
             this.dtgvDsChuyenBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDsChuyenBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsChuyenBay.ColumnHeadersHeight = 30;
             this.dtgvDsChuyenBay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsChuyenBay.Location = new System.Drawing.Point(3, 422);
             this.dtgvDsChuyenBay.MultiSelect = false;
@@ -277,6 +266,18 @@
             this.dtgvDsChuyenBay.ShowRowErrors = false;
             this.dtgvDsChuyenBay.Size = new System.Drawing.Size(1293, 359);
             this.dtgvDsChuyenBay.TabIndex = 10;
+            // 
+            // btn_Thoat
+            // 
+            this.btn_Thoat.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Thoat.ForeColor = System.Drawing.Color.Navy;
+            this.btn_Thoat.Location = new System.Drawing.Point(850, 286);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(106, 40);
+            this.btn_Thoat.TabIndex = 9;
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.UseVisualStyleBackColor = true;
+            this.btn_Thoat.Click += new System.EventHandler(this.thoat_Click);
             // 
             // frmThemChuyenBay
             // 

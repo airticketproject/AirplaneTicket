@@ -110,6 +110,7 @@
             this.dtgvDsThemSanBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDsThemSanBay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dtgvDsThemSanBay.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvDsThemSanBay.ColumnHeadersHeight = 30;
             this.dtgvDsThemSanBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvDsThemSanBay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvDsThemSanBay.Location = new System.Drawing.Point(3, 364);

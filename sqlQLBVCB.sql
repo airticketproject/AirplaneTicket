@@ -124,7 +124,7 @@ add constraint FK_ChiTietSanBayTrungGian_MaChuyenBay foreign key (MaChuyenBay) r
 	constraint FK_ChiTietSanBayTrungGian_MaSanBay foreign key (MaSanBay) references SanBay(MaSanBay) on delete cascade
 
 alter table LichChuyenBay
-add check (ThoiGianBay>0),
+add	check (ThoiGianBay>0),
 	check (SoLuongGheHang1>=0),
 	check (SoLuongGheHang2>=0)
 
@@ -135,26 +135,19 @@ add check (SoGheTrong>=0),
 alter table HangVe
 add check (TiLeDonGia>=0)
 
-alter table ThamSo
-add check (ThoiGianBayToiThieu>0),
-	check (SoLuongSanBayTrungGianToiDa>0),
-	check (ThoiGianDungToiDa>ThoiGianDungToiThieu and ThoiGianDungToiThieu>0),
-	check (ThoiGianChamNhatKhiDatVe>0),
-	check (ThoiGianHuyVe>0)
-
 alter table DoanhThuTheoThang
 add check (Thang>=0 and Thang<=12),
 	check (Nam>=2018)
 
-create trigger tr_SanBayDi_SanBayDen
+create trigger tr_SanBayKhacNhau
 on LichChuyenBay
 for insert, update
 as
 	declare @di nvarchar(5)
 	declare @den nvarchar(5)
-	select @di=SanBayDi from inserted
-	select @den=SanBayDen from inserted
-	if @di=@den
+	select @di=SanBayDi, @den=SanBayDen
+	from inserted
+	if (@di=@den)
 	begin
 		print 'Sân bay đi và sân bay đến không được trùng nhau'
 		rollback tran
@@ -260,6 +253,9 @@ as
 		rollback tran
 	end
 
+alter table ThamSo
+add check (ThoiGianDungToiDa>ThoiGianDungToiThieu and ThoiGianDungToiThieu>0)
+
 create trigger tr_ThoiGianDung
 on ChiTietSanBayTrungGian
 for insert
@@ -318,6 +314,11 @@ begin
 	where MaChuyenBay=@ma
 end
 
+<<<<<<< Updated upstream
+
+/*Trigger chi ban ve khi con cho*/
+=======
+>>>>>>> Stashed changes
 create trigger tr_BanVe
 on Ve
 for insert
@@ -431,7 +432,6 @@ begin
 	delete from DoanhThuTheoThang
 end
 
-
 create proc proc_BaoCaoDoanhThuNam
 @nam int
 as
@@ -450,7 +450,6 @@ begin
 	set TiLe=(convert(float,DoanhThu)/convert(float,@tong))
 	where Nam=@nam
 end
-
 
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('1',N'Nội Bài')
 INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
