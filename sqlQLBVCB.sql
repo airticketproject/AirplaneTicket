@@ -1,10 +1,7 @@
 ﻿create database QLBVMB
---use master
---drop database QLBVMB
 use QLBVMB
 
-
-CREATE TABLE LichChuyenBay
+create table LichChuyenBay
 (
 MaChuyenBay nvarchar(5) NOT NULL PRIMARY KEY,
 SanBayDi nvarchar(5) not null,
@@ -16,7 +13,7 @@ SoLuongGheHang2 int,
 GiaVe int
 )
 
-Create table SanBay
+create table SanBay
 (
 MaSanBay nvarchar(5) not null primary key,
 TenSanBay nvarchar(20)
@@ -30,7 +27,6 @@ CMND nvarchar(9),
 DienThoai nvarchar(11)
 )
 
-
 create table DanhSachChuyenBay
 (
 MaChuyenBay nvarchar(5) not null primary key,
@@ -42,7 +38,7 @@ create table HangVe
 (
 MaHangVe nvarchar(5) not null primary key,
 TenHangVe nvarchar(20),
-TiLeDonGia float  not null /*vd: ti le don gia = 0.9 tuong duong voi 90%, ti le don gia = 1.05 tuong duong voi 105%*/
+TiLeDonGia float  not null
 )
 
 create table PhieuDatVe
@@ -84,23 +80,24 @@ ThoiGianHuyVe int
 
 create table DoanhThuTheoThang
 (
-MaDoanhThuTheoThang nvarchar(5) not null primary key,
+Thang int not null,
+Nam int not null,
 MaChuyenBay nvarchar(5) not null,
 SoLuongVe int,
-DoanhThu money,
+DoanhThu int,
 TiLe float
+constraint PK_DoanhThuTheoThang primary key (Thang,Nam,MaChuyenBay)
 )
 
 create table DoanhThuTheoNam
 (
-MaDoanhThuTheoNam nvarchar(5) not null primary key,
-MaDoanhThuTheoThang nvarchar(5) not null,
+Nam int not null,
+Thang int not null,
 SoChuyenBay int,
 DoanhThu int,
 TiLe float
+constraint PK_DoanhThuTheoNam primary key (Nam,Thang)
 )
-
-
 
 alter table LichChuyenBay
 add constraint FK_LichChuyenBay_SanBayDi foreign key (SanBayDi) references SanBay(MaSanBay),
@@ -111,29 +108,23 @@ add constraint FK_DanhSachChuyenBay_MaChuyenBay foreign key (MaChuyenBay) refere
 
 alter table PhieuDatVe
 add constraint FK_PhieuDatVe_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade,
-	constraint FK_PhieuDatVe_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach),
-	constraint FK_PhieuDatVe_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe)
+	constraint FK_PhieuDatVe_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach) on delete cascade,
+	constraint FK_PhieuDatVe_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe) on delete cascade
 
 alter table Ve
 add constraint FK_Ve_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade,
-	constraint FK_Ve_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach),
-	constraint FK_Ve_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe)
+	constraint FK_Ve_MaHanhKhach foreign key (MaHanhKhach) references HanhKhach(MaHanhKhach) on delete cascade,
+	constraint FK_Ve_MaHangVe foreign key (MaHangVe) references HangVe(MaHangVe) on delete cascade
 
 alter table DoanhThuTheoThang
-add constraint FK_DoanhThuTheoThang_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay)
-
-alter table DoanhThuTheoNam
-add constraint FK_DoanhThuTheoNam_MaDoanhThuTheoThang foreign key (MaDoanhThuTheoThang) references DoanhThuTheoThang(MaDoanhThuTheoThang)
+	add constraint FK_DoanhThuTheoThang_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade
 
 alter table ChiTietSanBayTrungGian
-add constraint FK_ChiTietSanBayTrungGian_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay),
-	constraint FK_ChiTietSanBayTrungGian_MaSanBay foreign key (MaSanBay) references SanBay(MaSanBay)
-
-
+add constraint FK_ChiTietSanBayTrungGian_MaChuyenBay foreign key (MaChuyenBay) references LichChuyenBay(MaChuyenBay) on delete cascade,
+	constraint FK_ChiTietSanBayTrungGian_MaSanBay foreign key (MaSanBay) references SanBay(MaSanBay) on delete cascade
 
 alter table LichChuyenBay
-add check (SanBayDi<>SanBayDen),
-	check (ThoiGianBay>0),
+add check (ThoiGianBay>0),
 	check (SoLuongGheHang1>=0),
 	check (SoLuongGheHang2>=0)
 
@@ -144,11 +135,31 @@ add check (SoGheTrong>=0),
 alter table HangVe
 add check (TiLeDonGia>=0)
 
---Select * from LichChuyenBay
---Update LichChuyenBay set SoLuongGheHang1 = 10
---Where MaChuyenBay = '2'
+alter table ThamSo
+add check (ThoiGianBayToiThieu>0),
+	check (SoLuongSanBayTrungGianToiDa>0),
+	check (ThoiGianDungToiDa>ThoiGianDungToiThieu and ThoiGianDungToiThieu>0),
+	check (ThoiGianChamNhatKhiDatVe>0),
+	check (ThoiGianHuyVe>0)
 
-/*Trigger Thoi Gian Bay Toi Thieu*/
+alter table DoanhThuTheoThang
+add check (Thang>=0 and Thang<=12),
+	check (Nam>=2018)
+
+create trigger tr_SanBayDi_SanBayDen
+on LichChuyenBay
+for insert, update
+as
+	declare @di nvarchar(5)
+	declare @den nvarchar(5)
+	select @di=SanBayDi from inserted
+	select @den=SanBayDen from inserted
+	if @di=@den
+	begin
+		print 'Sân bay đi và sân bay đến không được trùng nhau'
+		rollback tran
+	end
+
 create trigger tr_ThoiGianBay
 on LichChuyenBay
 for Insert
@@ -159,7 +170,7 @@ as
 	select @min=ThoiGianBayToiThieu from ThamSo
 	if (@t<@min)
 	begin
-		print 'Thời gian bay phải nhỏ hơn thời gian bay tối thiểu'
+		print 'Thời gian bay < thời gian bay tối thiểu'
 		rollback tran
 	end
 
@@ -173,12 +184,10 @@ as
 	select @min=ThoiGianBayToiThieu from ThamSo
 	if (@t<@min)
 	begin
-		print 'Thời gian bay phải nhỏ hơn thời gian bay tối thiểu'
+		print 'Thời gian bay < thời gian bay tối thiểu'
 		rollback tran
 	end
 
-
-/*Trigger San Bay Trung Gian Toi Da*/
 create trigger tr_SanBayTrungGianToiDa
 on ChiTietSanBayTrungGian
 for insert
@@ -192,7 +201,7 @@ as
 	select @max=SoLuongSanBayTrungGianToiDa from ThamSo
 	if (@t>@max)
 	begin
-		print 'Số lượng sân bay trung gian vượt quá số lượng sân bay trung gian tối đa'
+		print 'Số lượng sân bay trung gian vượt quá số lượng tối đa'
 		rollback tran
 	end
 
@@ -209,14 +218,10 @@ as
 	select @max=SoLuongSanBayTrungGianToiDa from ThamSo
 	if (@t>@max)
 	begin
-		print 'Số lượng sân bay trung gian vượt quá số lượng sân bay trung gian tối đa'
+		print 'Số lượng sân bay trung gian vượt quá số lượng tối đa'
 		rollback tran
 	end
 
-
-/*Update 11/6*/
-
-/*Trigger thoi gian dat ve cham nhat*/
 create trigger tr_ThoiGianDatVeChamNhat
 on PhieuDatVe
 for insert
@@ -255,37 +260,6 @@ as
 		rollback tran
 	end
 
-
-/*Dữ liệu mẫu*/
-INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('1',N'Nội Bài')
-INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
-INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('3',N'Đà Nẵng')
-INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('4',N'Liên Khương')
-INSERT INTO LichChuyenBay (MaChuyenBay, SanBayDi, SanBayDen, NgayGio, ThoiGianBay, SoLuongGheHang1, SoLuongGheHang2, GiaVe)
-VALUES ('1','2','1','2019/06/29', 40, 1, 1, 100000)
-
-SELECT MaChuyenBay, SanBayDi, SanBayDen FROM LichChuyenBay
-SELECT * FROM ChiTietSanBayTrungGian
-
-select *
-from ThamSo
-Where MaChuyenBay = '2';
-
-INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('1','Thường',1) /*hang thuong co gia ve = 1*gia ve*/
-INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('2','VIP',1.05) /*hang vip co gia ve = 1.05*gia ve*/
-/*UPDATE HangVe set GiaTien = 10000 where MaHangVe = '1'*/
-
-/*drop table ThamSo
-drop table ChiTietSanBayTrungGian*/
-
-
-/*Update 18/6*/
-
-alter table ThamSo
-add check (ThoiGianDungToiDa>ThoiGianDungToiThieu and ThoiGianDungToiThieu>0)
-
-
-/*Trigger thoi gian dung cua san bay trung gian*/
 create trigger tr_ThoiGianDung
 on ChiTietSanBayTrungGian
 for insert
@@ -344,7 +318,6 @@ begin
 	where MaChuyenBay=@ma
 end
 
-drop trigger tr_BanVe
 create trigger tr_BanVe
 on Ve
 for insert
@@ -368,8 +341,6 @@ as
 		set SoGheDaDat=SoGheDaDat+1
 		where MaChuyenBay=@i
 	end
-
-
 
 create trigger tr_BanVe_Update
 on Ve
@@ -395,17 +366,105 @@ as
 		where MaChuyenBay=@i
 	end
 
-INSERT INTO [ChiTietSanBayTrungGian] ([MaChuyenBay], [MaSanBay], [ThoiGianDung], [GhiChu]) VALUES ('2','5',40,'Không có')
-INSERT INTO ThamSo VALUES (10,2,100,10,24,24)
+create trigger tr_CheckTrungSanBayTrungGian
+on ChiTietSanBayTrungGian
+for insert
+as
+	declare @i nvarchar(5)
+	declare @sanbay nvarchar(5)
+	declare @di nvarchar(5)
+	declare @den nvarchar(5)
+	select @i=MaChuyenBay from inserted
+	select @sanbay=MaSanBay from inserted
+	select @di=SanBayDi from LichChuyenBay
+	where MaChuyenBay=@i
+	select @den=SanBayDen from LichChuyenBay
+	where MaChuyenBay=@i
+	if (@di=@sanbay) or (@den=@sanbay)
+	begin
+		print 'Sân bay trung gian trùng với sân bay đi hoặc đến'
+		rollback tran
+	end
 
-Select MaChuyenBay, sb.TenSanBay, ThoiGianDung, GhiChu
-From ChiTietSanBayTrungGian ct, SanBay sb
-Where ct.MaSanBay = sb.MaSanBay 
+create trigger tr_CheckTrungSanBayTrungGian_update
+on ChiTietSanBayTrungGian
+for update
+as
+	declare @i nvarchar(5)
+	declare @sanbay nvarchar(5)
+	declare @di nvarchar(5)
+	declare @den nvarchar(5)
+	select @i=MaChuyenBay from inserted
+	select @sanbay=MaSanBay from inserted
+	select @di=SanBayDi from LichChuyenBay
+	where MaChuyenBay=@i
+	select @den=SanBayDen from LichChuyenBay
+	where MaChuyenBay=@i
+	if (@di=@sanbay) or (@den=@sanbay)
+	begin
+		print 'Sân bay trung gian trùng với sân bay đi hoặc đến'
+		rollback tran
+	end
 
-Select * 
-From ChiTietSanBayTrungGian
+create proc proc_BaoCaoDoanhThuThang
+@thang int,
+@nam int
+as
+begin
+	insert into DoanhThuTheoThang (Thang,Nam,MaChuyenBay,SoLuongVe,DoanhThu)
+	select @thang, @nam, a.MaChuyenBay, count(b.MaVe), sum(a.GiaVe*c.TiLeDonGia)
+	from LichChuyenBay a, Ve b, HangVe c
+	where month(a.NgayGio)=@thang and year(a.NgayGio)=@nam and a.MaChuyenBay=b.MaChuyenBay and b.MaHangVe=c.MaHangVe
+	group by a.MaChuyenBay
+	declare @tong int
+	select @tong=sum(DoanhThu)
+	from DoanhThuTheoThang
+	where Thang=@thang and Nam=@nam
+	update DoanhThuTheoThang
+	set TiLe=(convert(float,DoanhThu)/convert(float,@tong))
+	where Thang=@thang and Nam=@nam
+end
 
-Delete From ChiTietSanBayTrungGian 
-Where MaChuyenBay = '2'
+create proc proc_ClearThang
+as
+begin
+	delete from DoanhThuTheoThang
+end
 
-Update ChiTietSanBayTrungGian set ThoiGianDung = 42, GhiChu = 'a' where MaChuyenBay = '11'
+
+create proc proc_BaoCaoDoanhThuNam
+@nam int
+as
+begin
+	delete from DoanhThuTheoNam
+	insert into DoanhThuTheoNam (Thang,Nam,SoChuyenBay,DoanhThu)
+	select distinct Thang, @nam, count(MaChuyenBay),sum(DoanhThu)
+	from DoanhThuTheoThang
+	where Nam=@nam
+	group by Thang,Nam
+	declare @tong int
+	select @tong=sum(DoanhThu)
+	from DoanhThuTheoNam
+	where Nam=@nam
+	update DoanhThuTheoNam
+	set TiLe=(convert(float,DoanhThu)/convert(float,@tong))
+	where Nam=@nam
+end
+
+
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('1',N'Nội Bài')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('2',N'Tân Sân Nhất')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('5',N'a')
+INSERT INTO SanBay (MaSanBay,TenSanBay) VALUES ('6',N'b')
+insert into ThamSo values (10,2,100,10,24,24)
+insert into LichChuyenBay values ('1','1','2','2018-06-29',20,1,1,100000)
+insert into LichChuyenBay values ('3','1','2','2019-10-29',20,1,1,200000)
+insert into LichChuyenBay values ('2','2','1','2019/06/29', 40, 1, 1, 500000)
+INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('1','Thuong',1)
+INSERT INTO HangVe (MaHangVe,TenHangVe,TiLeDonGia) VALUES ('2','VIP',1.05)
+insert into PhieuDatVe values ('1','1','2','2')
+insert into Ve values ('1','1','3','2')
+insert into Ve values ('1','1','1','1')
+insert into Ve values ('1','1','2','1')
+insert into ChiTietSanBayTrungGian values ('1','5',30,'a')
+insert into ChiTietSanBayTrungGian values ('1','6',30,'a')

@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="CBBUS.cs" />
     <Compile Include="CTBUS.cs" />
+    <Compile Include="DSBUS.cs" />
+    <Compile Include="DTNBUS.cs" />
+    <Compile Include="DTTBUS.cs" />
     <Compile Include="HVBUS.cs" />
     <Compile Include="KHBUS.cs" />
     <Compile Include="PDVBUS.cs" />

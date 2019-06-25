@@ -38,7 +38,7 @@ namespace BanVeMayBay
         {
             if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
             {
-                frmUser = new frmQuanLyChuyenBay();
+                frmUser = new frmDanhSachChuyenBay();
                 frmUser.MdiParent = this;
                 frmUser.Dock = DockStyle.Fill;
                 frmUser.Show();
@@ -273,6 +273,21 @@ namespace BanVeMayBay
             if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
             {
                 frmUser = new frmQuanLySanBayTrungGian();
+                frmUser.MdiParent = this;
+                frmUser.Dock = DockStyle.Fill;
+                frmUser.Show();
+            }
+            else
+            {
+                MessageBox.Show("Chức năng đã được hiển thị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void cậpNhậtXóaChuyếnBayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild == null || frmUser.IsDisposed || frmUser == null)
+            {
+                frmUser = new frmQuanLyChuyenBay();
                 frmUser.MdiParent = this;
                 frmUser.Dock = DockStyle.Fill;
                 frmUser.Show();

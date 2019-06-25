@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(383, 27);
+            this.label1.Location = new System.Drawing.Point(346, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(303, 32);
             this.label1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(275, 89);
+            this.label.Location = new System.Drawing.Point(263, 86);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(112, 26);
             this.label.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.SanBayDen_label.AutoSize = true;
             this.SanBayDen_label.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SanBayDen_label.Location = new System.Drawing.Point(275, 142);
+            this.SanBayDen_label.Location = new System.Drawing.Point(263, 142);
             this.SanBayDen_label.Name = "SanBayDen_label";
             this.SanBayDen_label.Size = new System.Drawing.Size(128, 26);
             this.SanBayDen_label.TabIndex = 1;
@@ -72,7 +72,7 @@
             // TimKiem_button
             // 
             this.TimKiem_button.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimKiem_button.Location = new System.Drawing.Point(268, 186);
+            this.TimKiem_button.Location = new System.Drawing.Point(256, 185);
             this.TimKiem_button.Name = "TimKiem_button";
             this.TimKiem_button.Size = new System.Drawing.Size(119, 50);
             this.TimKiem_button.TabIndex = 5;
@@ -83,7 +83,7 @@
             // Thoat_button
             // 
             this.Thoat_button.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Thoat_button.Location = new System.Drawing.Point(664, 188);
+            this.Thoat_button.Location = new System.Drawing.Point(599, 187);
             this.Thoat_button.Name = "Thoat_button";
             this.Thoat_button.Size = new System.Drawing.Size(119, 47);
             this.Thoat_button.TabIndex = 5;
@@ -96,7 +96,7 @@
             this.cbbSanBayDi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSanBayDi.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSanBayDi.FormattingEnabled = true;
-            this.cbbSanBayDi.Location = new System.Drawing.Point(517, 86);
+            this.cbbSanBayDi.Location = new System.Drawing.Point(474, 83);
             this.cbbSanBayDi.Name = "cbbSanBayDi";
             this.cbbSanBayDi.Size = new System.Drawing.Size(266, 32);
             this.cbbSanBayDi.TabIndex = 6;
@@ -106,7 +106,7 @@
             this.cbbSanBayDen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSanBayDen.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSanBayDen.FormattingEnabled = true;
-            this.cbbSanBayDen.Location = new System.Drawing.Point(517, 139);
+            this.cbbSanBayDen.Location = new System.Drawing.Point(474, 139);
             this.cbbSanBayDen.Name = "cbbSanBayDen";
             this.cbbSanBayDen.Size = new System.Drawing.Size(266, 32);
             this.cbbSanBayDen.TabIndex = 6;
