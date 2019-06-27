@@ -56,5 +56,50 @@ namespace QLVMBDAL
             }
             return true;
         }
+
+        public TSDTO select()
+        {
+            string query = string.Empty;
+            query += "SELECT *";
+            query += "FROM [ThamSo]";
+            TSDTO ts = new TSDTO();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    try
+                    {
+                        con.Open();
+                        SqlDataReader reader = null;
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            while (reader.Read())
+                            {
+                                ts.ThoiGianBayToiThieu = int.Parse(reader["ThoiGianBayToiThieu"].ToString());
+                                ts.SoLuongSanBayTrungGianToiDa = int.Parse(reader["SoLuongSanBayTrungGianToiDa"].ToString());
+                                ts.ThoiGianDungToiDa = int.Parse(reader["ThoiGianDungToiDa"].ToString());
+                                ts.ThoiGianDungToiThieu = int.Parse(reader["ThoiGianDungToiThieu"].ToString());
+                                ts.ThoiGianChamNhatKhiDatVe = int.Parse(reader["ThoiGianChamNhatKhiDatVe"].ToString());
+                                ts.ThoiGianHuyVe = int.Parse(reader["ThoiGianHuyVe"].ToString());
+                            }
+                        }
+
+                        con.Close();
+                        con.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        return null;
+                    }
+                }
+            }
+            return ts;
+        }
     }
 }

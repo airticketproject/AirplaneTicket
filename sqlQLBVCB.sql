@@ -13,6 +13,8 @@ SoLuongGheHang2 int,
 GiaVe int
 )
 
+delete from ThamSo
+
 create table SanBay
 (
 MaSanBay nvarchar(5) not null primary key,

@@ -23,7 +23,18 @@ namespace BanVeMayBay
         private void frmQuanLyThamSo_Load(object sender, EventArgs e)
         {
             tsBUS = new TSBUS();
-            
+            loadData();
+        }
+
+        private void loadData()
+        {
+            TSDTO ts = tsBUS.select();
+            txbThoiGianBayToiThieu.Text = ts.ThoiGianBayToiThieu.ToString();
+            txbSoSanBayTrungGianToiDa.Text = ts.SoLuongSanBayTrungGianToiDa.ToString();
+            txbThoiGianDungToiDa.Text = ts.ThoiGianDungToiDa.ToString();
+            txbThoiGianDungToiThieu.Text = ts.ThoiGianDungToiThieu.ToString();
+            txbThoiGianChamNhatKhiDatVe.Text = ts.ThoiGianChamNhatKhiDatVe.ToString();
+            txbThoiGianHuyVe.Text = ts.ThoiGianHuyVe.ToString();
         }
 
         //Kiểm tra null
@@ -85,10 +96,10 @@ namespace BanVeMayBay
                 //3. Thêm vào DBn
                 bool kq = tsBUS.CapNhatThamSo(tsDTO);
                 if (kq == false)
-                    MessageBox.Show("Thêm Hạng vé thất bại. Vui lòng kiểm tra lại dũ liệu! \n", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Thay đổi tham số thất bại. Vui lòng kiểm tra lại dũ liệu! \n", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    MessageBox.Show("Thêm Hạng vé thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thay đổi tham số thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

@@ -21,5 +21,10 @@ namespace QLVMBBUS
             return re;
         }
 
+        public TSDTO select()
+        { 
+            return tsDAL.select();
+        }
+
     }
 }
