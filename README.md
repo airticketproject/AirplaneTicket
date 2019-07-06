@@ -62,4 +62,4 @@
   - https://youtube.com
   - http://veminhthanh.vn
 ## Tài liệu báo cáo:
-  - http://bit.ly/PDBaoCao
+  - http://bit.ly/BaoCaoCuoiKi
